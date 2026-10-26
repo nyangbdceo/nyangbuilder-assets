@@ -1516,3 +1516,10 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
   .app-block .story-sec .bs-logo-text{border-top:0;padding-top:0;position:relative}
   .app-block .story-sec .bs-logo-text::before{content:"";display:block;width:32px;height:2px;border-radius:2px;background:var(--line);margin:0 auto 20px}
 }
+/* 브랜드 스토리 모바일: 줄 대신 장마다 연한 카드로 나눠 보이게 */
+@media (max-width:900px){
+  .app-block .story-sec .bs-ch{background:var(--mist);border-radius:24px;padding:32px 20px!important;margin-top:14px}
+  .app-block .story-sec .bs-head + .bs-ch{margin-top:32px}
+  .app-block .story-sec .bs-card{background:#fff}
+  .app-block .story-sec .bs-card.dark{background:var(--ink)}
+}
