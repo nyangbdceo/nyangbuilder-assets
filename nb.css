@@ -1525,3 +1525,6 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
 }
 /* 서비스 태그 더미: 모바일에서는 숨김 */
 @media (max-width:700px){.what .pile{display:none}.what .pile + .svc,.what .svc{margin-top:40px}}
+/* 물결 아래 회색 줄: 고해상도 화면에서 물결 그림 아래로 물결 상자의 어두운 바탕이 1px 비침
+   → 물결 아래쪽 절반 바탕을 다음 섹션 색으로 깔아 틈이 생겨도 같은 색으로 보이게 */
+.wave{background:linear-gradient(var(--from) 0 62%,var(--to) 62% 100%)}
