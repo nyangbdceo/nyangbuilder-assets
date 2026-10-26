@@ -1397,5 +1397,5 @@ main.app:not(:has(.hero)) .app-block > .container > div button[class*="-button"]
 /* 푸터도 좁은 글꼴 로고: 아래 AI VIDEO AGENCY 줄과 폭이 비슷하게 */
 footer .brand .line[src*="wordmark-cond"]{height:23px}
 footer .brand:has(.line[src*="wordmark-cond"]) .sym{height:40px}
-footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacing:.34em;margin-top:5px}
-@media (max-width:900px){footer .brand .line[src*="wordmark-cond"]{height:18px}footer .brand:has(.line[src*="wordmark-cond"]) .sym{height:32px}footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:8.5px;letter-spacing:.3em}}
+footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacing:.56em;margin-top:5px}
+@media (max-width:900px){footer .brand .line[src*="wordmark-cond"]{height:18px}footer .brand:has(.line[src*="wordmark-cond"]) .sym{height:32px}footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:8px;letter-spacing:.5em}}
