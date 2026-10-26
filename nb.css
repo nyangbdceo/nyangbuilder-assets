@@ -1371,3 +1371,8 @@ small{font-size:smaller}
 .app-block :is(.lg.lg,.sg.sg) :is(.lg-button,.sg-button).primary{background:var(--blue);border-color:var(--blue);color:#fff}
 .app-block .lg.lg .lg-button.secondary{background:#fff;border:1.5px solid var(--line);color:var(--ink)}
 .app-block :is(.lg.lg,.sg.sg) :is(.lg-text-button,.sg-text-button){color:var(--sub);font-size:14px}
+/* 공통 p 줄바꿈 규칙이 식스샵 기본 폼 글자의 코드 줄바꿈까지 살려서 라벨이 두 줄로 깨짐 */
+.app-block :is(.lg.lg,.sg.sg) *{white-space:normal}
+.app-block .sg.sg .sg-field{margin-bottom:18px}
+.app-block .sg.sg .sg-label{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.app-block .sg.sg .sg-feedback{margin-top:8px;font-size:13px;color:var(--sub)}
