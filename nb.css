@@ -1480,3 +1480,8 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
   .pill{font-size:14.5px;padding:9px 15px;border-radius:999px;box-shadow:0 6px 16px rgba(10,12,20,.12)}
 }
 @media (max-width:700px){.what .top{flex-direction:column;align-items:center;gap:18px}.what .top p{margin:0 auto}}
+/* 비교 VS 모바일: 두 카드 사이 한가운데에 */
+@media (max-width:900px){
+  .vs2{gap:0}
+  .vs2 .vs-badge{position:relative;left:auto;top:auto;transform:none;margin:-22px auto;justify-self:center}
+}
