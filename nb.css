@@ -1535,3 +1535,5 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
 @media (max-width:700px){.what .top p{font-size:17px}}
 /* FAQ 게시판 답 본문 줄바꿈 정리 */
 .faq-board .ans-body p{white-space:normal}
+/* FAQ 게시판: 질문 글자는 Q 표시 바로 옆에 왼쪽 정렬 */
+.faq-board summary > span{flex:1;text-align:left}
