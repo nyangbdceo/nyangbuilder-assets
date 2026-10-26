@@ -1488,3 +1488,7 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
 /* 하위 페이지 첫 화면: 영문 라벨을 제목에서 조금 띄워 위로 */
 .hero.sub-hero .label{display:block;margin-bottom:22px}
 @media (max-width:900px){.hero.sub-hero .label{margin-bottom:16px}}
+/* 로그인: 아래에 간편 로그인(카카오·네이버)이 붙으므로 폼 아래 간격은 줄이고, 여백은 맨 끝에 */
+.app-block .lg.lg{padding-bottom:36px}
+.app-block .container:has(> .lg){padding-bottom:110px}
+@media (max-width:900px){.app-block .lg.lg{padding-bottom:28px}.app-block .container:has(> .lg){padding-bottom:80px}}
