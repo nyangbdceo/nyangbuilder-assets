@@ -1357,3 +1357,17 @@ small{font-size:smaller}
 .nav .logo .name[src*="wordmark-line"]{height:17px}
 @media (max-width:1100px){.nav .logo .name[src*="wordmark-line"]{height:15px}}
 @media (max-width:900px){.nav .logo .name[src*="wordmark-line"]{height:13px}}
+
+/* 로그인·회원가입: 고정 메뉴에 가리지 않게 내리고 브랜드 톤으로 */
+.app-block .lg,.app-block .sg{max-width:440px;margin:0 auto;padding:190px 0 110px}
+.app-block .sg{max-width:520px}
+@media (max-width:900px){.app-block .lg,.app-block .sg{padding:150px 16px 80px}}
+.app-block :is(.lg,.sg) h2{font-size:34px;font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+.app-block :is(.lg,.sg) :is(.lg-input-container,.sg-input-container){border:0;padding:0;background:none;box-shadow:none}
+.app-block :is(.lg,.sg) :is(.lg-input,.sg-input){height:54px;border-radius:12px;border:1.5px solid var(--line);padding:0 16px;font-size:15px;background:#fff}
+.app-block :is(.lg,.sg) :is(.lg-input,.sg-input):focus{border-color:var(--blue);outline:none}
+.app-block .lg .lg-field{margin-bottom:10px}
+.app-block :is(.lg,.sg) :is(.lg-button,.sg-button){height:56px;border-radius:12px;font-weight:700;font-size:16px}
+.app-block :is(.lg,.sg) :is(.lg-button,.sg-button).primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.app-block .lg .lg-button.secondary{background:#fff;border:1.5px solid var(--line);color:var(--ink)}
+.app-block :is(.lg,.sg) :is(.lg-text-button,.sg-text-button){color:var(--sub);font-size:14px}
