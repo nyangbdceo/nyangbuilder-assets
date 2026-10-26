@@ -157,6 +157,19 @@
       track.append(...[...track.children].map(copy));
       track.style.animationDuration = 60 * reps + 's';
     });
+    // 카톡 후기: 모바일 가로 슬라이드를 3.5초마다 다음 장으로 (손으로 넘기면 잠깐 멈춤)
+    document.querySelectorAll('.kt-grid').forEach(g => {
+      if (calm || !once(g, 'kt')) return;
+      let hold = 0;
+      ['touchstart', 'pointerdown', 'wheel'].forEach(ev => g.addEventListener(ev, () => { hold = Date.now() + 6000; }, { passive: true }));
+      const id = setInterval(() => {
+        if (!g.isConnected) return clearInterval(id);
+        if (innerWidth > 700 || Date.now() < hold || g.children.length < 2) return;
+        const step = g.children[1].offsetLeft - g.children[0].offsetLeft;
+        const next = g.scrollLeft + step > g.scrollWidth - g.clientWidth + 5 ? 0 : g.scrollLeft + step;
+        g.scrollTo({ left: next, behavior: 'smooth' });
+      }, 3500);
+    });
     // 남은 작업 일정 점 (data-left / data-total 은 블록 설정값)
     document.querySelectorAll('[data-slots]').forEach(el => {
       if (!once(el, 'sl')) return;
