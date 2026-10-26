@@ -1543,3 +1543,5 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
 /* 마무리 섹션: 한글 제목과 설명을 같은 크기로, 한 덩어리처럼 */
 .start h2.start-kr{font-size:clamp(21px,2.4vw,28px);line-height:1.45;letter-spacing:-.03em;margin-top:12px}
 .start h2.start-kr + p{font-size:clamp(21px,2.4vw,28px);line-height:1.45;font-weight:500;letter-spacing:-.03em;margin-top:2px;opacity:.85}
+/* 푸터 CONTACT 제목을 왼쪽 메뉴 글자와 같은 크기로 */
+footer h4{font-size:15px;font-weight:700;letter-spacing:.06em;margin-bottom:12px}
