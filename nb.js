@@ -3,6 +3,8 @@
   const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const once = (el, k) => (el.dataset['nb' + k] ? false : (el.dataset['nb' + k] = '1'));
   const pad = n => String(n).padStart(2, '0');
+  // 식스샵이 메뉴 블록을 두 번 그리는 경우가 있어 맨 위(마지막) 것만 씀
+  const theNav = () => [...document.querySelectorAll('.nav')].pop();
 
   // 섹션 사이 물결: 같은 모양을 두 번 이어 붙여 끊김 없이 흐르게
   const wavePath = (amp, phase) => {
@@ -74,7 +76,7 @@
     document.documentElement.style.overflow = open ? 'hidden' : '';
   };
   const alignUtil = () => {
-    const g = document.querySelector('.nav .util-g'), btn = document.querySelector('.nav .wrap > .btn');
+    const g = theNav()?.querySelector('.util-g'), btn = theNav()?.querySelector('.wrap > .btn');
     if (g && btn) g.style.width = btn.offsetWidth ? btn.offsetWidth + 'px' : '';
   };
   const navInit = nav => {
@@ -89,13 +91,13 @@
     nav.querySelectorAll('.m-menu a').forEach(a => a.addEventListener('click', () => setMenu(nav, false)));
     alignUtil();
   };
-  addEventListener('keydown', e => { const n = document.getElementById('nav'); if (e.key === 'Escape' && n) setMenu(n, false); });
+  addEventListener('keydown', e => { const n = theNav(); if (e.key === 'Escape' && n) setMenu(n, false); });
   addEventListener('resize', alignUtil);
   document.fonts?.ready.then(alignUtil);
 
   // 상단 메뉴: 어두운 첫 화면을 지나면 흰 배경으로
   const onScroll = () => {
-    const nav = document.getElementById('nav');
+    const nav = theNav();
     if (!nav) return;
     const hero = document.querySelector('.hero');
     nav.classList.toggle('solid', !hero || scrollY > hero.offsetHeight * .7);
@@ -120,7 +122,8 @@
     document.querySelectorAll('[data-count]').forEach(el => { if (once(el, 'c')) cio.observe(el); });
     document.querySelectorAll('canvas.sea').forEach(cv => { if (once(cv, 's')) sea(cv); });
     document.querySelectorAll('.vf-tc').forEach(tc => { if (once(tc, 't')) timecode(tc); });
-    document.querySelectorAll('.nav').forEach(n => { if (once(n, 'n')) navInit(n); });
+    const navs = [...document.querySelectorAll('.nav')];
+    navs.forEach((n, i) => { n.style.display = i < navs.length - 1 ? 'none' : ''; if (once(n, 'n')) navInit(n); });
     // 작업물 카드: 끊김 없이 옆으로 계속 흐르게 (카드를 한 번 더 복제)
     document.querySelectorAll('.rail').forEach(rail => {
       if (!rail.children.length || !once(rail, 'rail')) return;
