@@ -1509,3 +1509,10 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
 }
 /* 왜 냥빌더 모바일: 빨간 X를 가운데 정렬된 문구 한가운데에 */
 @media (max-width:900px){.assure .qa .x::after{left:50%;width:70%;transform:translateX(-50%)}}
+/* 브랜드 스토리 모바일: 장 사이 가로줄 없애고 여백으로만 구분, 슬로건 한글도 가운데 */
+@media (max-width:900px){
+  .app-block .story-sec .bs-ch{border-top:0!important;padding:36px 0!important}
+  .app-block .story-sec .bs-ch .bs-slogan,.app-block .story-sec .bs-ch .bs-slogan-kr{text-align:center!important}
+  .app-block .story-sec .bs-logo-text{border-top:0;padding-top:0;position:relative}
+  .app-block .story-sec .bs-logo-text::before{content:"";display:block;width:32px;height:2px;border-radius:2px;background:var(--line);margin:0 auto 20px}
+}
