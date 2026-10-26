@@ -1301,3 +1301,5 @@ small{font-size:smaller}
 .agree input[type=checkbox]:checked{border-color:var(--blue)!important;background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat!important}
 .agree input[type=checkbox]:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
 .agree{cursor:pointer}
+/* 제출 알림 문구에서 줄바꿈 살리기 */
+.Toastify__toast-body,.Toastify__toast{white-space:pre-line}
