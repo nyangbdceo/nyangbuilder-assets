@@ -1303,3 +1303,5 @@ small{font-size:smaller}
 .agree{cursor:pointer}
 /* 제출 알림 문구에서 줄바꿈 살리기 */
 .Toastify__toast-body,.Toastify__toast{white-space:pre-line}
+/* 파란 CONTACT 버튼에 마우스를 올렸을 때 나오는 한글(문의하기)은 흰색 */
+.nav .btn .flip span::after{color:#fff!important}
