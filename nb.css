@@ -1296,3 +1296,8 @@ em,i{font-style:italic}
 small{font-size:smaller}
 /* 넓은 화면에서 뷰파인더 틀을 메뉴 너비(1280px)에 맞춤 */
 @media (min-width:1340px){.vf{left:calc((100% - 1280px) / 2);right:calc((100% - 1280px) / 2)}}
+/* 동의 체크박스: 식스샵 기본 스타일에 가려 체크 표시가 안 보여서 직접 그림 */
+.agree input[type=checkbox]{-webkit-appearance:none!important;appearance:none!important;flex:none;width:18px!important;height:18px!important;margin:2px 0 0!important;padding:0!important;border:1.5px solid #B7C2D6!important;border-radius:5px!important;background:#fff!important;cursor:pointer;position:relative;opacity:1!important;pointer-events:auto!important}
+.agree input[type=checkbox]:checked{border-color:var(--blue)!important;background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat!important}
+.agree input[type=checkbox]:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+.agree{cursor:pointer}
