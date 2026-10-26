@@ -1528,3 +1528,10 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
 /* 물결 아래 회색 줄: 고해상도 화면에서 물결 그림 아래로 물결 상자의 어두운 바탕이 1px 비침
    → 물결 아래쪽 절반 바탕을 다음 섹션 색으로 깔아 틈이 생겨도 같은 색으로 보이게 */
 .wave{background:linear-gradient(var(--from) 0 62%,var(--to) 62% 100%)}
+/* 서비스 가격 카드: 추천 문구를 비우면 상자도 숨김 */
+.svc .for:empty{display:none}
+/* WHAT WE DO 오른쪽 설명 글자 크게 */
+.what .top p{font-size:18px;line-height:1.6;max-width:340px}
+@media (max-width:700px){.what .top p{font-size:17px}}
+/* FAQ 게시판 답 본문 줄바꿈 정리 */
+.faq-board .ans-body p{white-space:normal}
