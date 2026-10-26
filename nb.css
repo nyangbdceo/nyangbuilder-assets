@@ -1377,8 +1377,8 @@ small{font-size:smaller}
 .app-block .sg.sg .sg-label{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:8px}
 .app-block .sg.sg .sg-feedback{margin-top:8px;font-size:13px;color:var(--sub)}
 /* 비밀번호 찾기·재설정·비회원 주문조회 등 식스샵 기본 화면(첫 화면 없는 페이지)도 메뉴 아래로 */
-main.app:not(:has(.hero)) .app-block > .container > div:not(.lg):not(.sg){max-width:440px;margin:0 auto;padding:190px 0 110px}
-@media (max-width:900px){main.app:not(:has(.hero)) .app-block > .container > div:not(.lg):not(.sg){padding:150px 16px 80px}}
+main.app:not(:has(.hero)) .app-block > .container > div:not(.lg):not(.sg){padding-top:190px;padding-bottom:110px}
+@media (max-width:900px){main.app:not(:has(.hero)) .app-block > .container > div:not(.lg):not(.sg){padding-top:150px;padding-bottom:80px}}
 main.app:not(:has(.hero)) .app-block > .container > div *{white-space:normal}
 main.app:not(:has(.hero)) .app-block > .container > div h2{font-size:34px;font-weight:800;letter-spacing:-.03em;color:var(--ink)}
 main.app:not(:has(.hero)) .app-block > .container > div [class$="-input-container"]{border:0;padding:0;background:none;box-shadow:none}
