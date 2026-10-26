@@ -1440,3 +1440,16 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
   .form .agree-wrap .privacy-box{background:#fff}
   .form button[type=submit]{width:100%;justify-content:center;padding-top:16px;padding-bottom:16px}
 }
+/* 물결 아래 얇은 틈(아이폰에서 회색 줄로 보임) 메우기 */
+.wave{margin-bottom:-2px;position:relative;z-index:1}
+.wave svg{display:block}
+/* 문의 모바일: 남은 일정·카톡 상자를 폼 위로 */
+@media (max-width:900px){.contact .contact-side{order:-1}}
+/* 카톡 후기 모바일: 세로로 길게 쌓지 않고 옆으로 넘겨 보기 */
+@media (max-width:700px){
+  .kt-grid{display:flex;grid-template-columns:none;max-width:none;gap:14px;margin:32px -16px 0;padding:0 16px 8px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .kt-grid::-webkit-scrollbar{display:none}
+  .kt-grid .kt{flex:0 0 72%;scroll-snap-align:center}
+}
+/* 1편→10편+ 카드 모바일: 가운데 정렬 */
+@media (max-width:900px){.ten div{text-align:center}.ten strong{text-align:center}}
