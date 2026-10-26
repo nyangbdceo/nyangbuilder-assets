@@ -167,7 +167,10 @@
         if (innerWidth > 700 || Date.now() < hold || g.children.length < 2) return;
         const step = g.children[1].offsetLeft - g.children[0].offsetLeft;
         const next = g.scrollLeft + step > g.scrollWidth - g.clientWidth + 5 ? 0 : g.scrollLeft + step;
+        const from = g.scrollLeft;
         g.scrollTo({ left: next, behavior: 'smooth' });
+        // 부드러운 이동이 막힌 브라우저에서는 바로 이동
+        setTimeout(() => { if (g.scrollLeft === from) g.scrollLeft = next; }, 700);
       }, 3500);
     });
     // 남은 작업 일정 점 (data-left / data-total 은 블록 설정값)

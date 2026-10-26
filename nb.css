@@ -1495,3 +1495,16 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
 /* 문의 폼 안내 문구를 비우면 자리도 없애기 */
 .form .form-note:empty{display:none}
 .form .form-note:empty + .agree-wrap{margin-top:0}
+/* 모바일 다듬기: 좌우 여백, 소개 사진·심볼·사인, 성과 숫자 크게 */
+@media (max-width:900px){
+  .wrap{padding-left:24px;padding-right:24px}
+  .about-intro .portrait{width:calc(100% - 24px);margin:0 auto}
+  .about-intro .portrait .sym{right:-12px;bottom:-12px;width:58px}
+  .about-intro .sig{width:104px;margin-top:-34px}
+  .stat-grid{gap:6px}
+  .stat{padding:18px 2px}
+  .stat strong{font-size:clamp(26px,8.2vw,36px);letter-spacing:-.05em}
+  .stat strong small{font-size:.36em;margin-left:1px}
+  .stat strong .pre{display:block;font-size:11px;margin:0 0 4px;vertical-align:0;letter-spacing:0}
+  .stat span{font-size:11px}
+}
