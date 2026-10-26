@@ -1508,3 +1508,16 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
   .stat strong .pre{display:block;font-size:11px;margin:0 0 4px;vertical-align:0;letter-spacing:0}
   .stat span{font-size:11px}
 }
+/* 소개 모바일: 전체 가운데 정렬, 브랜드 스토리 장 제목은 세로로 쌓고 심볼과 설명 사이를 구분 */
+@media (max-width:900px){
+  .about-intro > div:last-child{text-align:center}
+  .about-intro .sig{margin-left:auto;margin-right:auto;margin-top:14px}
+  .app-block .story-sec .bs-head,.app-block .story-sec .bs-ch{text-align:center}
+  .app-block .story-sec .bs-ch .bs-ch-label{flex-direction:column;align-items:center;gap:6px}
+  .app-block .story-sec .bs-ch .lead{margin-left:auto;margin-right:auto}
+  .app-block .story-sec .bs-ch .bs-slogan,.app-block .story-sec .bs-ch .bs-slogan-kr{text-align:center}
+  .app-block .story-sec .bs-card{align-items:center;text-align:center}
+  .app-block .story-sec .bs-ch .bs-logo{flex-direction:column;align-items:center;gap:0}
+  .app-block .story-sec .bs-ch .bs-logo img{width:84px}
+  .app-block .story-sec .bs-logo-text{margin-top:22px;padding-top:22px;border-top:1px solid var(--line);width:100%}
+}
