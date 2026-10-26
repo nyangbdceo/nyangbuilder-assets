@@ -1523,3 +1523,5 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
   .app-block .story-sec .bs-card{background:#fff}
   .app-block .story-sec .bs-card.dark{background:var(--ink)}
 }
+/* 서비스 태그 더미: 모바일에서는 숨김 */
+@media (max-width:700px){.what .pile{display:none}.what .pile + .svc,.what .svc{margin-top:40px}}
