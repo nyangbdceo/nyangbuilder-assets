@@ -122,8 +122,12 @@
     document.querySelectorAll('[data-count]').forEach(el => { if (once(el, 'c')) cio.observe(el); });
     document.querySelectorAll('canvas.sea').forEach(cv => { if (once(cv, 's')) sea(cv); });
     document.querySelectorAll('.vf-tc').forEach(tc => { if (once(tc, 't')) timecode(tc); });
-    const navs = [...document.querySelectorAll('.nav')];
-    navs.forEach((n, i) => { n.style.display = i < navs.length - 1 ? 'none' : ''; if (once(n, 'n')) navInit(n); });
+    // 식스샵이 공통 영역(메뉴·푸터·카톡 버튼)을 두 번 그리는 경우가 있어 마지막 하나만 보이게
+    ['.nav', 'footer#contact', '.kakao-float'].forEach(sel => {
+      const all = [...document.querySelectorAll(sel)];
+      all.forEach((el, i) => { el.style.display = i < all.length - 1 ? 'none' : ''; });
+    });
+    document.querySelectorAll('.nav').forEach(n => { if (once(n, 'n')) navInit(n); });
     // 작업물 카드: 끊김 없이 옆으로 계속 흐르게 (카드를 한 번 더 복제)
     document.querySelectorAll('.rail').forEach(rail => {
       if (!rail.children.length || !once(rail, 'rail')) return;
