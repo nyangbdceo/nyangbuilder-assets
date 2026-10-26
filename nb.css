@@ -1287,3 +1287,5 @@ section.Toastify{padding:0}
 /* 식스샵 기본 CSS가 그림 너비를 100%로 막아 물결이 잘리는 것 방지 */
 .wave svg{max-width:none!important;height:100%!important}
 .wave{width:100%}
+/* 화면 높이가 낮을 때(식스샵 편집기·작은 노트북) 버튼이 뷰파인더 글자와 겹치지 않게 */
+.hero:not(.sub-hero){min-height:max(100svh,780px)}

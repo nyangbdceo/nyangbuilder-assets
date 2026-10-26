@@ -78,6 +78,8 @@
     if (g && btn) g.style.width = btn.offsetWidth ? btn.offsetWidth + 'px' : '';
   };
   const navInit = nav => {
+    // 식스샵 섹션 틀이 쌓임 순서를 따로 만들어서 본문이 메뉴를 덮음 → 메뉴를 감싼 틀을 맨 위로
+    for (let el = nav.parentElement; el && el !== document.body; el = el.parentElement) el.style.zIndex = '1000';
     const path = decodeURI(location.pathname).replace(/\/$/, '');
     nav.querySelectorAll('ul a, .m-menu a').forEach(a => {
       const p = decodeURI(new URL(a.href, location.href).pathname).replace(/\/$/, '');
