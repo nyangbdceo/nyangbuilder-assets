@@ -1470,3 +1470,13 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
   .col-list .cover strong{font-size:14.5px;max-width:100%;line-height:1.35}
   .col-list .post .cat{margin-top:2px;font-size:11.5px}
 }
+/* 서비스 WHAT WE DO 모바일: 머리글 가운데, 태그는 떨어지는 효과·기울기 없이 가지런히 */
+@media (max-width:700px){
+  .what .top,.what .top > div{text-align:center}
+  .what .top{justify-items:center}
+  .what .top .btn{margin-left:auto;margin-right:auto}
+  .pile .pill,.pile.in .pill{transform:none!important;transition:opacity .5s ease,background .3s,color .3s;transition-delay:calc(var(--i) * 40ms),0s,0s}
+  .pile{gap:10px 8px}
+  .pill{font-size:14.5px;padding:9px 15px;border-radius:999px;box-shadow:0 6px 16px rgba(10,12,20,.12)}
+}
+@media (max-width:700px){.what .top{flex-direction:column;align-items:center;gap:18px}.what .top p{margin:0 auto}}
