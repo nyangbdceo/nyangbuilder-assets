@@ -1485,3 +1485,6 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
   .vs2{gap:0}
   .vs2 .vs-badge{position:relative;left:auto;top:auto;transform:none;margin:-22px auto;justify-self:center}
 }
+/* 하위 페이지 첫 화면: 영문 라벨을 제목에서 조금 띄워 위로 */
+.hero.sub-hero .label{display:block;margin-bottom:22px}
+@media (max-width:900px){.hero.sub-hero .label{margin-bottom:16px}}
