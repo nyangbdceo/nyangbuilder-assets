@@ -1414,3 +1414,5 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
   .assure .qa .a li{color:#fff;opacity:.92}
   .assure .qa .a li::before{border-color:#fff}
 }
+/* 클래스: 오른쪽 대기 명단 상자를 왼쪽 큰 제목 높이에 맞춤 */
+@media (min-width:901px){.cls > .ticket{margin-top:32px}}
