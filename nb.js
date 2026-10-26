@@ -106,14 +106,14 @@
   addEventListener('scroll', onScroll, { passive: true });
 
   // 탭: 주소 끝 #ebook / #order 로 바로 열 수도 있음
-  const openTab = id => document.querySelectorAll('[role="tab"]').forEach(b => {
+  const openTab = id => document.querySelectorAll('[role="tab"][data-tab]').forEach(b => {
     const on = b.dataset.tab === id, panel = document.getElementById(b.dataset.tab);
     b.setAttribute('aria-selected', on);
     if (!panel) return;
     panel.hidden = !on;
     if (on) panel.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
   });
-  const hashTab = () => [...document.querySelectorAll('[role="tab"]')].some(b => '#' + b.dataset.tab === location.hash);
+  const hashTab = () => [...document.querySelectorAll('[role="tab"][data-tab]')].some(b => '#' + b.dataset.tab === location.hash);
   addEventListener('hashchange', () => { if (hashTab()) openTab(location.hash.slice(1)); });
 
 
@@ -146,10 +146,16 @@
       if (!rail.children.length || !once(rail, 'rail')) return;
       const track = document.createElement('div');
       track.className = 'track';
-      track.append(...rail.children);
-      track.append(...[...track.children].map(c => { const k = c.cloneNode(true); k.setAttribute('aria-hidden', 'true'); k.classList.add('in'); return k; }));
+      const base = [...rail.children];
+      const copy = c => { const k = c.cloneNode(true); k.setAttribute('aria-hidden', 'true'); k.classList.add('in'); return k; };
+      track.append(...base);
       rail.append(track);
       rail.classList.add('auto');
+      // 넓은 화면에서 카드가 화면보다 짧으면 끝에 빈 곳이 생기므로, 한 묶음이 화면을 다 채울 때까지 늘린다
+      let reps = 1;
+      while (track.scrollWidth < rail.clientWidth * 1.1 && reps < 8) { track.append(...base.map(copy)); reps++; }
+      track.append(...[...track.children].map(copy));
+      track.style.animationDuration = 60 * reps + 's';
     });
     // 남은 작업 일정 점 (data-left / data-total 은 블록 설정값)
     document.querySelectorAll('[data-slots]').forEach(el => {
@@ -160,7 +166,7 @@
         ? `<span class="dots">${dots}</span><span>${month} 남은 작업 일정 <b>${left}건</b> / ${total}건</span>`
         : `<span class="dots">${dots}</span><span>${month} 작업 일정이 모두 찼어요. 다음 달로 안내드려요</span>`;
     });
-    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    const tabs = [...document.querySelectorAll('[role="tab"][data-tab]')];
     const fresh = tabs.filter(b => once(b, 'tab'));
     fresh.forEach(b => b.addEventListener('click', () => { openTab(b.dataset.tab); history.replaceState(null, '', '#' + b.dataset.tab); }));
     if (fresh.length) openTab(hashTab() ? location.hash.slice(1) : tabs[0].dataset.tab);

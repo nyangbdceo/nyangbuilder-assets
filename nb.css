@@ -164,7 +164,8 @@ p{margin:0}
 .slots.dark .dots i.used{background:#3A4256}
 .filters{display:flex;gap:8px;flex-wrap:wrap}
 .filters button{font:inherit;font-size:15px;font-weight:700;padding:10px 20px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--sub);cursor:pointer;transition:all .25s}
-.filters button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.filters button:hover{border-color:#BFD6FA;color:var(--blue-d)}
+.filters button[aria-selected="true"]{background:#E3EDFF;border-color:#9CC2F7;color:var(--blue)}
 .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 22px;margin-top:36px}
 .post{display:flex;flex-direction:column;gap:8px}
 .post .thumb{aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:var(--ink2);display:flex;align-items:center;justify-content:center}
