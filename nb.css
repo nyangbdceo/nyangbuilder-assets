@@ -1339,3 +1339,11 @@ small{font-size:smaller}
   .ten strong{text-align:left;font-size:26px;white-space:normal}
   .ten b{margin-top:10px}
 }
+@media (max-width:900px){
+  /* 모바일 푸터 로고 줄이기 */
+  footer{padding:52px 0 48px}
+  footer .brand{gap:10px;margin-bottom:18px}
+  footer .brand .sym{height:34px}
+  footer .brand .line{height:16px}
+  footer .brand .tag{margin-top:4px;font-size:9.5px;letter-spacing:.32em}
+}
