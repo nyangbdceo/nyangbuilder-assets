@@ -1390,3 +1390,7 @@ main.app:not(:has(.hero)) .app-block > .container > div button[class*="-button"]
 main.app:not(:has(.hero)) .app-block > .container > div button[class*="-button"].primary:not(:disabled){background:var(--blue);border-color:var(--blue);color:#fff}
 main.app:not(:has(.hero)) .app-block > .container > div button[class*="-button"]:disabled{background:#E3E7EE;border-color:#E3E7EE;color:#9AA2B1}
 main.app:not(:has(.hero)) .app-block > .container > div button[class*="-button"].secondary{background:#fff;border:1.5px solid var(--line);color:var(--ink)}
+/* 상단 메뉴 좁은 글꼴 로고 (심볼은 기존 크기 그대로, 글자는 심볼 높이의 약 57%) */
+.nav .logo .name[src*="wordmark-cond"]{height:24px}
+@media (max-width:1100px){.nav .logo .name[src*="wordmark-cond"]{height:18px}}
+@media (max-width:900px){.nav .logo .name[src*="wordmark-cond"]{height:15px}}
