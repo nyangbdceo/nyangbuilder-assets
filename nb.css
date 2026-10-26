@@ -1416,3 +1416,8 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
 }
 /* 클래스: 오른쪽 대기 명단 상자를 왼쪽 큰 제목 높이에 맞춤 */
 @media (min-width:901px){.cls > .ticket{margin-top:32px}}
+/* 왜 냥빌더 모바일: 고민·해결 카드 사이 화살표 없이 */
+@media (max-width:900px){.assure .qa .a::after{display:none}.assure .qa .a{margin-top:12px}}
+/* 문의 폼: 안내 문구 · 동의 · 개인정보 상자를 한 묶음으로 촘촘하게 */
+.form .form-note + .agree-wrap{margin-top:-12px}
+.form .agree-wrap .privacy-box{margin-top:8px}
