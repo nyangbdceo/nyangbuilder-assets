@@ -1492,3 +1492,6 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
 .app-block .lg.lg{padding-bottom:36px}
 .app-block .container:has(> .lg){padding-bottom:110px}
 @media (max-width:900px){.app-block .lg.lg{padding-bottom:28px}.app-block .container:has(> .lg){padding-bottom:80px}}
+/* 문의 폼 안내 문구를 비우면 자리도 없애기 */
+.form .form-note:empty{display:none}
+.form .form-note:empty + .agree-wrap{margin-top:0}
