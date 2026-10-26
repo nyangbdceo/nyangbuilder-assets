@@ -1284,3 +1284,6 @@ footer .menu a:first-child{margin-top:0}
 /* 식스샵용 추가 */
 .nl{white-space:pre-line}
 section.Toastify{padding:0}
+/* 식스샵 기본 CSS가 그림 너비를 100%로 막아 물결이 잘리는 것 방지 */
+.wave svg{max-width:none!important;height:100%!important}
+.wave{width:100%}
