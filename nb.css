@@ -592,7 +592,7 @@ footer .cols .btn{display:inline-flex;margin-top:14px;color:#fff;padding:12px 20
   .portrait .sym{right:12px;bottom:12px;width:64px}
   body{font-size:16px}
   .wrap{padding:0 16px}
-  section{padding:76px 0}
+  :where(.app-block) section{padding:76px 0}
   .wave{height:44px}
   .nav ul{display:none}
   .nav .btn{margin-left:auto}
@@ -1326,3 +1326,16 @@ small{font-size:smaller}
 .hero.sub-hero h1{font-size:clamp(32px,4.4vw,54px);line-height:1.2}
 .hero.sub-hero .sub{font-size:18px;line-height:1.7;margin-top:20px;color:#C3CADA}
 @media (max-width:900px){.hero.sub-hero .sub{font-size:16px}}
+/* 엔터로 쓴 줄바꿈이 모든 블록 글에서 그대로 보이게 (템플릿 p 안에는 줄바꿈이 없어 안전) */
+.app-block p{white-space:pre-line}
+/* 가운데 정렬 설명 글은 줄 길이를 고르게 */
+.lead{text-wrap:balance}
+@media (max-width:900px){
+  /* 모바일 메뉴: 글자 줄이고 지금 페이지도 흰색 */
+  .m-menu a:not(.btn){padding:16px 4px;font-size:21px}
+  .m-menu a[aria-current]{color:#fff}
+  /* 큰 숫자 카드: 숫자를 위로, 설명을 아래로 (겹침 방지) */
+  .ten div{display:block}
+  .ten strong{text-align:left;font-size:26px;white-space:normal}
+  .ten b{margin-top:10px}
+}
