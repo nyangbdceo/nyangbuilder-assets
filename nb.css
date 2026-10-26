@@ -1294,3 +1294,5 @@ h1,h2,h3,h4,h5,h6{font-weight:700}
 b,strong{font-weight:bolder}
 em,i{font-style:italic}
 small{font-size:smaller}
+/* 넓은 화면에서 뷰파인더 틀을 메뉴 너비(1280px)에 맞춤 */
+@media (min-width:1340px){.vf{left:calc((100% - 1280px) / 2);right:calc((100% - 1280px) / 2)}}
