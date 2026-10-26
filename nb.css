@@ -1427,3 +1427,5 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
   .m-menu a[aria-current]:not(.m-contact)::before{content:"";position:absolute;left:2px;top:50%;width:7px;height:7px;border-radius:50%;background:var(--sky);transform:translateY(-50%)}
   .m-menu a[aria-current]:not(.m-contact) small{color:var(--sky)}
 }
+/* 모바일 메뉴바 로고 조금 크게 */
+@media (max-width:900px){.nav .logo .sym{height:31px}.nav .logo .name[src*="wordmark-cond"]{height:18px}}
