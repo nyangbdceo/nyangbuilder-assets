@@ -1305,3 +1305,17 @@ small{font-size:smaller}
 .Toastify__toast-body,.Toastify__toast{white-space:pre-line}
 /* 파란 CONTACT 버튼에 마우스를 올렸을 때 나오는 한글(문의하기)은 흰색 */
 .nav .btn .flip span::after{color:#fff!important}
+/* 칼럼 글 화면: 식스샵 게시글 본문(.ck-content) 기본 글자 크기보다 원래 칼럼 디자인을 우선 */
+.ck.ck-content .notion{font-family:Pretendard,system-ui,sans-serif;font-size:16.5px;line-height:1.8;letter-spacing:normal}
+.ck.ck-content .notion :is(h2,h3,h4){font-family:inherit;letter-spacing:-.03em;line-height:1.35;margin:1.6em 0 .5em;font-weight:800}
+.ck.ck-content .notion h2{font-size:26px}
+.ck.ck-content .notion h3{font-size:21px}
+.ck.ck-content .notion h4{font-size:18px;font-weight:700}
+.ck.ck-content .notion a{color:inherit!important}
+.ck.ck-content .notion .n-bookmark{color:var(--ink)!important}
+.ck.ck-content .notion .back{color:var(--blue-d)!important}
+.ck.ck-content .notion .cover strong{font-size:clamp(22px,3vw,32px)}
+@media (max-width:700px){.ck.ck-content .notion{font-size:16px}.ck.ck-content .notion h2{font-size:22px}.ck.ck-content .notion h3{font-size:19px}}
+/* 칼럼 글 화면: 식스샵 기본 제목줄·작성자·댓글줄은 숨기고 칼럼 표지부터 보이게 (본문에 .notion 이 있는 글만) */
+[class*="PostT01_wrapper"]:has(.notion) > :not([class*="post-contents-wrapper"]){display:none!important}
+.section-type-Post-T01:has(.notion){padding-top:120px}
