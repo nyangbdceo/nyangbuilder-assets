@@ -1429,3 +1429,14 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
 }
 /* 모바일 메뉴바 로고 조금 크게 */
 @media (max-width:900px){.nav .logo .sym{height:31px}.nav .logo .name[src*="wordmark-cond"]{height:18px}}
+/* 문의 폼 모바일: 안내·동의를 연한 상자 하나로 묶고, 문의하기 버튼은 가로 가득 가운데 */
+@media (max-width:560px){
+  .form .form-note{font-size:13px;text-align:center}
+  .form .form-note + .agree-wrap{margin-top:-8px}
+  .form .agree-wrap{background:var(--mist);border-radius:14px;padding:14px 16px}
+  .form .agree-row{gap:6px}
+  .form .agree-row .agree{font-size:13.5px;line-height:1.55}
+  .form .privacy-toggle{margin-left:30px;font-size:13px}
+  .form .agree-wrap .privacy-box{background:#fff}
+  .form button[type=submit]{width:100%;justify-content:center;padding-top:16px;padding-bottom:16px}
+}
