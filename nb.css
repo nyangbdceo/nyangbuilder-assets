@@ -1348,3 +1348,12 @@ small{font-size:smaller}
   footer .brand .line{height:16px}
   footer .brand .tag{margin-top:4px;font-size:9.5px;letter-spacing:.32em}
 }
+
+/* 칼럼 본문: 식스샵 글 영역이 pre-line이라 태그 사이 줄바꿈이 빈 줄로 보임 → 일반 줄바꿈으로 */
+.notion,.notion *{white-space:normal}
+.notion .n-callout > :first-child{margin-top:0}
+
+/* 상단 메뉴 한 줄 로고 */
+.nav .logo .name[src*="wordmark-line"]{height:17px}
+@media (max-width:1100px){.nav .logo .name[src*="wordmark-line"]{height:15px}}
+@media (max-width:900px){.nav .logo .name[src*="wordmark-line"]{height:13px}}
