@@ -1421,3 +1421,9 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
 /* 문의 폼: 안내 문구 · 동의 · 개인정보 상자를 한 묶음으로 촘촘하게 */
 .form .form-note + .agree-wrap{margin-top:-12px}
 .form .agree-wrap .privacy-box{margin-top:8px}
+/* 모바일 메뉴: 지금 보고 있는 페이지를 하늘색 + 앞 점으로 표시 (CONTACT 파랑과 구분) */
+@media (max-width:900px){
+  .m-menu a[aria-current]:not(.m-contact){position:relative;padding-left:20px;color:var(--sky)}
+  .m-menu a[aria-current]:not(.m-contact)::before{content:"";position:absolute;left:2px;top:50%;width:7px;height:7px;border-radius:50%;background:var(--sky);transform:translateY(-50%)}
+  .m-menu a[aria-current]:not(.m-contact) small{color:var(--sky)}
+}
