@@ -1322,3 +1322,7 @@ small{font-size:smaller}
 /* 칼럼 글 화면: 식스샵 기본 제목줄·작성자·댓글줄은 숨기고 칼럼 표지부터 보이게 (본문에 .notion 이 있는 글만) */
 [class*="PostT01_wrapper"]:has(.notion) > :not([class*="post-contents-wrapper"]){display:none!important}
 .section-type-Post-T01:has(.notion){padding-top:120px}
+/* 페이지 첫 화면(서브): 제목은 조금 줄이고 설명은 키워 균형 맞춤 */
+.hero.sub-hero h1{font-size:clamp(32px,4.4vw,54px);line-height:1.2}
+.hero.sub-hero .sub{font-size:18px;line-height:1.7;margin-top:20px;color:#C3CADA}
+@media (max-width:900px){.hero.sub-hero .sub{font-size:16px}}
