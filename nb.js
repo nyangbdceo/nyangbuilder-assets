@@ -116,6 +116,19 @@
   const hashTab = () => [...document.querySelectorAll('[role="tab"]')].some(b => '#' + b.dataset.tab === location.hash);
   addEventListener('hashchange', () => { if (hashTab()) openTab(location.hash.slice(1)); });
 
+
+  // 칼럼 코드 상자와 "복사" 상자에 복사 버튼
+  const addCopy = (box, getText) => {
+    const b = document.createElement('button');
+    b.className = 'copy'; b.type = 'button'; b.textContent = '복사';
+    b.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(getText()); b.textContent = '복사됨 ✓'; }
+      catch { b.textContent = '직접 드래그해 복사해 주세요'; }
+      setTimeout(() => (b.textContent = '복사'), 1800);
+    });
+    box.append(b);
+  };
+
   const init = () => {
     document.querySelectorAll('.wave').forEach(w => { if (once(w, 'w')) w.innerHTML = WAVE; });
     document.querySelectorAll('.reveal, .stream, .pile').forEach(el => { if (once(el, 'r')) io.observe(el); });
@@ -151,6 +164,19 @@
     const fresh = tabs.filter(b => once(b, 'tab'));
     fresh.forEach(b => b.addEventListener('click', () => { openTab(b.dataset.tab); history.replaceState(null, '', '#' + b.dataset.tab); }));
     if (fresh.length) openTab(hashTab() ? location.hash.slice(1) : tabs[0].dataset.tab);
+    document.querySelectorAll('.notion pre').forEach(pre => { if (once(pre, 'cp')) addCopy(pre, () => pre.querySelector('code')?.innerText ?? pre.innerText); });
+    document.querySelectorAll('.notion .n-callout').forEach(box => {
+      const head = box.querySelector(':scope > p:first-of-type b, :scope > b');
+      if (!head || !head.textContent.includes('복사') || !once(box, 'cp')) return;
+      box.classList.add('copyable');
+      addCopy(box, () => {
+        const c = box.cloneNode(true);
+        c.querySelectorAll('.copy, .n-ic').forEach(el => el.remove());
+        const h = c.querySelector(':scope > p:first-of-type');
+        if (h && h.textContent.includes('복사')) h.remove();
+        return c.innerText.trim();
+      });
+    });
     onScroll();
   };
 
