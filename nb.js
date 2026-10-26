@@ -79,6 +79,28 @@
     const g = theNav()?.querySelector('.util-g'), btn = theNav()?.querySelector('.wrap > .btn');
     if (g && btn) g.style.width = btn.offsetWidth ? btn.offsetWidth + 'px' : '';
   };
+  // 하위 메뉴: 블록 설정의 링크 묶음을 '붙일 메뉴 주소'와 같은 메뉴 밑에 붙임 (PC는 펼침 상자, 모바일은 들여쓴 줄)
+  const addSub = nav => {
+    const src = nav.querySelector('.nav-sub-src');
+    if (!src || !src.children.length) return;
+    const key = (src.dataset.for || '').replace(/\/$/, '');
+    const same = a => new URL(a.href, location.href).pathname.replace(/\/$/, '') === key;
+    const li = [...nav.querySelectorAll('.wrap ul > li')].find(l => same(l.querySelector('a')));
+    if (li) {
+      const box = document.createElement('div');
+      box.className = 'sub';
+      box.innerHTML = '<div class="sub-in">' + src.innerHTML + '</div>';
+      li.classList.add('has-sub');
+      li.append(box);
+    }
+    const m = [...nav.querySelectorAll('.m-menu > a')].find(same);
+    if (m) {
+      const box = document.createElement('div');
+      box.className = 'm-sub';
+      box.innerHTML = src.innerHTML;
+      m.after(box);
+    }
+  };
   const navInit = nav => {
     // 식스샵 섹션 틀이 쌓임 순서를 따로 만들어서 본문이 메뉴를 덮음 → 메뉴를 감싼 틀을 맨 위로
     for (let el = nav.parentElement; el && el !== document.body; el = el.parentElement) el.style.zIndex = '1000';
@@ -87,8 +109,17 @@
       const p = decodeURI(new URL(a.href, location.href).pathname).replace(/\/$/, '');
       if (p && p === path) { a.classList.add('on'); a.setAttribute('aria-current', 'page'); }
     });
+    addSub(nav);
     nav.querySelector('.burger')?.addEventListener('click', () => setMenu(nav, !nav.classList.contains('open')));
     nav.querySelectorAll('.m-menu a').forEach(a => a.addEventListener('click', () => setMenu(nav, false)));
+    // 같은 페이지 안의 하위 메뉴(#web 등)는 주소가 같아도 다시 눌리면 그 위치로
+    nav.querySelectorAll('.sub a, .m-sub a').forEach(a => a.addEventListener('click', e => {
+      const u = new URL(a.href, location.href);
+      if (u.pathname !== location.pathname || !u.hash) return;
+      e.preventDefault();
+      history.replaceState(null, '', u.hash);
+      goHash();
+    }));
     alignUtil();
   };
   addEventListener('keydown', e => { const n = theNav(); if (e.key === 'Escape' && n) setMenu(n, false); });
@@ -114,7 +145,20 @@
     if (on) panel.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
   });
   const hashTab = () => [...document.querySelectorAll('[role="tab"][data-tab]')].some(b => '#' + b.dataset.tab === location.hash);
-  addEventListener('hashchange', () => { if (hashTab()) openTab(location.hash.slice(1)); });
+  // 주소 끝 #이름 위치로: 탭이면 그 탭을 열고 탭 고르는 줄로, 아니면 그 섹션으로 (위 고정 메뉴만큼 띄움)
+  const goHash = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (!id) return false;
+    const tab = [...document.querySelectorAll('[role="tab"][data-tab]')].find(b => b.dataset.tab === id);
+    if (tab) openTab(id);
+    const el = tab ? tab.parentElement : document.getElementById(id);
+    if (!el) return false;
+    const navH = theNav()?.querySelector('.wrap')?.getBoundingClientRect().bottom || 0;
+    scrollTo({ top: el.getBoundingClientRect().top + scrollY - navH - 24 });
+    return true;
+  };
+  addEventListener('hashchange', goHash);
+  let jumped = false;
 
 
   // 칼럼 코드 상자와 "복사" 상자에 복사 버튼
@@ -186,6 +230,11 @@
     const fresh = tabs.filter(b => once(b, 'tab'));
     fresh.forEach(b => b.addEventListener('click', () => { openTab(b.dataset.tab); history.replaceState(null, '', '#' + b.dataset.tab); }));
     if (fresh.length) openTab(hashTab() ? location.hash.slice(1) : tabs[0].dataset.tab);
+    // 다른 페이지에서 /class#lecture 처럼 들어오면 블록이 다 그려진 뒤 그 위치로 (식스샵이 늦게 그려서 브라우저 기본 이동이 빗나감)
+    if (!jumped && location.hash && (hashTab() || document.getElementById(decodeURIComponent(location.hash.slice(1))))) {
+      jumped = true;
+      setTimeout(goHash, 400);
+    }
     document.querySelectorAll('.notion pre').forEach(pre => { if (once(pre, 'cp')) addCopy(pre, () => pre.querySelector('code')?.innerText ?? pre.innerText); });
     document.querySelectorAll('.notion .n-callout').forEach(box => {
       const head = box.querySelector(':scope > p:first-of-type b, :scope > b');

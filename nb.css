@@ -1545,3 +1545,16 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
 .start h2.start-kr + p{font-size:clamp(21px,2.4vw,28px);line-height:1.45;font-weight:500;letter-spacing:-.03em;margin-top:2px;opacity:.85}
 /* 푸터 CONTACT 제목을 왼쪽 메뉴 글자와 같은 크기로 */
 footer h4{font-size:15px;font-weight:700;letter-spacing:.06em;margin-bottom:12px}
+/* 상단 메뉴 하위 메뉴: PC는 마우스를 올리면 아래로 펼치는 흰 상자, 모바일은 메뉴 밑 들여쓴 줄 */
+.nav-sub-src{display:none!important}
+.nav ul li.has-sub{position:relative}
+.nav .sub{position:absolute;top:100%;left:50%;padding-top:18px;transform:translate(-50%,6px);opacity:0;visibility:hidden;transition:opacity .25s,transform .3s var(--ease),visibility 0s .3s}
+.nav li.has-sub:hover .sub,.nav li.has-sub:focus-within .sub{opacity:1;visibility:visible;transform:translate(-50%,0);transition:opacity .25s,transform .3s var(--ease)}
+.nav .sub-in{display:flex;flex-direction:column;min-width:190px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(10,12,20,.12)}
+.nav .sub a{padding:11px 14px;border-radius:9px;font:600 15px/1.3 Pretendard,sans-serif;letter-spacing:-.01em;color:var(--ink);white-space:nowrap;transition:background .2s,color .2s}
+.nav .sub a:hover,.nav .sub a:focus-visible{background:var(--mist);color:var(--blue-d)}
+.m-menu .m-sub{display:flex;flex-direction:column;padding:2px 0 10px;border-bottom:1px solid rgba(255,255,255,.08)}
+.m-menu .m-sub a:not(.btn){padding:10px 4px 10px 20px;border:0;font:500 16px/1.3 Pretendard,sans-serif;letter-spacing:-.01em;color:#B5BDCC}
+.m-menu .m-sub a:not(.btn)::before{content:"";width:6px;height:1px;margin:0 10px 0 -16px;background:#5A6275;align-self:center}
+.m-menu .m-sub a:not(.btn){justify-content:flex-start}
+.m-menu a:has(+ .m-sub){border-bottom:0}
