@@ -1288,7 +1288,9 @@ section.Toastify{padding:0}
 .wave svg{max-width:none!important;height:100%!important}
 .wave{width:100%}
 /* 화면 높이가 낮을 때(식스샵 편집기·작은 노트북) 버튼이 뷰파인더 글자와 겹치지 않게 */
-.hero:not(.sub-hero){min-height:max(100svh,780px)}
+.hero:not(.sub-hero){min-height:max(100svh,860px)}
+.hero:not(.sub-hero) .wrap{padding-bottom:150px}
+@media (max-width:900px){.hero:not(.sub-hero) .wrap{padding-bottom:130px}}
 /* 식스샵 기본 CSS의 *{font:inherit} 때문에 사라진 브라우저 기본 글자 모양 되돌리기 (클래스로 정한 규칙이 있으면 그쪽이 우선) */
 h1,h2,h3,h4,h5,h6{font-weight:700}
 b,strong{font-weight:bolder}
