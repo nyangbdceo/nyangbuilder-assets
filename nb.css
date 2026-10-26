@@ -1399,3 +1399,18 @@ footer .brand .line[src*="wordmark-cond"]{height:23px}
 footer .brand:has(.line[src*="wordmark-cond"]) .sym{height:40px}
 footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacing:.56em;margin-top:5px}
 @media (max-width:900px){footer .brand .line[src*="wordmark-cond"]{height:18px}footer .brand:has(.line[src*="wordmark-cond"]) .sym{height:32px}footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:8px;letter-spacing:.5em}}
+
+/* 왜 냥빌더 PROBLEM 모바일: 카드 안 카드 대신 흰 고민 카드 → 파란 해결 카드를 번갈아, 가운데 정렬 */
+@media (max-width:900px){
+  .assure .qa{background:none;box-shadow:none;padding:0;margin:0 0 36px;text-align:center}
+  .assure .qa:last-child{margin-bottom:0}
+  .assure .qa .q{background:#fff;border-radius:22px;padding:28px 22px;box-shadow:0 10px 30px rgba(15,110,240,.06)}
+  .assure .qa .q small{justify-content:center;flex-wrap:wrap}
+  .assure .qa .a{position:relative;background:var(--blue)!important;color:#fff;border-radius:22px;padding:28px 22px 26px;margin-top:22px}
+  .assure .qa .a::after{content:"";position:absolute;left:50%;top:-16px;width:12px;height:12px;border-right:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:translateX(-50%) rotate(45deg)}
+  .assure .qa .a::before{color:rgba(255,255,255,.75)}
+  .assure .qa .a h3{color:#fff;font-size:19px;margin-bottom:14px}
+  .assure .qa .a ul{justify-items:center}
+  .assure .qa .a li{color:#fff;opacity:.92}
+  .assure .qa .a li::before{border-color:#fff}
+}
