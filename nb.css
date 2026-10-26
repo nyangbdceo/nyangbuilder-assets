@@ -1521,3 +1521,5 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
   .app-block .story-sec .bs-ch .bs-logo img{width:84px}
   .app-block .story-sec .bs-logo-text{margin-top:22px;padding-top:22px;border-top:1px solid var(--line);width:100%}
 }
+/* 왜 냥빌더 모바일: 빨간 X를 가운데 정렬된 문구 한가운데에 */
+@media (max-width:900px){.assure .qa .x::after{left:50%;width:70%;transform:translateX(-50%)}}
