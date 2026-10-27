@@ -1641,7 +1641,7 @@ ul.chk li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;bor
 /* 모바일 메뉴: 하위 메뉴가 있는 CLASS는 펼침 메뉴 */
 .m-menu .m-sub{display:none}
 .m-menu .m-sub.open{display:flex}
-.m-menu a.m-has-sub{border-bottom:1px solid rgba(255,255,255,.08)!important}
+.m-menu a.m-has-sub{border-bottom:1px solid rgba(255,255,255,.08)!important;cursor:pointer}
 .m-menu a.m-has-sub[aria-expanded="true"]{border-bottom:0!important}
 .m-menu a.m-has-sub small::after{content:"";display:inline-block;width:6px;height:6px;margin:0 2px 3px 10px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);transition:transform .25s}
 .m-menu a.m-has-sub[aria-expanded="true"] small::after{transform:translateY(3px) rotate(-135deg)}

@@ -161,8 +161,13 @@
       li.classList.add('has-sub');
       li.append(box);
     }
-    const m = [...nav.querySelectorAll('.m-menu > a')].find(same);
+    let m = [...nav.querySelectorAll('.m-menu > a')].find(same);
     if (m) {
+      // 식스샵이 링크 클릭을 가로채 페이지를 옮기므로, 주소 없는 복제본(가로채기 없음)으로 바꿔 펼침 버튼으로 씀
+      const t = m.cloneNode(true);
+      ['href', 'data-intercepted'].forEach(k => t.removeAttribute(k));
+      t.setAttribute('role', 'button'); t.tabIndex = 0;
+      m.replaceWith(t); m = t;
       const box = document.createElement('div');
       box.className = 'm-sub';
       box.innerHTML = src.innerHTML;
@@ -172,6 +177,7 @@
       const show = v => { box.classList.toggle('open', v); m.setAttribute('aria-expanded', String(v)); };
       show(inSub);
       m.addEventListener('click', e => { e.preventDefault(); show(!box.classList.contains('open')); });
+      m.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); m.click(); } });
     }
   };
   const navInit = nav => {
