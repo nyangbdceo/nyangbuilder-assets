@@ -116,7 +116,8 @@
         if (Math.abs(x) < best) { best = Math.abs(x); near = i; }
         c.style.transform = `translate3d(${mid - W / 2 + R * Math.sin(a)}px,0,${R * (1 - Math.cos(a))}px) rotateY(${-a}rad)`;
         c.style.setProperty('--far', far.toFixed(3));
-        c.style.visibility = Math.abs(a) > MAX ? 'hidden' : '';
+        // 숨길 카드는 아예 빼 둠: 원통 뒤쪽 카드는 눈(원근 시점)보다 뒤로 넘어가는데, 그런 3D 카드가 남아 있으면 크롬이 띠 전체를 안 그리는 경우가 있음
+        c.style.display = Math.abs(a) > MAX ? 'none' : '';
       });
       if (near !== cur) {
         cur = near;
@@ -129,7 +130,7 @@
       requestAnimationFrame(loop);
       const dt = Math.min(64, t - last); last = t;
       if (!seen) return;
-      if (!calm && !hold) pos += dt * .045;
+      if (!calm && !hold) pos += dt * .07;
       place();
     };
     rail.addEventListener('mouseenter', () => { hold = true; });
@@ -166,6 +167,11 @@
       box.className = 'm-sub';
       box.innerHTML = src.innerHTML;
       m.after(box);
+      // 모바일은 펼침 메뉴: 누르면 하위 메뉴가 열리고 닫힘 (지금 그 안의 페이지면 처음부터 열어 둠)
+      m.classList.add('m-has-sub');
+      const show = v => { box.classList.toggle('open', v); m.setAttribute('aria-expanded', String(v)); };
+      show(inSub);
+      m.addEventListener('click', e => { e.preventDefault(); show(!box.classList.contains('open')); });
     }
   };
   const navInit = nav => {
@@ -178,7 +184,7 @@
     });
     addSub(nav);
     nav.querySelector('.burger')?.addEventListener('click', () => setMenu(nav, !nav.classList.contains('open')));
-    nav.querySelectorAll('.m-menu a').forEach(a => a.addEventListener('click', () => setMenu(nav, false)));
+    nav.querySelectorAll('.m-menu a:not(.m-has-sub)').forEach(a => a.addEventListener('click', () => setMenu(nav, false)));
     // 같은 페이지 안의 하위 메뉴(#web 등)는 주소가 같아도 다시 눌리면 그 위치로
     nav.querySelectorAll('.sub a, .m-sub a').forEach(a => a.addEventListener('click', e => {
       const u = new URL(a.href, location.href);
@@ -260,9 +266,12 @@
       ['touchstart', 'pointerdown', 'wheel'].forEach(ev => g.addEventListener(ev, () => { hold = Date.now() + 6000; }, { passive: true }));
       const id = setInterval(() => {
         if (!g.isConnected) return clearInterval(id);
-        if (innerWidth > 700 || Date.now() < hold || g.children.length < 2) return;
+        // 화면 폭 대신 실제로 옆으로 넘칠 때만 (식스샵 편집기의 모바일 미리보기에서도 돌게)
+        const end = g.scrollWidth - g.clientWidth;
+        if (end < 5 || Date.now() < hold || g.children.length < 2) return;
         const step = g.children[1].offsetLeft - g.children[0].offsetLeft;
-        const next = g.scrollLeft + step > g.scrollWidth - g.clientWidth + 5 ? 0 : g.scrollLeft + step;
+        // 끝에 닿았을 때만 처음으로 (스냅 때문에 한 칸이 딱 안 떨어져도 마지막 장까지 보여 줌)
+        const next = g.scrollLeft >= end - 5 ? 0 : Math.min(end, g.scrollLeft + step);
         const from = g.scrollLeft;
         g.scrollTo({ left: next, behavior: 'smooth' });
         // 부드러운 이동이 막힌 브라우저에서는 바로 이동
