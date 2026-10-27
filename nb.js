@@ -106,7 +106,7 @@
         if (x > total / 2) x -= total;
         const n = x / step, far = Math.min(1, Math.abs(n));
         if (Math.abs(x) < best) { best = Math.abs(x); near = i; }
-        c.style.transform = `translateX(${x}px) translateZ(${Math.min(Math.abs(n), 3) * 58}px) rotateY(${Math.max(-3, Math.min(3, n)) * -15}deg) scale(${1 + (1 - far) * .04})`;
+        c.style.transform = `translateX(${x}px) translateZ(${Math.min(Math.abs(n), 2.5) * 22}px) rotateY(${Math.max(-2.2, Math.min(2.2, n)) * -7}deg)`;
         c.style.setProperty('--far', far.toFixed(3));
         c.style.zIndex = 10 - Math.round(Math.abs(n));
       });
@@ -163,7 +163,8 @@
     });
     new IntersectionObserver(es => es.forEach(e => { seen = e.isIntersecting; })).observe(rail);
     fill(); place(); loop();
-    addEventListener('resize', () => { if (rail.isConnected) { fill(); target = pos = Math.round(pos / step) * step; place(); } });
+    // 창 크기뿐 아니라 편집기 미리보기처럼 띠 너비만 바뀌어도 다시 계산
+    new ResizeObserver(() => { if (rail.isConnected && base[0].offsetWidth) { const k = step ? pos / step : 0; fill(); target = pos = Math.round(k) * step; place(); } }).observe(rail);
   };
 
   // 하위 메뉴: 블록 설정의 링크 묶음을 '붙일 메뉴 주소'와 같은 메뉴 밑에 붙임 (PC는 펼침 상자, 모바일은 들여쓴 줄)
