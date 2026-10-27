@@ -1587,3 +1587,8 @@ footer h4{font-size:15px;font-weight:700;letter-spacing:.06em;margin-bottom:12px
 .nav ul li.has-sub{padding-right:0}
 .nav ul li.has-sub::after,.nav .sub a::after{content:none}
 .nav .sub{padding-top:12px;margin-left:0}
+/* 하위 메뉴 더 촘촘하게 */
+.nav .sub{padding-top:6px}
+.nav .sub-in{min-width:0;padding:6px}
+.nav .sub-head{padding:7px 12px 9px;font-size:10px}
+.nav .sub a{padding:9px 12px;font-size:14px}
