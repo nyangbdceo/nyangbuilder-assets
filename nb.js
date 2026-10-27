@@ -89,7 +89,7 @@
     const fill = () => {
       W = base[0].offsetWidth; step = W + (innerWidth > 700 ? 30 : 16);
       // 원 반지름: 화면이 넓을수록 크게 (너무 둥글면 카드가 많이 기울어 이상해 보임)
-      R = Math.max(2200, document.documentElement.clientWidth * 2.8);
+      R = Math.max(step * 14, document.documentElement.clientWidth * 2.8);
       // 띠가 화면보다 넓게 그려지는 경우가 있어 '보이는 화면'의 가운데를 기준으로 삼음
       mid = document.documentElement.clientWidth / 2 - rail.getBoundingClientRect().left;
       while (cards.length * step < document.documentElement.clientWidth * 1.5 + step * 2 && cards.length < base.length * 8) {
