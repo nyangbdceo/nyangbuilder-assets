@@ -144,6 +144,10 @@
     const key = (src.dataset.for || '').replace(/\/$/, '');
     const same = a => new URL(a.href, location.href).pathname.replace(/\/$/, '') === key;
     const li = [...nav.querySelectorAll('.wrap ul > li')].find(l => same(l.querySelector('a')));
+    // 지금 페이지가 하위 메뉴 중 하나면 부모 메뉴(예: CLASS)도 현재 위치로 표시
+    const here = decodeURI(location.pathname).replace(/\/$/, '');
+    const inSub = [...src.querySelectorAll('a')].some(a => decodeURI(new URL(a.href, location.href).pathname).replace(/\/$/, '') === here);
+    if (inSub) [li?.querySelector('a'), [...nav.querySelectorAll('.m-menu > a')].find(same)].forEach(a => { if (a) { a.classList.add('on'); a.setAttribute('aria-current', 'page'); } });
     if (li) {
       const box = document.createElement('div');
       box.className = 'sub';
