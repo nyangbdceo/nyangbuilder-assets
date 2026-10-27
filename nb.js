@@ -274,7 +274,11 @@
     const tabs = [...document.querySelectorAll('[role="tab"][data-tab]')];
     const fresh = tabs.filter(b => once(b, 'tab'));
     fresh.forEach(b => b.addEventListener('click', () => { openTab(b.dataset.tab); history.replaceState(null, '', '#' + b.dataset.tab); }));
-    if (fresh.length) openTab(hashTab() ? location.hash.slice(1) : tabs[0].dataset.tab);
+    // 탭 이름을 비워 두면 그 클래스는 이 페이지에서 숨김. 하나만 남으면 탭 줄도 숨기고 그 클래스만 보여 줌
+    fresh.forEach(b => { if (!b.querySelector('b')?.textContent.trim()) { b.hidden = true; const p = document.getElementById(b.dataset.tab); if (p) p.remove(); } });
+    document.querySelectorAll('[role="tablist"]').forEach(l => { if (l.querySelectorAll('[role="tab"]:not([hidden])').length < 2) l.hidden = true; });
+    const shown = tabs.filter(b => !b.hidden);
+    if (fresh.length && shown.length) openTab(hashTab() && shown.some(b => '#' + b.dataset.tab === location.hash) ? location.hash.slice(1) : shown[0].dataset.tab);
     // 다른 페이지에서 /class#lecture 처럼 들어오면 블록이 다 그려진 뒤 그 위치로 (식스샵이 늦게 그려서 브라우저 기본 이동이 빗나감)
     if (!jumped && location.hash && (hashTab() || document.getElementById(decodeURIComponent(location.hash.slice(1))))) {
       jumped = true;
