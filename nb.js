@@ -176,7 +176,9 @@
     if (li) {
       const box = document.createElement('div');
       box.className = 'sub';
-      box.innerHTML = '<div class="sub-in">' + src.innerHTML + '</div>';
+      box.innerHTML = '<div class="sub-in"><small class="sub-head"></small>' + src.innerHTML + '</div>';
+      // 상자 맨 위에 어느 메뉴의 하위인지 작게 (예: CLASS)
+      box.querySelector('.sub-head').textContent = li.querySelector('a').textContent.trim();
       li.classList.add('has-sub');
       li.append(box);
     }
