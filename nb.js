@@ -106,7 +106,7 @@
         if (x > total / 2) x -= total;
         const n = x / step, far = Math.min(1, Math.abs(n));
         if (Math.abs(x) < best) { best = Math.abs(x); near = i; }
-        c.style.transform = `translateX(${x}px) translateZ(${Math.min(Math.abs(n), 3) * 46}px) rotateY(${Math.max(-3, Math.min(3, n)) * -13}deg) scale(${1 + (1 - far) * .04})`;
+        c.style.transform = `translateX(${x}px) translateZ(${Math.min(Math.abs(n), 3) * 58}px) rotateY(${Math.max(-3, Math.min(3, n)) * -15}deg) scale(${1 + (1 - far) * .04})`;
         c.style.setProperty('--far', far.toFixed(3));
         c.style.zIndex = 10 - Math.round(Math.abs(n));
       });
