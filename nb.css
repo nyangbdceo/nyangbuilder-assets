@@ -1636,3 +1636,4 @@ ul.chk li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;bor
 .lg-links{gap:20px}
 .lg:has(.lg-links){padding-bottom:4px!important}
 [class*="SocialLogin_divider"]{margin-top:12px!important}
+@media (min-width:901px){.why .cards.ten strong{font-size:36px}}
