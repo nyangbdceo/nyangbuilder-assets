@@ -1593,3 +1593,5 @@ footer h4{font-size:15px;font-weight:700;letter-spacing:.06em;margin-bottom:12px
 .nav .sub-head{padding:7px 12px 9px;font-size:10px}
 .nav .sub a{padding:9px 12px;font-size:14px}
 .nav .sub{padding-top:22px}
+/* 무료 전자책 안내: 제목을 비우면 상자째 숨김 */
+.free:has(> div > b:empty){display:none}
