@@ -1608,3 +1608,5 @@ footer h4{font-size:15px;font-weight:700;letter-spacing:.06em;margin-bottom:12px
 /* 로그인: 폼 아래 큰 여백은 '또는'(소셜 로그인) 아래로 옮김 */
 .app-block .container:has(> .lg){padding-bottom:0}
 [class*="SocialLogin_wrapper"]{padding-bottom:120px}
+/* 4번째 카드(SNS 월 패키지)는 아래 한 줄 전체로 */
+@media(min-width:901px){.svc>div:nth-child(4){grid-column:1/-1}.svc>div:nth-child(4) ul{display:grid;grid-template-columns:repeat(3,1fr);column-gap:28px}}
