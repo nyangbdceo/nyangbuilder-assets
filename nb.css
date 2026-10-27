@@ -1583,3 +1583,7 @@ footer h4{font-size:15px;font-weight:700;letter-spacing:.06em;margin-bottom:12px
 .nav .sub a{position:relative;display:flex;align-items:center;justify-content:space-between;gap:18px}
 .nav .sub a::after{content:"→";font-weight:500;color:var(--blue);opacity:0;transform:translateX(-6px);transition:opacity .2s,transform .25s var(--ease)}
 .nav .sub a:hover::after,.nav .sub a:focus-visible::after{opacity:1;transform:none}
+/* 하위 메뉴: 꺾쇠·화살표 빼고, 상자를 클래스 글자 바로 밑으로 */
+.nav ul li.has-sub{padding-right:0}
+.nav ul li.has-sub::after,.nav .sub a::after{content:none}
+.nav .sub{padding-top:12px;margin-left:0}
