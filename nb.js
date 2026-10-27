@@ -83,7 +83,6 @@
   // 손으로 끄는 기능 없이 계속 흐르고, 마우스를 올리면 잠깐 멈춤. 가운데 카드만 제 색으로 재생, 양옆은 파랗게 가라앉음.
   const arc = rail => {
     const base = [...rail.children];
-    base.forEach((r, i) => r.querySelector('.shot')?.insertAdjacentHTML('afterbegin', `<span class="num">${pad(i + 1)}</span>`));
     rail.classList.add('arc');
     let cards = base, step = 0, W = 0, R = 0, mid = 0, pos = 0, seen = false, hold = false, cur = -1;
     const fill = () => {
