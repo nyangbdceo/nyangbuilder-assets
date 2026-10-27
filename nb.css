@@ -1631,3 +1631,8 @@ ul.chk li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;bor
 /* WHY AI VIDEO 카드 가운데 정렬 */
 .why .cards.ten>div{text-align:center}
 .why .cards.ten>div p{word-break:keep-all}
+/* 로그인: 링크 사이 작대기 제거, '또는' 위 여백 축소 */
+.lg-links .lg-divider{display:none}
+.lg-links{gap:20px}
+.lg:has(.lg-links){padding-bottom:4px!important}
+[class*="SocialLogin_divider"]{margin-top:12px!important}
