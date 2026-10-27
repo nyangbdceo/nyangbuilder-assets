@@ -1595,3 +1595,7 @@ footer h4{font-size:15px;font-weight:700;letter-spacing:.06em;margin-bottom:12px
 .nav .sub{padding-top:22px}
 /* 무료 전자책 안내: 제목을 비우면 상자째 숨김 */
 .free:has(> div > b:empty){display:none}
+/* 작업물: 원의 윗부분을 따라 도는 슬라이드 (끌기 없음, 위치는 nb.js가 계산) */
+.rail.arc{perspective:none;cursor:default;touch-action:auto;user-select:auto;-webkit-user-select:auto}
+.rail.arc .reel{left:0;top:24px;margin-left:0;transform-style:flat;transform-origin:50% 50%}
+.rail.arc .drag-dot{display:none}

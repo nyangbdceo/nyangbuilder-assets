@@ -79,24 +79,24 @@
     const g = theNav()?.querySelector('.util-g'), btn = theNav()?.querySelector('.wrap > .btn');
     if (g && btn) g.style.width = btn.offsetWidth ? btn.offsetWidth + 'px' : '';
   };
-  // 작업물 카드: 안쪽으로 휜 띠 위에서 끌어 넘기는 슬라이드. 가운데 한 장만 제 색으로 재생, 양옆은 파랗게 가라앉음.
-  // 손을 떼면 가장 가까운 카드에 멈추고, 가만두면 3.5초마다 한 장씩 넘어감 (끝없이 돌도록 화면이 찰 때까지 복제)
+  // 작업물 카드: 커다란 원의 윗부분을 따라 천천히 도는 슬라이드 (가운데가 가장 높고 양옆으로 갈수록 내려가며 기울어짐)
+  // 손으로 끄는 기능 없이 계속 흐르고, 마우스를 올리면 잠깐 멈춤. 가운데 카드만 제 색으로 재생, 양옆은 파랗게 가라앉음.
   const arc = rail => {
     const base = [...rail.children];
     base.forEach((r, i) => r.querySelector('.shot')?.insertAdjacentHTML('afterbegin', `<span class="num">${pad(i + 1)}</span>`));
     rail.classList.add('arc');
-    rail.tabIndex = 0;
-    rail.setAttribute('aria-label', '작업물 넘겨 보기 (좌우 화살표)');
-    rail.insertAdjacentHTML('beforeend', '<span class="drag-dot" aria-hidden="true">‹ DRAG ›</span>');
-    const dot = rail.lastElementChild;
-    let cards = base, step = 0, W = 0, pos = 0, vel = 0, target = 0, down = null, moved = 0, idle = Date.now(), seen = false, cur = -1;
+    let cards = base, step = 0, W = 0, R = 0, mid = 0, pos = 0, seen = false, hold = false, cur = -1;
     const fill = () => {
-      W = base[0].offsetWidth; step = W + (innerWidth > 700 ? 34 : 18);
-      while (cards.length * step < rail.clientWidth * 1.4 + step * 2 && cards.length < base.length * 8) {
+      W = base[0].offsetWidth; step = W + (innerWidth > 700 ? 30 : 16);
+      // 원 반지름: 화면이 넓을수록 크게 (너무 둥글면 카드가 많이 기울어 이상해 보임)
+      R = Math.max(1400, document.documentElement.clientWidth * 1.5);
+      // 띠가 화면보다 넓게 그려지는 경우가 있어 '보이는 화면'의 가운데를 기준으로 삼음
+      mid = document.documentElement.clientWidth / 2 - rail.getBoundingClientRect().left;
+      while (cards.length * step < document.documentElement.clientWidth * 1.5 + step * 2 && cards.length < base.length * 8) {
         const more = base.map(c => { const k = c.cloneNode(true); k.setAttribute('aria-hidden', 'true'); return k; });
-        dot.before(...more); cards = cards.concat(more);
+        rail.append(...more); cards = cards.concat(more);
       }
-      rail.style.height = base[0].offsetHeight + 70 + 'px';
+      rail.style.height = base[0].offsetHeight + 90 + 'px';
     };
     const place = () => {
       const total = cards.length * step;
@@ -104,67 +104,32 @@
       cards.forEach((c, i) => {
         let x = ((i * step - pos) % total + total) % total;
         if (x > total / 2) x -= total;
-        const n = x / step, far = Math.min(1, Math.abs(n));
+        // 호의 길이 x 만큼 원을 따라 이동한 자리: 각도 a, 가로 R·sin a, 내려감 R·(1-cos a)
+        const a = x / R, far = Math.min(1, Math.abs(x) / step);
         if (Math.abs(x) < best) { best = Math.abs(x); near = i; }
-        c.style.transform = `translateX(${x}px) translateZ(${Math.min(Math.abs(n), 2.5) * 22}px) rotateY(${Math.max(-2.2, Math.min(2.2, n)) * -7}deg)`;
+        c.style.transform = `translate(${mid - W / 2 + R * Math.sin(a)}px,${R * (1 - Math.cos(a))}px) rotate(${a}rad)`;
         c.style.setProperty('--far', far.toFixed(3));
-        c.style.zIndex = 10 - Math.round(Math.abs(n));
       });
       if (near !== cur) {
         cur = near;
         cards.forEach((c, i) => { const v = c.querySelector('video'); if (v) i === near ? v.play().catch(() => {}) : v.pause(); });
       }
     };
-    const loop = () => {
+    let last = performance.now();
+    const loop = t => {
       if (!rail.isConnected) return;
       requestAnimationFrame(loop);
+      const dt = Math.min(64, t - last); last = t;
       if (!seen) return;
-      if (!down) {
-        if (Math.abs(vel) > .5) { pos += vel; vel *= .93; target = Math.round(pos / step) * step; }
-        else {
-          vel = 0;
-          if (!calm && Date.now() - idle > 3500) { target += step; idle = Date.now(); }
-          pos += (target - pos) * .09;
-        }
-      }
+      if (!calm && !hold) pos += dt * .045;
       place();
     };
-    rail.addEventListener('pointerdown', e => {
-      if (e.button) return;
-      down = { x: e.clientX, last: e.clientX, t: performance.now() }; moved = 0; vel = 0;
-      rail.setPointerCapture(e.pointerId); rail.classList.add('drag');
-    });
-    rail.addEventListener('pointermove', e => {
-      const r = rail.getBoundingClientRect();
-      dot.style.transform = `translate(${e.clientX - r.left}px,${e.clientY - r.top}px)`;
-      if (!down) return;
-      const dx = e.clientX - down.last;
-      down.last = e.clientX; moved += Math.abs(dx); pos -= dx; vel = -dx;
-    });
-    const up = e => {
-      if (!down) return;
-      rail.classList.remove('drag'); idle = Date.now();
-      if (moved < 6) {
-        // 옆 카드를 그냥 누르면 그 카드를 가운데로
-        const c = e.target.closest?.('.reel'), i = cards.indexOf(c);
-        if (i >= 0) { const total = cards.length * step; let x = ((i * step - pos) % total + total) % total; if (x > total / 2) x -= total; target = Math.round((pos + x) / step) * step; }
-      } else if (Math.abs(vel) < .5) target = Math.round(pos / step) * step;
-      down = null;
-    };
-    rail.addEventListener('pointerup', up);
-    rail.addEventListener('pointercancel', up);
-    rail.addEventListener('wheel', e => {
-      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
-      e.preventDefault(); pos += e.deltaX; target = Math.round(pos / step) * step; idle = Date.now();
-    }, { passive: false });
-    rail.addEventListener('keydown', e => {
-      const d = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
-      if (d) { e.preventDefault(); target += d * step; idle = Date.now(); }
-    });
+    rail.addEventListener('mouseenter', () => { hold = true; });
+    rail.addEventListener('mouseleave', () => { hold = false; });
     new IntersectionObserver(es => es.forEach(e => { seen = e.isIntersecting; })).observe(rail);
-    fill(); place(); loop();
+    fill(); place(); requestAnimationFrame(loop);
     // 창 크기뿐 아니라 편집기 미리보기처럼 띠 너비만 바뀌어도 다시 계산
-    new ResizeObserver(() => { if (rail.isConnected && base[0].offsetWidth) { const k = step ? pos / step : 0; fill(); target = pos = Math.round(k) * step; place(); } }).observe(rail);
+    new ResizeObserver(() => { if (rail.isConnected && base[0].offsetWidth) { fill(); place(); } }).observe(rail);
   };
 
   // 하위 메뉴: 블록 설정의 링크 묶음을 '붙일 메뉴 주소'와 같은 메뉴 밑에 붙임 (PC는 펼침 상자, 모바일은 들여쓴 줄)
