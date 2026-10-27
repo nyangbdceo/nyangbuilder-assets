@@ -236,7 +236,7 @@
   });
   const hashTab = () => [...document.querySelectorAll('[role="tab"][data-tab]')].some(b => '#' + b.dataset.tab === location.hash);
   // 주소 끝 #이름 위치로: 탭이면 그 탭을 열고 탭 고르는 줄로, 아니면 그 섹션으로 (위 고정 메뉴만큼 띄움)
-  const goHash = () => {
+  const goHash = instant => {
     const id = decodeURIComponent(location.hash.slice(1));
     if (!id) return false;
     const tab = [...document.querySelectorAll('[role="tab"][data-tab]')].find(b => b.dataset.tab === id);
@@ -244,10 +244,10 @@
     const el = tab ? tab.parentElement : document.getElementById(id);
     if (!el) return false;
     const navH = theNav()?.querySelector('.wrap')?.getBoundingClientRect().bottom || 0;
-    scrollTo({ top: el.getBoundingClientRect().top + scrollY - navH - 24 });
+    scrollTo({ top: el.getBoundingClientRect().top + scrollY - navH - 24, behavior: instant === true ? 'instant' : 'smooth' });
     return true;
   };
-  addEventListener('hashchange', goHash);
+  addEventListener('hashchange', () => goHash());
   let jumped = false;
 
 
@@ -308,7 +308,7 @@
     // 다른 페이지에서 /class#lecture 처럼 들어오면 블록이 다 그려진 뒤 그 위치로 (식스샵이 늦게 그려서 브라우저 기본 이동이 빗나감)
     if (!jumped && location.hash && (hashTab() || document.getElementById(decodeURIComponent(location.hash.slice(1))))) {
       jumped = true;
-      setTimeout(goHash, 400);
+      setTimeout(() => goHash(true), 400);
     }
     document.querySelectorAll('.notion pre').forEach(pre => { if (once(pre, 'cp')) addCopy(pre, () => pre.querySelector('code')?.innerText ?? pre.innerText); });
     document.querySelectorAll('.notion .n-callout').forEach(box => {
