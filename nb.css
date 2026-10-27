@@ -1608,8 +1608,9 @@ footer h4{font-size:15px;font-weight:700;letter-spacing:.06em;margin-bottom:12px
 /* 로그인: 폼 아래 큰 여백은 '또는'(소셜 로그인) 아래로 옮김 */
 .app-block .container:has(> .lg){padding-bottom:0}
 [class*="SocialLogin_wrapper"]{padding-bottom:120px}
-/* 4번째 카드(SNS 월 패키지)는 아래 한 줄 전체로 */
-@media(min-width:901px){.svc>div:nth-child(4){grid-column:1/-1}.svc>div:nth-child(4) ul{display:grid;grid-template-columns:repeat(3,1fr);column-gap:28px}}
+/* 가격 카드 4장 한 줄 (SNS 패키지 맨 오른쪽) */
+@media(min-width:1101px){.cards.svc{grid-template-columns:repeat(4,1fr);gap:14px}.svc>div{padding:32px 22px}.cards.svc ul{width:100%}}
+@media(min-width:901px) and (max-width:1100px){.cards.svc{grid-template-columns:repeat(2,1fr)}}
 /* 가격 카드 목록: 너비 통일 + 체크 아이콘 */
 .svc ul{width:84%;min-width:0}
 .svc li{display:flex;align-items:center;gap:10px;font-weight:500}
