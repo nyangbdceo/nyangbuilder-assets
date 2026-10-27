@@ -1599,3 +1599,7 @@ footer h4{font-size:15px;font-weight:700;letter-spacing:.06em;margin-bottom:12px
 .rail.arc{perspective:none;cursor:default;touch-action:auto;user-select:auto;-webkit-user-select:auto}
 .rail.arc .reel{left:0;top:24px;margin-left:0;transform-style:flat;transform-origin:50% 50%}
 .rail.arc .drag-dot{display:none}
+/* 작업물: 오목한 원통 3D (위치·각도는 nb.js) */
+.rail.arc{perspective:1500px}
+.rail.arc .reel{top:var(--top,24px);transform-origin:50% 50%;backface-visibility:hidden}
+@media (max-width:700px){.rail.arc{perspective:900px}}

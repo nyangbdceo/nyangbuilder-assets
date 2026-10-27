@@ -79,7 +79,7 @@
     const g = theNav()?.querySelector('.util-g'), btn = theNav()?.querySelector('.wrap > .btn');
     if (g && btn) g.style.width = btn.offsetWidth ? btn.offsetWidth + 'px' : '';
   };
-  // 작업물 카드: 커다란 원의 윗부분을 따라 천천히 도는 슬라이드 (가운데가 가장 높고 양옆으로 갈수록 내려가며 기울어짐)
+  // 작업물 카드: 오목한 원통 안쪽 벽을 따라 천천히 도는 3D 슬라이드 (가운데는 정면, 양옆은 이쪽으로 돌아오며 조금 커짐)
   // 손으로 끄는 기능 없이 계속 흐르고, 마우스를 올리면 잠깐 멈춤. 가운데 카드만 제 색으로 재생, 양옆은 파랗게 가라앉음.
   const arc = rail => {
     const base = [...rail.children];
@@ -88,15 +88,21 @@
     let cards = base, step = 0, W = 0, R = 0, mid = 0, pos = 0, seen = false, hold = false, cur = -1;
     const fill = () => {
       W = base[0].offsetWidth; step = W + (innerWidth > 700 ? 30 : 16);
-      // 원 반지름: 화면이 넓을수록 크게 (너무 둥글면 카드가 많이 기울어 이상해 보임)
-      R = Math.max(step * 14, document.documentElement.clientWidth * 2.8);
+      // 원통 반지름: 작을수록 많이 휨. 화면 폭 정도면 끝 카드가 25도쯤 돌아옴 (더 휘면 카드가 찌그러져 보임)
+      R = Math.max(step * 4.5, document.documentElement.clientWidth * 1.1);
       // 띠가 화면보다 넓게 그려지는 경우가 있어 '보이는 화면'의 가운데를 기준으로 삼음
       mid = document.documentElement.clientWidth / 2 - rail.getBoundingClientRect().left;
-      while (cards.length * step < document.documentElement.clientWidth * 1.5 + step * 2 && cards.length < base.length * 8) {
+      // 화면 끝까지 채우려면 원통을 따라 잰 길이로 그만큼 카드가 있어야 함
+      const need = 2 * R * Math.asin(Math.min(1, document.documentElement.clientWidth / 2 / R)) + step * 3;
+      while (cards.length * step < need && cards.length < base.length * 8) {
         const more = base.map(c => { const k = c.cloneNode(true); k.setAttribute('aria-hidden', 'true'); return k; });
         rail.append(...more); cards = cards.concat(more);
       }
-      rail.style.height = base[0].offsetHeight + 90 + 'px';
+      // 양옆 카드가 커져도 위아래가 잘리지 않게 여유를 두고, 원근의 중심을 카드 한가운데에
+      const H = base[0].offsetHeight;
+      rail.style.height = H * 1.3 + 40 + 'px';
+      rail.style.setProperty('--top', H * .15 + 20 + 'px');
+      rail.style.perspectiveOrigin = `${mid}px ${H * .65 + 20}px`;
     };
     const place = () => {
       const total = cards.length * step;
@@ -104,10 +110,10 @@
       cards.forEach((c, i) => {
         let x = ((i * step - pos) % total + total) % total;
         if (x > total / 2) x -= total;
-        // 호의 길이 x 만큼 원을 따라 이동한 자리: 각도 a, 가로 R·sin a, 내려감 R·(1-cos a)
+        // 원통 벽을 x 만큼 따라간 자리: 각도 a, 가로 R·sin a, 이쪽으로 다가옴 R·(1-cos a), 카드는 원통 중심을 바라보게 회전
         const a = x / R, far = Math.min(1, Math.abs(x) / step);
         if (Math.abs(x) < best) { best = Math.abs(x); near = i; }
-        c.style.transform = `translate(${mid - W / 2 + R * Math.sin(a)}px,${R * (1 - Math.cos(a))}px) rotate(${a}rad)`;
+        c.style.transform = `translate3d(${mid - W / 2 + R * Math.sin(a)}px,0,${R * (1 - Math.cos(a))}px) rotateY(${-a}rad)`;
         c.style.setProperty('--far', far.toFixed(3));
       });
       if (near !== cur) {
