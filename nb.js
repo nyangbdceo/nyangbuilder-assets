@@ -79,6 +79,93 @@
     const g = theNav()?.querySelector('.util-g'), btn = theNav()?.querySelector('.wrap > .btn');
     if (g && btn) g.style.width = btn.offsetWidth ? btn.offsetWidth + 'px' : '';
   };
+  // 작업물 카드: 안쪽으로 휜 띠 위에서 끌어 넘기는 슬라이드. 가운데 한 장만 제 색으로 재생, 양옆은 파랗게 가라앉음.
+  // 손을 떼면 가장 가까운 카드에 멈추고, 가만두면 3.5초마다 한 장씩 넘어감 (끝없이 돌도록 화면이 찰 때까지 복제)
+  const arc = rail => {
+    const base = [...rail.children];
+    base.forEach((r, i) => r.querySelector('.shot')?.insertAdjacentHTML('afterbegin', `<span class="num">${pad(i + 1)}</span>`));
+    rail.classList.add('arc');
+    rail.tabIndex = 0;
+    rail.setAttribute('aria-label', '작업물 넘겨 보기 (좌우 화살표)');
+    rail.insertAdjacentHTML('beforeend', '<span class="drag-dot" aria-hidden="true">‹ DRAG ›</span>');
+    const dot = rail.lastElementChild;
+    let cards = base, step = 0, W = 0, pos = 0, vel = 0, target = 0, down = null, moved = 0, idle = Date.now(), seen = false, cur = -1;
+    const fill = () => {
+      W = base[0].offsetWidth; step = W + (innerWidth > 700 ? 34 : 18);
+      while (cards.length * step < rail.clientWidth * 1.4 + step * 2 && cards.length < base.length * 8) {
+        const more = base.map(c => { const k = c.cloneNode(true); k.setAttribute('aria-hidden', 'true'); return k; });
+        dot.before(...more); cards = cards.concat(more);
+      }
+      rail.style.height = base[0].offsetHeight + 70 + 'px';
+    };
+    const place = () => {
+      const total = cards.length * step;
+      let near = 0, best = 1e9;
+      cards.forEach((c, i) => {
+        let x = ((i * step - pos) % total + total) % total;
+        if (x > total / 2) x -= total;
+        const n = x / step, far = Math.min(1, Math.abs(n));
+        if (Math.abs(x) < best) { best = Math.abs(x); near = i; }
+        c.style.transform = `translateX(${x}px) translateZ(${Math.min(Math.abs(n), 3) * 46}px) rotateY(${Math.max(-3, Math.min(3, n)) * -13}deg) scale(${1 + (1 - far) * .04})`;
+        c.style.setProperty('--far', far.toFixed(3));
+        c.style.zIndex = 10 - Math.round(Math.abs(n));
+      });
+      if (near !== cur) {
+        cur = near;
+        cards.forEach((c, i) => { const v = c.querySelector('video'); if (v) i === near ? v.play().catch(() => {}) : v.pause(); });
+      }
+    };
+    const loop = () => {
+      if (!rail.isConnected) return;
+      requestAnimationFrame(loop);
+      if (!seen) return;
+      if (!down) {
+        if (Math.abs(vel) > .5) { pos += vel; vel *= .93; target = Math.round(pos / step) * step; }
+        else {
+          vel = 0;
+          if (!calm && Date.now() - idle > 3500) { target += step; idle = Date.now(); }
+          pos += (target - pos) * .09;
+        }
+      }
+      place();
+    };
+    rail.addEventListener('pointerdown', e => {
+      if (e.button) return;
+      down = { x: e.clientX, last: e.clientX, t: performance.now() }; moved = 0; vel = 0;
+      rail.setPointerCapture(e.pointerId); rail.classList.add('drag');
+    });
+    rail.addEventListener('pointermove', e => {
+      const r = rail.getBoundingClientRect();
+      dot.style.transform = `translate(${e.clientX - r.left}px,${e.clientY - r.top}px)`;
+      if (!down) return;
+      const dx = e.clientX - down.last;
+      down.last = e.clientX; moved += Math.abs(dx); pos -= dx; vel = -dx;
+    });
+    const up = e => {
+      if (!down) return;
+      rail.classList.remove('drag'); idle = Date.now();
+      if (moved < 6) {
+        // 옆 카드를 그냥 누르면 그 카드를 가운데로
+        const c = e.target.closest?.('.reel'), i = cards.indexOf(c);
+        if (i >= 0) { const total = cards.length * step; let x = ((i * step - pos) % total + total) % total; if (x > total / 2) x -= total; target = Math.round((pos + x) / step) * step; }
+      } else if (Math.abs(vel) < .5) target = Math.round(pos / step) * step;
+      down = null;
+    };
+    rail.addEventListener('pointerup', up);
+    rail.addEventListener('pointercancel', up);
+    rail.addEventListener('wheel', e => {
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+      e.preventDefault(); pos += e.deltaX; target = Math.round(pos / step) * step; idle = Date.now();
+    }, { passive: false });
+    rail.addEventListener('keydown', e => {
+      const d = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+      if (d) { e.preventDefault(); target += d * step; idle = Date.now(); }
+    });
+    new IntersectionObserver(es => es.forEach(e => { seen = e.isIntersecting; })).observe(rail);
+    fill(); place(); loop();
+    addEventListener('resize', () => { if (rail.isConnected) { fill(); target = pos = Math.round(pos / step) * step; place(); } });
+  };
+
   // 하위 메뉴: 블록 설정의 링크 묶음을 '붙일 메뉴 주소'와 같은 메뉴 밑에 붙임 (PC는 펼침 상자, 모바일은 들여쓴 줄)
   const addSub = nav => {
     const src = nav.querySelector('.nav-sub-src');
@@ -185,22 +272,7 @@
       all.forEach((el, i) => { el.style.display = i < all.length - 1 ? 'none' : ''; });
     });
     document.querySelectorAll('.nav').forEach(n => { if (once(n, 'n')) navInit(n); });
-    // 작업물 카드: 끊김 없이 옆으로 계속 흐르게 (카드를 한 번 더 복제)
-    document.querySelectorAll('.rail').forEach(rail => {
-      if (!rail.children.length || !once(rail, 'rail')) return;
-      const track = document.createElement('div');
-      track.className = 'track';
-      const base = [...rail.children];
-      const copy = c => { const k = c.cloneNode(true); k.setAttribute('aria-hidden', 'true'); k.classList.add('in'); return k; };
-      track.append(...base);
-      rail.append(track);
-      rail.classList.add('auto');
-      // 넓은 화면에서 카드가 화면보다 짧으면 끝에 빈 곳이 생기므로, 한 묶음이 화면을 다 채울 때까지 늘린다
-      let reps = 1;
-      while (track.scrollWidth < rail.clientWidth * 1.1 && reps < 8) { track.append(...base.map(copy)); reps++; }
-      track.append(...[...track.children].map(copy));
-      track.style.animationDuration = 60 * reps + 's';
-    });
+    document.querySelectorAll('.rail').forEach(rail => { if (rail.children.length && once(rail, 'rail')) arc(rail); });
     // 카톡 후기: 모바일 가로 슬라이드를 3.5초마다 다음 장으로 (손으로 넘기면 잠깐 멈춤)
     document.querySelectorAll('.kt-grid').forEach(g => {
       if (calm || !once(g, 'kt')) return;

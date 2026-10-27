@@ -1558,3 +1558,17 @@ footer h4{font-size:15px;font-weight:700;letter-spacing:.06em;margin-bottom:12px
 .m-menu .m-sub a:not(.btn)::before{content:"";width:6px;height:1px;margin:0 10px 0 -16px;background:#5A6275;align-self:center}
 .m-menu .m-sub a:not(.btn){justify-content:flex-start}
 .m-menu a:has(+ .m-sub){border-bottom:0}
+/* 작업물: 안쪽으로 휜 띠 (위치·기울기는 nb.js가 카드마다 계산) */
+.rail.arc{position:relative;display:block;overflow:hidden;padding:0;margin-top:36px;perspective:1500px;perspective-origin:50% 40%;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none;outline:0}
+.rail.arc.drag{cursor:grabbing}
+.rail.arc .reel{position:absolute;left:50%;top:34px;width:min(290px,56vw);margin-left:calc(min(290px,56vw) / -2);opacity:1;transition:none;will-change:transform;transform-style:preserve-3d}
+.rail.arc .reel .shot{transition:box-shadow .4s;box-shadow:0 28px 50px -24px rgba(10,12,20,calc(.5 - var(--far,0) * .3))}
+.rail.arc .reel:hover .shot{transform:none}
+.rail.arc .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,#1F63F0,#0A0C14 85%);mix-blend-mode:color;opacity:calc(var(--far,0) * .9);pointer-events:none}
+.rail.arc .shot::before{content:"";position:absolute;inset:0;background:#0A0C14;opacity:calc(var(--far,0) * .28);pointer-events:none;z-index:1}
+.rail.arc .reel .num{z-index:2;font-size:13px;letter-spacing:.08em;opacity:calc(1 - var(--far,0) * .5)}
+.rail.arc .reel h3,.rail.arc .reel p{text-align:center;opacity:calc(1 - var(--far,0) * .65)}
+.rail.arc video,.rail.arc img{pointer-events:none;-webkit-user-drag:none}
+.rail.arc .drag-dot{position:absolute;left:-46px;top:-46px;z-index:30;display:grid;place-items:center;width:92px;height:92px;border-radius:50%;background:var(--blue);color:#fff;font:800 12px/1 var(--en);letter-spacing:.1em;pointer-events:none;opacity:0;scale:.4;transition:opacity .25s,scale .3s var(--ease);box-shadow:0 10px 30px rgba(31,99,240,.35)}
+@media (hover:hover) and (pointer:fine){.rail.arc:hover .drag-dot{opacity:1;scale:1}.rail.arc.drag .drag-dot{scale:.82}}
+.rail.arc:focus-visible{box-shadow:inset 0 0 0 2px var(--sky)}
