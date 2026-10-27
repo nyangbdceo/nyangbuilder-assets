@@ -85,15 +85,17 @@
     const base = [...rail.children];
     rail.classList.add('arc');
     let cards = base, step = 0, W = 0, R = 0, mid = 0, pos = 0, seen = false, hold = false, cur = -1;
+    const MAX = .9; // 이 각도(약 50도)보다 더 돈 카드는 화면 밖이라 숨김
     const fill = () => {
       W = base[0].offsetWidth; step = W + (innerWidth > 700 ? 30 : 16);
       // 원통 반지름: 작을수록 많이 휨. 화면 폭 정도면 끝 카드가 25도쯤 돌아옴 (더 휘면 카드가 찌그러져 보임)
       R = Math.max(step * 4.5, document.documentElement.clientWidth * 1.1);
       // 띠가 화면보다 넓게 그려지는 경우가 있어 '보이는 화면'의 가운데를 기준으로 삼음
       mid = document.documentElement.clientWidth / 2 - rail.getBoundingClientRect().left;
-      // 화면 끝까지 채우려면 원통을 따라 잰 길이로 그만큼 카드가 있어야 함
-      const need = 2 * R * Math.asin(Math.min(1, document.documentElement.clientWidth / 2 / R)) + step * 3;
-      while (cards.length * step < need && cards.length < base.length * 8) {
+      // 원통 양끝(MAX 각도 밖)은 숨기므로, 띠가 한 바퀴 이어 붙는 자리가 그 숨은 구간에 오도록 카드를 넉넉히 채움
+      // (원근 때문에 옆으로 돌아온 카드는 크게 보여 화면 안으로 들어오니, 화면 폭이 아니라 각도로 잼)
+      const need = 2 * R * MAX + step * 2;
+      while (cards.length * step < need && cards.length < base.length * 12) {
         const more = base.map(c => { const k = c.cloneNode(true); k.setAttribute('aria-hidden', 'true'); return k; });
         rail.append(...more); cards = cards.concat(more);
       }
@@ -114,6 +116,7 @@
         if (Math.abs(x) < best) { best = Math.abs(x); near = i; }
         c.style.transform = `translate3d(${mid - W / 2 + R * Math.sin(a)}px,0,${R * (1 - Math.cos(a))}px) rotateY(${-a}rad)`;
         c.style.setProperty('--far', far.toFixed(3));
+        c.style.visibility = Math.abs(a) > MAX ? 'hidden' : '';
       });
       if (near !== cur) {
         cur = near;
