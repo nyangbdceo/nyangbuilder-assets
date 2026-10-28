@@ -1696,16 +1696,9 @@ ul.chk li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;bor
 .promise-band p b{text-decoration-color:rgba(10,12,20,.32);text-decoration-thickness:1.5px}
 /* 두께는 1px 그대로, 색만 조금 진하게 */
 .promise-band p b{text-decoration-thickness:1px}
-/* 소개 브랜드 스토리: 장 제목은 숫자·영문만, 왼쪽 칸 안에서 가운데, 오른쪽 내용도 세로·가로 가운데 */
+/* 소개 브랜드 스토리: 장 제목은 숫자·영문만, 왼쪽·위 정렬 그대로 (따라 내려오는 고정만 풂) */
 .story-sec .bs-ch-label b{display:none}
-@media (min-width:901px){
-  .story-sec .bs-ch{align-items:center}
-  div[data-block-id] .story-sec .bs-ch .bs-ch-label{position:static;align-self:center;align-items:center;text-align:center}
-  .story-sec .bs-ch > div:last-child > :first-child{margin-top:0}
-  .story-sec .bs-ch .lead{text-align:center;margin-left:auto;margin-right:auto}
-  div[data-block-id] .story-sec .bs-ch :is(.bs-slogan,.bs-slogan-kr){text-align:center}
-  .story-sec .bs-ch .bs-logo{justify-content:center}
-}
+div[data-block-id] .story-sec .bs-ch .bs-ch-label{position:static}
 /* 소개 '시작한 이야기' 섹션 위에 AGENCY STORY 라벨 (블록에 라벨 칸이 없어서 CSS로) */
 .founder .wrap::before{content:"AGENCY STORY";display:block;margin-bottom:56px;font-family:var(--en);font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--blue-d)}
 @media (max-width:900px){.founder .wrap::before{text-align:center;margin-bottom:36px}}
