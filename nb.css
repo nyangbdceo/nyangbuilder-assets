@@ -1699,6 +1699,6 @@ ul.chk li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;bor
 /* 소개 브랜드 스토리: 장 제목은 숫자·영문만, 왼쪽·위 정렬 그대로 (따라 내려오는 고정만 풂) */
 .story-sec .bs-ch-label b{display:none}
 div[data-block-id] .story-sec .bs-ch .bs-ch-label{position:static}
-/* 소개 '시작한 이야기' 섹션 위에 AGENCY STORY 라벨 (블록에 라벨 칸이 없어서 CSS로) */
-.founder .wrap::before{content:"AGENCY STORY";display:block;margin-bottom:56px;font-family:var(--en);font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--blue-d)}
-@media (max-width:900px){.founder .wrap::before{text-align:center;margin-bottom:36px}}
+/* 소개: 인사(흰 배경)와 냥빌더 이야기를 배경색으로 나눔 */
+.story-sec{background:var(--mist);padding-top:110px}
+@media (max-width:900px){.story-sec{padding-top:80px}}
