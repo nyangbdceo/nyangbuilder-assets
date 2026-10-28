@@ -1711,3 +1711,21 @@ div[data-block-id] .story-sec .bs-ch .bs-ch-label{position:static}
 .story-sec::before{content:"";position:absolute;top:0;left:0;width:100%;height:72px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2880 80' preserveAspectRatio='none'%3E%3Cpath fill='%23fff' d='M0 0 L2880 0 L2880 40.0 L2832 35.5 L2784 31.8 L2736 29.5 L2688 29.1 L2640 30.5 L2592 33.5 L2544 37.7 L2496 42.3 L2448 46.5 L2400 49.5 L2352 50.9 L2304 50.5 L2256 48.2 L2208 44.5 L2160 40.0 L2112 35.5 L2064 31.8 L2016 29.5 L1968 29.1 L1920 30.5 L1872 33.5 L1824 37.7 L1776 42.3 L1728 46.5 L1680 49.5 L1632 50.9 L1584 50.5 L1536 48.2 L1488 44.5 L1440 40.0 L1392 35.5 L1344 31.8 L1296 29.5 L1248 29.1 L1200 30.5 L1152 33.5 L1104 37.7 L1056 42.3 L1008 46.5 L960 49.5 L912 50.9 L864 50.5 L816 48.2 L768 44.5 L720 40.0 L672 35.5 L624 31.8 L576 29.5 L528 29.1 L480 30.5 L432 33.5 L384 37.7 L336 42.3 L288 46.5 L240 49.5 L192 50.9 L144 50.5 L96 48.2 L48 44.5 L0 40.0 Z'/%3E%3C/svg%3E") 0 0/200% 100% no-repeat;animation:nbWaveTop 30s linear infinite;pointer-events:none}
 @keyframes nbWaveTop{to{background-position:-100% 0}}
 @media (max-width:900px){.story-sec::before{height:44px}}
+/* 소개 냥빌더(브랜드 스토리) PC: 가운데 정렬, 01·02·03 소제목은 카드 밖, 글 내용만 흰 카드 */
+@media (min-width:901px){
+  div[data-block-id] section.story-sec .bs-head{display:flex;flex-direction:column;align-items:center;text-align:center}
+  div[data-block-id] section.story-sec .bs-head *{text-align:center}
+  div[data-block-id] section.story-sec .bs-ch{display:block;border-top:0;padding:72px 0 0;text-align:center}
+  div[data-block-id] section.story-sec .bs-head + .bs-ch{margin-top:0;padding-top:56px}
+  div[data-block-id] section.story-sec .bs-ch .bs-ch-label{flex-direction:row;justify-content:center;align-items:baseline;gap:10px;margin-bottom:20px}
+  div[data-block-id] section.story-sec .bs-ch > div:last-child{max-width:880px;margin:0 auto}
+  div[data-block-id] section.story-sec .bs-ch .lead{background:#fff;border:1px solid var(--line);border-top:0;border-bottom:0;margin:0;max-width:none;padding:5px 48px;text-align:center}
+  div[data-block-id] section.story-sec .bs-ch .lead:first-child{border-top:1px solid var(--line);border-radius:24px 24px 0 0;padding-top:40px}
+  div[data-block-id] section.story-sec .bs-ch .lead:has(+ .bs-pair){border-bottom:1px solid var(--line);border-radius:0 0 24px 24px;padding-bottom:40px}
+  div[data-block-id] section.story-sec .bs-ch .lead:first-child:has(+ .bs-pair){border-radius:24px}
+  div[data-block-id] section.story-sec .bs-ch .bs-pair{margin-top:18px;text-align:left}
+  div[data-block-id] section.story-sec .bs-ch > div:has(> .bs-slogan){background:#fff;border:1px solid var(--line);border-radius:24px;padding:40px 48px}
+  div[data-block-id] section.story-sec .bs-ch .bs-slogan,div[data-block-id] section.story-sec .bs-ch .bs-slogan-kr{text-align:center}
+  div[data-block-id] section.story-sec .bs-ch .bs-logo{flex-direction:column;align-items:center;gap:18px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:40px 48px;margin:0 auto}
+  div[data-block-id] section.story-sec .bs-ch .bs-logo-text{text-align:center}
+}
