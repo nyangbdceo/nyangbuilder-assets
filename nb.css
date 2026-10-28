@@ -1713,7 +1713,7 @@ div[data-block-id] .story-sec .bs-ch .bs-ch-label{position:static}
 @media (max-width:900px){.story-sec::before{height:44px}}
 /* 소개 냥빌더(브랜드 스토리) PC: 가운데 정렬, 01·02·03 소제목은 카드 밖, 글 내용만 흰 카드 */
 @media (min-width:901px){
-  div[data-block-id] section.story-sec .bs-head{display:flex;flex-direction:column;align-items:center;text-align:center}
+  div[data-block-id] section.story-sec .bs-head{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:none;width:100%}
   div[data-block-id] section.story-sec .bs-head *{text-align:center}
   div[data-block-id] section.story-sec .bs-ch{display:block;border-top:0;padding:72px 0 0;text-align:center}
   div[data-block-id] section.story-sec .bs-head + .bs-ch{margin-top:0;padding-top:56px}
