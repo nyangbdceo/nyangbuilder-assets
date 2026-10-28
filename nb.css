@@ -1673,3 +1673,9 @@ ul.chk li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;bor
 .hero h1 .sel i:nth-of-type(1),.hero h1 .sel i:nth-of-type(3){left:calc(-.02em - 6px)}
 .hero h1 .sel i:nth-of-type(2),.hero h1 .sel i:nth-of-type(4){right:calc(-.02em - 6px)}
 .hero h1 .sel i:nth-of-type(3),.hero h1 .sel i:nth-of-type(4){bottom:calc(.04em - 6px)}
+/* 카톡 후기: 화면에 들어오면 세 장이 차례로 살짝 떠오름 (nb.js가 .kt-grid에 .in을 붙임) */
+.kt-grid .kt{opacity:0;transform:translateY(32px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.kt-grid .kt:nth-child(2){transition-delay:.15s}
+.kt-grid .kt:nth-child(3){transition-delay:.3s}
+.kt-grid.in .kt{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.kt-grid .kt{opacity:1;transform:none}}

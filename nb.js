@@ -254,7 +254,7 @@
 
   const init = () => {
     document.querySelectorAll('.wave').forEach(w => { if (once(w, 'w')) w.innerHTML = WAVE; });
-    document.querySelectorAll('.reveal, .stream, .pile').forEach(el => { if (once(el, 'r')) io.observe(el); });
+    document.querySelectorAll('.reveal, .stream, .pile, .kt-grid').forEach(el => { if (once(el, 'r')) io.observe(el); });
     document.querySelectorAll('[data-count]').forEach(el => { if (once(el, 'c')) cio.observe(el); });
     document.querySelectorAll('canvas.sea').forEach(cv => { if (once(cv, 's')) sea(cv); });
     document.querySelectorAll('.vf-tc').forEach(tc => { if (once(tc, 't')) timecode(tc); });
