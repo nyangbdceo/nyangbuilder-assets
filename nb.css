@@ -1696,3 +1696,12 @@ ul.chk li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;bor
 .promise-band p b{text-decoration-color:rgba(10,12,20,.32);text-decoration-thickness:1.5px}
 /* 두께는 1px 그대로, 색만 조금 진하게 */
 .promise-band p b{text-decoration-thickness:1px}
+/* 소개 브랜드 스토리: 장 제목은 숫자·영문만, 왼쪽 칸 안에서 가운데, 오른쪽 내용도 세로·가로 가운데 */
+.story-sec .bs-ch-label b{display:none}
+@media (min-width:901px){
+  .story-sec .bs-ch{align-items:center}
+  .story-sec .bs-ch .bs-ch-label{position:static;align-items:center;text-align:center}
+  .story-sec .bs-ch > div:last-child > :first-child{margin-top:0}
+  .story-sec .bs-ch .lead{text-align:center;margin-left:auto;margin-right:auto}
+  .story-sec .bs-ch .bs-logo{justify-content:center}
+}
