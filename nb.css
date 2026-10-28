@@ -1690,3 +1690,5 @@ ul.chk li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;bor
 /* 파란 마무리: 아이콘을 위로 올리고(글자 위치는 그대로), 두 줄 사이를 좁힘 */
 .start .sym{margin:-16px auto 34px}
 .start h2.start-kr + p{margin-top:4px}
+/* 5건 약속 밑줄: 파란색 대신 은은한 회색 얇은 줄 */
+.promise-band p b{text-decoration-color:rgba(10,12,20,.18);text-decoration-thickness:1px}
