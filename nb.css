@@ -1692,3 +1692,5 @@ ul.chk li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;bor
 .start h2.start-kr + p{margin-top:4px}
 /* 5건 약속 밑줄: 파란색 대신 은은한 회색 얇은 줄 */
 .promise-band p b{text-decoration-color:rgba(10,12,20,.18);text-decoration-thickness:1px}
+/* 5건 약속 밑줄: 회색을 조금 진하고 두껍게 (1px·18% → 1.5px·32%) */
+.promise-band p b{text-decoration-color:rgba(10,12,20,.32);text-decoration-thickness:1.5px}
