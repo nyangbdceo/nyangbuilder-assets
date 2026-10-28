@@ -1703,5 +1703,6 @@ ul.chk li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;bor
   div[data-block-id] .story-sec .bs-ch .bs-ch-label{position:static;align-self:center;align-items:center;text-align:center}
   .story-sec .bs-ch > div:last-child > :first-child{margin-top:0}
   .story-sec .bs-ch .lead{text-align:center;margin-left:auto;margin-right:auto}
+  div[data-block-id] .story-sec .bs-ch :is(.bs-slogan,.bs-slogan-kr){text-align:center}
   .story-sec .bs-ch .bs-logo{justify-content:center}
 }
