@@ -1683,3 +1683,5 @@ ul.chk li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;bor
 .promise-band h2{font-size:clamp(28px,3.8vw,48px)}
 /* 다른 페이지 제목도 42px에 맞춤 (소개 52, 서비스 카드 44, 일부 페이지 48) */
 .about-intro h2,.shop-card h2,.fd-head .h2{font-size:clamp(28px,3.4vw,42px)}
+/* 5건 약속 설명: 굵은 마지막 줄만 살짝 띄우고 파란 밑줄 */
+.promise-band p b{display:inline-block;margin-top:12px;color:var(--ink);text-decoration:underline;text-decoration-color:var(--blue);text-decoration-thickness:2px;text-underline-offset:6px}
