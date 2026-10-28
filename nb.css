@@ -1729,3 +1729,5 @@ div[data-block-id] .story-sec .bs-ch .bs-ch-label{position:static}
   div[data-block-id] section.story-sec .bs-ch .bs-logo{flex-direction:column;align-items:center;gap:18px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:40px 48px;margin:0 auto}
   div[data-block-id] section.story-sec .bs-ch .bs-logo-text{text-align:center}
 }
+/* 위 물결이 움직이며 끊기지 않게 가로 반복 */
+.story-sec::before{background-repeat:repeat-x}
