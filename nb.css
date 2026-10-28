@@ -1664,3 +1664,12 @@ ul.chk li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;bor
   .buy-final > div{display:flex;flex-direction:column;align-items:center;gap:6px}
   .buy-final s,.buy-final small{margin:0}
 }
+/* 히어로 제목 균형: 크기 살짝 줄이고, camera. 선택 박스를 소문자 높이에 맞춰 위아래 여백을 고르게 */
+.hero h1{font-size:clamp(52px,9.2vw,134px);line-height:1.02}
+.hero h1>span:first-child{padding-left:.04em}
+.hero h1 .sel{margin-left:.1em;padding:0 .1em}
+.hero h1 .sel::before{inset:.24em -.02em .04em}
+.hero h1 .sel i:nth-of-type(1),.hero h1 .sel i:nth-of-type(2){top:calc(.24em - 6px)}
+.hero h1 .sel i:nth-of-type(1),.hero h1 .sel i:nth-of-type(3){left:calc(-.02em - 6px)}
+.hero h1 .sel i:nth-of-type(2),.hero h1 .sel i:nth-of-type(4){right:calc(-.02em - 6px)}
+.hero h1 .sel i:nth-of-type(3),.hero h1 .sel i:nth-of-type(4){bottom:calc(.04em - 6px)}
