@@ -1724,12 +1724,12 @@ div[data-block-id="6adf1e2dd9946fa1aa1ce7ee"]{order:2}
   div[data-block-id] section.story-sec .bs-head{grid-column:1/-1;grid-row:1;display:flex;flex-direction:column;align-items:center;text-align:center;max-width:none;width:100%}
   div[data-block-id] section.story-sec .bs-head *{text-align:center}
   div[data-block-id] section.story-sec .bs-ch{border-top:0;padding:0;margin:0}
-  div[data-block-id] section.story-sec .bs-head + .bs-ch,div[data-block-id] section.story-sec .bs-head + .bs-ch > div{display:contents}
+  div[data-block-id] section.story-sec .bs-head + .bs-ch,div[data-block-id] section.story-sec .bs-head + .bs-ch > div:last-child{display:contents}
   div[data-block-id] section.story-sec .bs-ch .bs-pair{grid-column:1/-1;grid-row:2;grid-template-columns:1fr 1fr;gap:24px;position:relative;margin-top:56px}
   div[data-block-id] section.story-sec .bs-ch .bs-plus{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1}
   div[data-block-id] section.story-sec .bs-ch .bs-ch-label{flex-direction:row;align-items:baseline;gap:10px;margin:0 0 18px}
   div[data-block-id] section.story-sec .bs-ch .bs-ch-label i{font-size:34px}
-  div[data-block-id] section.story-sec .bs-head + .bs-ch > .bs-ch-label{grid-column:1/3;grid-row:3;margin:24px 0 0;padding:36px 32px 18px;background:#fff;border:1px solid var(--line);border-bottom:0;border-radius:24px 24px 0 0}
+  div[data-block-id] section.story-sec .bs-head + .bs-ch > .bs-ch-label{display:flex;justify-content:flex-start;grid-column:1/3;grid-row:3;margin:24px 0 0;padding:36px 32px 18px;background:#fff;border:1px solid var(--line);border-bottom:0;border-radius:24px 24px 0 0}
   div[data-block-id] section.story-sec .bs-head + .bs-ch .lead{grid-column:1/3;grid-row:4;margin:0;max-width:none;text-align:left;font-size:15px;padding:0 32px 36px;background:#fff;border:1px solid var(--line);border-top:0;border-radius:0 0 24px 24px}
   div[data-block-id] section.story-sec .bs-head + .bs-ch .lead + .lead{display:none}
   div[data-block-id] section.story-sec .bs-ch + .bs-ch{grid-row:3/5;margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:36px 32px;display:flex;flex-direction:column;justify-content:flex-start;gap:0}
