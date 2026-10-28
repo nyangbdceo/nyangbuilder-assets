@@ -1681,3 +1681,5 @@ ul.chk li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;bor
 /* 섹션 헤드카피: 두 줄 제목이 너무 커 보여서 PC 50→42px, 5건 약속은 56→48px */
 .h2{font-size:clamp(28px,3.4vw,42px)}
 .promise-band h2{font-size:clamp(28px,3.8vw,48px)}
+/* 다른 페이지 제목도 42px에 맞춤 (소개 52, 서비스 카드 44, 일부 페이지 48) */
+.about-intro h2,.shop-card h2,.fd-head .h2{font-size:clamp(28px,3.4vw,42px)}
