@@ -1706,3 +1706,6 @@ ul.chk li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;bor
   div[data-block-id] .story-sec .bs-ch :is(.bs-slogan,.bs-slogan-kr){text-align:center}
   .story-sec .bs-ch .bs-logo{justify-content:center}
 }
+/* 소개 '시작한 이야기' 섹션 위에 AGENCY STORY 라벨 (블록에 라벨 칸이 없어서 CSS로) */
+.founder .wrap::before{content:"AGENCY STORY";display:block;margin-bottom:56px;font-family:var(--en);font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--blue-d)}
+@media (max-width:900px){.founder .wrap::before{text-align:center;margin-bottom:36px}}
