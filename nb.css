@@ -1687,3 +1687,6 @@ ul.chk li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;bor
 .promise-band p b{display:inline-block;margin-top:12px;color:var(--ink);text-decoration:underline;text-decoration-color:var(--blue);text-decoration-thickness:2px;text-underline-offset:6px}
 /* 파란 마무리: 두 번째 줄도 제목처럼 굵게 (모든 페이지 공통) */
 .start h2.start-kr + p{font-weight:800}
+/* 파란 마무리: 아이콘을 위로 올리고(글자 위치는 그대로), 두 줄 사이를 좁힘 */
+.start .sym{margin:-16px auto 34px}
+.start h2.start-kr + p{margin-top:4px}
