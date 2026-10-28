@@ -1717,13 +1717,13 @@ div[data-block-id] .story-sec .bs-ch .bs-ch-label{position:static}
   div[data-block-id] section.story-sec .bs-head,div[data-block-id] section.story-sec .bs-head + .bs-ch{grid-column:1/-1}
   div[data-block-id] section.story-sec .bs-ch{display:block;border-top:0;padding:0;margin:0}
   div[data-block-id] section.story-sec .bs-head + .bs-ch{margin-top:28px}
-  div[data-block-id] section.story-sec .bs-head + .bs-ch .bs-ch-label{display:none}
+  div[data-block-id] section.story-sec .bs-ch .bs-ch-label{flex-direction:row;align-items:baseline;gap:10px;margin:0 0 20px}
   div[data-block-id] section.story-sec .bs-ch .lead{margin:0 0 12px;max-width:720px;text-align:left}
   div[data-block-id] section.story-sec .bs-ch .bs-pair{grid-template-columns:1fr 1fr;gap:28px;position:relative;margin-top:44px}
   div[data-block-id] section.story-sec .bs-ch .bs-plus{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1}
   div[data-block-id] section.story-sec .bs-ch + .bs-ch{margin-top:28px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:36px 36px 40px;display:flex;flex-direction:column;justify-content:flex-start;gap:0}
-  div[data-block-id] section.story-sec .bs-ch + .bs-ch .bs-ch-label{flex-direction:row;margin:0 0 20px}
-  div[data-block-id] section.story-sec .bs-ch + .bs-ch .bs-ch-label i{display:none}
+  div[data-block-id] section.story-sec .bs-ch + .bs-ch .bs-ch-label{margin:0 0 18px}
+  div[data-block-id] section.story-sec .bs-ch + .bs-ch .bs-ch-label i{font-size:34px}
   div[data-block-id] section.story-sec .bs-ch + .bs-ch > div{margin:0}
   div[data-block-id] section.story-sec .bs-ch .bs-slogan{font-size:44px;line-height:1.05;text-align:left;margin:0}
   div[data-block-id] section.story-sec .bs-ch .bs-slogan-kr{text-align:left;margin-top:10px}
