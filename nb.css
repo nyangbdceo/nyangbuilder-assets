@@ -1740,3 +1740,10 @@ div[data-block-id="6adf1e2dd9946fa1aa1ce7ee"]{order:2}
 .founder > .wrap{position:relative;z-index:1}
 .founder{padding-top:150px}
 @media (max-width:900px){.founder{padding-top:100px}}
+/* 냥빌더 섹션 PC: 제목·01·설명은 가운데, 카드 안 글은 왼쪽 그대로 */
+@media (min-width:901px){
+  div[data-block-id] section.story-sec .bs-head{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:none;width:100%}
+  div[data-block-id] section.story-sec .bs-head *{text-align:center}
+  div[data-block-id] section.story-sec .bs-head + .bs-ch > .bs-ch-label{justify-content:center}
+  div[data-block-id] section.story-sec .bs-head + .bs-ch .lead{text-align:center;margin-left:auto;margin-right:auto}
+}
