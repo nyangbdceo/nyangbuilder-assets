@@ -1720,7 +1720,7 @@ div[data-block-id="6adf1e2dd9946fa1aa1ce7ee"]{order:2}
 @media (max-width:900px){.founder{padding-top:100px}}
 /* 소개 냥빌더 PC: 제목(가운데) → 시선·기술 큰 카드 2장 → 01·02·03 작은 카드 3장 */
 @media (min-width:901px){
-  div[data-block-id] section.story-sec .wrap{display:grid;grid-template-columns:repeat(6,1fr);column-gap:24px;row-gap:0}
+  div[data-block-id] section.story-sec .wrap{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:auto auto auto 1fr;column-gap:24px;row-gap:0}
   div[data-block-id] section.story-sec .bs-head{grid-column:1/-1;grid-row:1;display:flex;flex-direction:column;align-items:center;text-align:center;max-width:none;width:100%}
   div[data-block-id] section.story-sec .bs-head *{text-align:center}
   div[data-block-id] section.story-sec .bs-ch{border-top:0;padding:0;margin:0}
@@ -1729,8 +1729,8 @@ div[data-block-id="6adf1e2dd9946fa1aa1ce7ee"]{order:2}
   div[data-block-id] section.story-sec .bs-ch .bs-plus{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1}
   div[data-block-id] section.story-sec .bs-ch .bs-ch-label{flex-direction:row;align-items:baseline;gap:10px;margin:0 0 18px}
   div[data-block-id] section.story-sec .bs-ch .bs-ch-label i{font-size:34px}
-  div[data-block-id] section.story-sec .bs-head + .bs-ch > .bs-ch-label{display:flex;justify-content:flex-start;grid-column:1/3;grid-row:3;margin:24px 0 0;padding:36px 32px 18px;background:#fff;border:1px solid var(--line);border-bottom:0;border-radius:24px 24px 0 0}
-  div[data-block-id] section.story-sec .bs-head + .bs-ch .lead{grid-column:1/3;grid-row:4;margin:0;max-width:none;text-align:left;font-size:15px;padding:0 32px 36px;background:#fff;border:1px solid var(--line);border-top:0;border-radius:0 0 24px 24px}
+  div[data-block-id] section.story-sec .bs-head + .bs-ch > .bs-ch-label{display:flex;justify-content:flex-start;align-self:stretch;grid-column:1/3;grid-row:3;margin:24px 0 0;padding:36px 32px 18px;background:#fff;border:1px solid var(--line);border-bottom:0;border-radius:24px 24px 0 0}
+  div[data-block-id] section.story-sec .bs-head + .bs-ch .lead{align-self:stretch;grid-column:1/3;grid-row:4;margin:0;max-width:none;text-align:left;font-size:15px;padding:0 32px 36px;background:#fff;border:1px solid var(--line);border-top:0;border-radius:0 0 24px 24px}
   div[data-block-id] section.story-sec .bs-head + .bs-ch .lead + .lead{display:none}
   div[data-block-id] section.story-sec .bs-ch + .bs-ch{grid-row:3/5;margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:36px 32px;display:flex;flex-direction:column;justify-content:flex-start;gap:0}
   div[data-block-id] section.story-sec .bs-ch + .bs-ch:nth-of-type(3){grid-column:3/5}
