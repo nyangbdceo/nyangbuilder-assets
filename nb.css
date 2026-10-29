@@ -1743,3 +1743,10 @@ div[data-block-id="6adf1e2dd9946fa1aa1ce7ee"]{order:2}
   div[data-block-id] section.story-sec .bs-ch .bs-logo img{width:80px}
   div[data-block-id] section.story-sec .bs-ch .bs-logo-text{text-align:left}
 }
+/* 냥빌더 01·02·03 카드: 오른쪽 내용은 남은 칸 가운데로 (오른쪽 빈 여백 줄이기) */
+@media (min-width:901px){
+  div[data-block-id] section.story-sec .bs-head + .bs-ch .lead{text-align:center;padding-right:180px}
+  div[data-block-id] section.story-sec .bs-ch + .bs-ch{padding-right:220px}
+  div[data-block-id] section.story-sec .bs-ch .bs-slogan,div[data-block-id] section.story-sec .bs-ch .bs-slogan-kr{text-align:center}
+  div[data-block-id] section.story-sec .bs-ch .bs-logo{justify-content:center}
+}
