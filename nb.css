@@ -1764,3 +1764,5 @@ div[data-block-id="6adf1e2dd9946fa1aa1ce7ee"]{order:2}
 @media (min-width:901px){div[data-block-id] section.story-sec .bs-ch .bs-pair{gap:64px}}
 /* 시선·기술 카드 안 글 가운데 */
 @media (min-width:901px){div[data-block-id] section.story-sec .bs-pair .bs-card{text-align:center}div[data-block-id] section.story-sec .bs-pair .bs-card *{text-align:center}}
+/* 03 심볼 카드: 01·02처럼 위아래로 쌓고 전부 가운데 */
+@media (min-width:901px){div[data-block-id] section.story-sec .bs-ch .bs-logo{flex-direction:column;align-items:center;gap:18px}div[data-block-id] section.story-sec .bs-ch .bs-logo img{width:76px}div[data-block-id] section.story-sec .bs-ch .bs-logo-text,div[data-block-id] section.story-sec .bs-ch .bs-logo-text *{text-align:center}}
