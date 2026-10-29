@@ -1757,6 +1757,6 @@ div[data-block-id="6adf1e2dd9946fa1aa1ce7ee"]{order:2}
   div[data-block-id] section.story-sec .bs-head + .bs-ch .lead:first-child{grid-row:4;margin-top:0;padding-top:0;border-top:0;border-radius:0}
   div[data-block-id] section.story-sec .bs-head + .bs-ch .lead + .lead{grid-row:5}
   div[data-block-id] section.story-sec .bs-head + .bs-ch .lead:has(+ .bs-pair){padding-bottom:40px;border-radius:0 0 24px 24px}
-  div[data-block-id] section.story-sec .bs-ch + .bs-ch{display:flex;flex-direction:column;align-items:center;padding:40px}
-  div[data-block-id] section.story-sec .bs-ch + .bs-ch .bs-ch-label{justify-content:center;margin:0 0 16px}
+  div[data-block-id] section.story-sec .bs-ch + .bs-ch{display:flex;flex-direction:column;align-items:center;gap:0;padding:40px}
+  div[data-block-id] section.story-sec .bs-ch + .bs-ch .bs-ch-label{justify-content:center;align-self:center;margin:0 0 16px}
 }
