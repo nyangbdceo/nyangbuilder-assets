@@ -284,13 +284,13 @@
         setTimeout(() => { if (g.scrollLeft === from) g.scrollLeft = next; }, 700);
       }, 3500);
     });
-    // 남은 작업 일정 점 (data-left / data-total 은 블록 설정값)
+    // 제작 가능 일정 점 (data-left / data-total 은 블록 설정값, 달은 오늘 날짜로 자동)
     document.querySelectorAll('[data-slots]').forEach(el => {
       if (!once(el, 'sl')) return;
-      const left = +el.dataset.left, total = +el.dataset.total, month = el.dataset.month;
+      const left = +el.dataset.left, total = +el.dataset.total, month = `${new Date().getMonth() + 1}월`;
       const dots = Array.from({ length: total }, (_, i) => `<i class="${i >= left ? 'used' : ''}"></i>`).join('');
       el.innerHTML = left > 0
-        ? `<span class="dots">${dots}</span><span>${month} 남은 작업 일정 <b>${left}건</b> / ${total}건</span>`
+        ? `<span class="dots">${dots}</span><span>${month} 제작 가능 <b>${left}건</b> / 총 ${total}건</span>`
         : `<span class="dots">${dots}</span><span>${month} 작업 일정이 모두 찼어요. 다음 달로 안내드려요</span>`;
     });
     const tabs = [...document.querySelectorAll('[role="tab"][data-tab]')];
