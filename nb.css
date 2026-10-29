@@ -1773,3 +1773,7 @@ div[data-block-id] section.founder .fd-body ul li{font-size:17.5px;line-height:1
 div[data-block-id] section.founder .fd-body ul li::before{top:.55em}
 div[data-block-id] section.founder .fd-key{font-size:19px!important;line-height:1.7}
 @media (max-width:900px){div[data-block-id] section.founder .fd-body p{font-size:16px}div[data-block-id] section.founder .fd-body ul li{font-size:16px}div[data-block-id] section.founder .fd-key{font-size:17px!important}}
+/* AGENCY STORY 번호·소제목(01 —— 문제를 발견하다) 키움 */
+div[data-block-id] section.founder .fd-no{font-size:16.5px;letter-spacing:.02em;gap:16px}
+div[data-block-id] section.founder .fd-no i{width:52px;height:2px}
+@media (max-width:900px){div[data-block-id] section.founder .fd-no{font-size:15px}}
