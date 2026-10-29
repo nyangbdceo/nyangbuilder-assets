@@ -1717,30 +1717,29 @@ div[data-block-id="6adf1e2dd9946fa1aa1ce7ee"]{order:2}
 .founder > .wrap{position:relative;z-index:1}
 .founder{padding-top:150px}
 @media (max-width:900px){.founder{padding-top:100px}}
-/* 소개 냥빌더 PC: 제목(가운데) → 시선·기술 큰 카드 2장 → 01·02·03 작은 카드 3장 */
+/* 소개 냥빌더 PC: 제목(가운데) → 시선·기술 큰 카드 2장 → 01·02·03 넓은 카드 (번호·영문은 카드 왼쪽 칸) */
 @media (min-width:901px){
-  div[data-block-id] section.story-sec .wrap{display:grid;grid-template-columns:1fr 1fr;column-gap:24px;row-gap:0}
+  div[data-block-id] section.story-sec .wrap{display:grid;grid-template-columns:220px 1fr;column-gap:0;row-gap:0}
   div[data-block-id] section.story-sec .bs-head{grid-column:1/-1;grid-row:1;display:flex;flex-direction:column;align-items:center;text-align:center;max-width:none;width:100%}
   div[data-block-id] section.story-sec .bs-head *{text-align:center}
   div[data-block-id] section.story-sec .bs-ch{border-top:0;padding:0;margin:0}
   div[data-block-id] section.story-sec .bs-head + .bs-ch,div[data-block-id] section.story-sec .bs-head + .bs-ch > div:last-child{display:contents}
   div[data-block-id] section.story-sec .bs-ch .bs-pair{grid-column:1/-1;grid-row:2;grid-template-columns:1fr 1fr;gap:24px;position:relative;margin-top:56px}
   div[data-block-id] section.story-sec .bs-ch .bs-plus{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1}
-  div[data-block-id] section.story-sec .bs-ch .bs-ch-label{flex-direction:row;align-items:baseline;gap:10px;margin:0 0 18px}
+  div[data-block-id] section.story-sec .bs-ch .bs-ch-label{display:flex;flex-direction:row;align-items:baseline;justify-content:flex-start;align-self:stretch;gap:10px;margin:0}
   div[data-block-id] section.story-sec .bs-ch .bs-ch-label i{font-size:34px}
-  div[data-block-id] section.story-sec .bs-head + .bs-ch > .bs-ch-label{display:flex;justify-content:center;align-self:stretch;grid-column:1/-1;grid-row:3;margin:24px 0 0;padding:40px 40px 18px;background:#fff;border:1px solid var(--line);border-bottom:0;border-radius:24px 24px 0 0}
-  div[data-block-id] section.story-sec .bs-head + .bs-ch .lead{align-self:stretch;grid-column:1/-1;grid-row:4;margin:0;max-width:none;text-align:center;padding:0 40px 10px;background:#fff;border:1px solid var(--line);border-top:0;border-bottom:0}
+  div[data-block-id] section.story-sec .bs-head + .bs-ch > .bs-ch-label{grid-column:1;grid-row:3/6;margin-top:24px;padding:40px 0 40px 40px;background:#fff;border:1px solid var(--line);border-right:0;border-radius:24px 0 0 24px}
+  div[data-block-id] section.story-sec .bs-head + .bs-ch .lead{grid-column:2;grid-row:4;align-self:stretch;margin:0;max-width:none;text-align:left;padding:0 40px 10px 0;background:#fff;border:1px solid var(--line);border-left:0;border-top:0;border-bottom:0}
+  div[data-block-id] section.story-sec .bs-head + .bs-ch .lead:first-child{grid-row:3;margin-top:24px;padding-top:40px;border-top:1px solid var(--line);border-top-right-radius:24px}
   div[data-block-id] section.story-sec .bs-head + .bs-ch .lead + .lead{grid-row:5}
-  div[data-block-id] section.story-sec .bs-head + .bs-ch .lead:has(+ .bs-pair){padding-bottom:40px;border-bottom:1px solid var(--line);border-radius:0 0 24px 24px}
-  div[data-block-id] section.story-sec .bs-ch + .bs-ch{grid-row:6;margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:36px 32px;display:flex;flex-direction:column;justify-content:flex-start;gap:0}
-  div[data-block-id] section.story-sec .bs-ch + .bs-ch:nth-of-type(3){grid-column:1}
-  div[data-block-id] section.story-sec .bs-ch + .bs-ch + .bs-ch{grid-column:2}
-  div[data-block-id] section.story-sec .bs-ch + .bs-ch > div{margin:0}
-  div[data-block-id] section.story-sec .bs-ch .bs-slogan{font-size:44px;line-height:1.05;text-align:left;margin:0}
+  div[data-block-id] section.story-sec .bs-head + .bs-ch .lead:has(+ .bs-pair){padding-bottom:40px;border-bottom:1px solid var(--line);border-bottom-right-radius:24px}
+  div[data-block-id] section.story-sec .bs-ch + .bs-ch{grid-column:1/-1;grid-row:6;margin-top:24px;display:grid;grid-template-columns:180px 1fr;column-gap:0;align-items:center;background:#fff;border:1px solid var(--line);border-radius:24px;padding:40px}
+  div[data-block-id] section.story-sec .bs-ch + .bs-ch + .bs-ch{grid-row:7}
+  div[data-block-id] section.story-sec .bs-ch + .bs-ch > div:last-child{margin:0}
+  div[data-block-id] section.story-sec .bs-ch + .bs-ch .bs-ch-label{align-self:start}
+  div[data-block-id] section.story-sec .bs-ch .bs-slogan{font-size:48px;line-height:1.05;text-align:left;margin:0}
   div[data-block-id] section.story-sec .bs-ch .bs-slogan-kr{text-align:left;margin-top:12px;font-size:15px}
-  div[data-block-id] section.story-sec .bs-ch .bs-logo{flex-direction:row;align-items:center;gap:22px;margin:0;padding:0;border:0;background:none}
-  div[data-block-id] section.story-sec .bs-ch .bs-logo img{width:72px}
+  div[data-block-id] section.story-sec .bs-ch .bs-logo{flex-direction:row;align-items:center;gap:28px;margin:0;padding:0;border:0;background:none}
+  div[data-block-id] section.story-sec .bs-ch .bs-logo img{width:80px}
   div[data-block-id] section.story-sec .bs-ch .bs-logo-text{text-align:left}
-  div[data-block-id] section.story-sec .bs-ch .bs-logo-text b{font-size:16px}
-  div[data-block-id] section.story-sec .bs-ch .bs-logo-text p{font-size:14px}
 }
