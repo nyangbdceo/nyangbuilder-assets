@@ -1780,3 +1780,5 @@ div[data-block-id] section.founder .fd-no i{width:52px;height:2px}
 /* 냥빌더 01 설명·02 한글 슬로건·03 심볼 설명 글자 크기 통일 */
 div[data-block-id] section.story-sec .bs-head + .bs-ch .lead,div[data-block-id] section.story-sec .bs-ch .bs-slogan-kr,div[data-block-id] section.story-sec .bs-ch .bs-logo-text p{font-size:16px;line-height:1.8;color:var(--sub)}
 @media (max-width:900px){div[data-block-id] section.story-sec .bs-head + .bs-ch .lead,div[data-block-id] section.story-sec .bs-ch .bs-slogan-kr,div[data-block-id] section.story-sec .bs-ch .bs-logo-text p{font-size:15px}}
+/* 파란 마무리 섹션 영문 라벨(GET STARTED) 숨김, 모든 페이지 */
+.start .label{display:none}
