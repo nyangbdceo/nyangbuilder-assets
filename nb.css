@@ -1777,3 +1777,6 @@ div[data-block-id] section.founder .fd-key{font-size:19px!important;line-height:
 div[data-block-id] section.founder .fd-no{font-size:16.5px;letter-spacing:.02em;gap:16px}
 div[data-block-id] section.founder .fd-no i{width:52px;height:2px}
 @media (max-width:900px){div[data-block-id] section.founder .fd-no{font-size:15px}}
+/* 냥빌더 01 설명·02 한글 슬로건·03 심볼 설명 글자 크기 통일 */
+div[data-block-id] section.story-sec .bs-head + .bs-ch .lead,div[data-block-id] section.story-sec .bs-ch .bs-slogan-kr,div[data-block-id] section.story-sec .bs-ch .bs-logo-text p{font-size:16px;line-height:1.8;color:var(--sub)}
+@media (max-width:900px){div[data-block-id] section.story-sec .bs-head + .bs-ch .lead,div[data-block-id] section.story-sec .bs-ch .bs-slogan-kr,div[data-block-id] section.story-sec .bs-ch .bs-logo-text p{font-size:15px}}
