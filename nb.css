@@ -1809,3 +1809,5 @@ div[data-block-id="6adf1e030902346eb30f34e1"] section.flow{background:#fff}
 .faq-board .faq-note{font-size:14px!important;color:var(--sub);padding-top:12px;border-top:1px dashed var(--line);margin-top:14px!important}
 /* FAQ 답: 문장 단위 줄바꿈(<br>)이 그대로 보이게 폭 제한 해제 */
 .faq-board .ans-body p{max-width:none}
+/* FAQ 답: 맨 위 경위 단락을 본문과 구분 */
+.faq-board .ans-body p.faq-story{padding-bottom:20px;margin-bottom:22px;border-bottom:1px dashed #C9D6EA}
