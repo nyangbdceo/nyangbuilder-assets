@@ -1784,3 +1784,21 @@ div[data-block-id] section.story-sec .bs-head + .bs-ch .lead,div[data-block-id] 
 section.start .label{display:none!important}
 /* 서비스 페이지 PROCESS 배경 흰색 (아래 COMPARISON 연파랑과 구획) */
 div[data-block-id="6adf1e030902346eb30f34e1"] section.flow{background:#fff}
+/* FAQ 게시판 답: 단어 중간에서 줄이 끊기지 않게 */
+.faq-board .ans-body{word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty}
+/* FAQ 답 안의 표(요금·기간, 추가 비용) */
+.faq-board .faq-rows{list-style:none;padding:0;margin:14px 0;max-width:560px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.faq-board .faq-rows li{display:grid;grid-template-columns:110px 1fr auto;gap:12px;align-items:center;padding:13px 18px;font-size:15.5px;color:var(--sub);margin:0}
+.faq-board .faq-rows li + li{border-top:1px solid var(--line)}
+.faq-board .faq-rows li::before{display:none}
+.faq-board .faq-rows b{color:var(--ink);font-weight:800;font-size:14px;letter-spacing:.02em}
+.faq-board .faq-rows em{font-style:normal;color:var(--ink);font-weight:700;text-align:right;white-space:nowrap}
+.faq-board .faq-rows.two li{grid-template-columns:1fr auto}
+.faq-board .faq-rows.two b{font-size:15.5px;letter-spacing:0;font-weight:600;color:var(--sub)}
+@media (max-width:700px){.faq-board .faq-rows li{grid-template-columns:84px 1fr auto;padding:12px 14px;font-size:14.5px}}
+/* FAQ 답 안의 문의 버튼 */
+.faq-board .faq-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.faq-board .faq-cta a{display:inline-flex;align-items:center;gap:6px;padding:13px 22px;border-radius:12px;font-weight:800;font-size:15px;color:#0A0C14;text-decoration:none;transition:transform .25s var(--ease)}
+.faq-board .faq-cta a:hover{transform:translateY(-2px)}
+.faq-board .faq-cta .cta-w{background:#fff;box-shadow:0 0 0 1px var(--line),0 4px 14px rgba(10,12,20,.06)}
+.faq-board .faq-cta .cta-k{background:#FEE500;color:#191600}
