@@ -1815,5 +1815,6 @@ div[data-block-id="6adf1e030902346eb30f34e1"] section.flow{background:#fff}
 .detail .d-block > .label,.detail .d-title{display:block;text-align:center}
 /* 탭 줄을 숨긴 페이지(홈페이지 클래스)는 탭 아래 여백을 없애 첫 안내가 바로 붙게 */
 [role="tablist"][hidden] ~ [role="tabpanel"]{padding-top:0}
-/* SOLD OUT 안내: 글 길이만큼만, 가운데 */
-.closed{width:fit-content;max-width:100%;margin-left:auto;margin-right:auto}
+/* SOLD OUT 안내: 아래 전자책 카드의 오른쪽 글 칸(.shop-card 1.1fr, 간격 56px)과 같은 폭으로 그 위에 */
+.closed{width:calc((100% - 56px) * .55);margin-left:auto;margin-right:0}
+@media (max-width:900px){.closed{width:auto;margin-left:0}}
