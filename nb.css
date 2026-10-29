@@ -1811,3 +1811,7 @@ div[data-block-id="6adf1e030902346eb30f34e1"] section.flow{background:#fff}
 .faq-board .ans-body p{max-width:none}
 /* FAQ 답: 맨 위 경위 단락을 본문과 구분 */
 .faq-board .ans-body p.faq-story{padding-bottom:20px;margin-bottom:22px;border-bottom:1px dashed #C9D6EA}
+/* 전자책 페이지: 섹션 제목(라벨 + 제목)은 PC에서도 가운데 */
+.detail .d-block > .label,.detail .d-title{display:block;text-align:center}
+/* 탭 줄을 숨긴 페이지(홈페이지 클래스)는 탭 아래 여백을 없애 첫 안내가 바로 붙게 */
+[role="tablist"][hidden] ~ [role="tabpanel"]{padding-top:0}
