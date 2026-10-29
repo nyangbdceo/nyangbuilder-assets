@@ -1782,3 +1782,5 @@ div[data-block-id] section.story-sec .bs-head + .bs-ch .lead,div[data-block-id] 
 @media (max-width:900px){div[data-block-id] section.story-sec .bs-head + .bs-ch .lead,div[data-block-id] section.story-sec .bs-ch .bs-slogan-kr,div[data-block-id] section.story-sec .bs-ch .bs-logo-text p{font-size:15px}}
 /* 파란 마무리 섹션 영문 라벨(GET STARTED) 숨김, 모든 페이지 */
 section.start .label{display:none!important}
+/* 서비스 페이지 PROCESS 배경 흰색 (아래 COMPARISON 연파랑과 구획) */
+div[data-block-id="6adf1e030902346eb30f34e1"] section.flow{background:#fff}
