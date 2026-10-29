@@ -1762,3 +1762,5 @@ div[data-block-id="6adf1e2dd9946fa1aa1ce7ee"]{order:2}
 }
 /* 시선·기술 카드 사이 + 양옆 여백 */
 @media (min-width:901px){div[data-block-id] section.story-sec .bs-ch .bs-pair{gap:64px}}
+/* 시선·기술 카드 안 글 가운데 */
+@media (min-width:901px){div[data-block-id] section.story-sec .bs-pair .bs-card{text-align:center}div[data-block-id] section.story-sec .bs-pair .bs-card *{text-align:center}}
