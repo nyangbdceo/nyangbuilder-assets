@@ -1766,3 +1766,10 @@ div[data-block-id="6adf1e2dd9946fa1aa1ce7ee"]{order:2}
 @media (min-width:901px){div[data-block-id] section.story-sec .bs-pair .bs-card{text-align:center}div[data-block-id] section.story-sec .bs-pair .bs-card *{text-align:center}}
 /* 03 심볼 카드: 01·02처럼 위아래로 쌓고 전부 가운데 */
 @media (min-width:901px){div[data-block-id] section.story-sec .bs-ch .bs-logo{flex-direction:column;align-items:center;gap:18px}div[data-block-id] section.story-sec .bs-ch .bs-logo img{width:76px}div[data-block-id] section.story-sec .bs-ch .bs-logo-text,div[data-block-id] section.story-sec .bs-ch .bs-logo-text *{text-align:center}}
+/* AGENCY STORY 본문: 글자 키우고 체크 목록 촘촘하게 */
+div[data-block-id] section.founder .fd-body p{font-size:18px;line-height:1.75;margin:0 0 12px}
+div[data-block-id] section.founder .fd-body ul{gap:2px;margin:6px 0 16px}
+div[data-block-id] section.founder .fd-body ul li{font-size:17.5px;line-height:1.7;padding-left:26px}
+div[data-block-id] section.founder .fd-body ul li::before{top:.55em}
+div[data-block-id] section.founder .fd-key{font-size:19px!important;line-height:1.7}
+@media (max-width:900px){div[data-block-id] section.founder .fd-body p{font-size:16px}div[data-block-id] section.founder .fd-body ul li{font-size:16px}div[data-block-id] section.founder .fd-key{font-size:17px!important}}
