@@ -1892,7 +1892,10 @@ div[data-block-id="6adf1e030902346eb30f34e1"] section.flow{background:#fff}
   [data-section-id="6adb3e5417fb0eda57c16f51"] .block-type-group > *{padding-top:0!important;padding-bottom:0!important;margin:0!important}
   [data-section-id="6adb3e5417fb0eda57c16f51"] .pi-product-name{margin:0 0 12px!important}
   [data-section-id="6adb3e5417fb0eda57c16f51"] [class*="PurchaseControl_wrapper"]{margin:16px 0 18px!important;padding:0!important}
-  [data-section-id="6adb3e5417fb0eda57c16f51"] .pig-wrapper{max-width:560px;margin:0 auto 40px;border-radius:20px;overflow:hidden}
+  [data-section-id="6adb3e5417fb0eda57c16f51"] .block-type-group,[data-section-id="6adb3e5417fb0eda57c16f51"] .block-type-group > *{min-height:0!important;height:auto!important}
+  [data-section-id="6adb3e5417fb0eda57c16f51"] [class*="PurchaseButton_wrapper"],[data-section-id="6adb3e5417fb0eda57c16f51"] [class*="PurchaseButton_button-wrapper"]{margin:0!important;padding:0!important}
+  [data-section-id="6adb3e5417fb0eda57c16f51"] [class*="PurchaseButton_fixed-bottom-sheet-container"]{height:0;margin:0!important}
+  [data-section-id="6adb3e5417fb0eda57c16f51"] .pig-wrapper{max-width:none;margin:0 0 32px;border-radius:20px;overflow:hidden}
   [data-section-id="6adb3e5417fb0eda57c16f51"] .eb{max-width:none;border:1px solid #E3E8F1;border-radius:20px;overflow:clip!important}
   [data-section-id="6adb3e5417fb0eda57c16f51"] .eb .eb-who li{padding:0 20px;gap:16px;min-height:170px}
   [data-section-id="6adb3e5417fb0eda57c16f51"] .eb .eb-who img{width:170px;height:170px;margin-bottom:-38px}
@@ -1901,3 +1904,6 @@ div[data-block-id="6adf1e030902346eb30f34e1"] section.flow{background:#fff}
 @media (max-width:900px){
   [data-section-id="6adb3e5417fb0eda57c16f58"]{padding-bottom:64px}
 }
+/* 상품 요약 줄은 숨기고, 가격 아래 월 할부 금액을 표시 */
+[data-section-id="6adb3e5417fb0eda57c16f51"] .pi-wrapper > p{display:none}
+[data-section-id="6adb3e5417fb0eda57c16f51"] .pi-wrapper::after{content:"12개월 할부 시 월 8,250원";display:block;margin-top:8px;font-size:14px;font-weight:600;color:#4E5566}
