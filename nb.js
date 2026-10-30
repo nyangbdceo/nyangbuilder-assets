@@ -355,6 +355,14 @@
       const m = marks.find(t => h.textContent.includes(t));
       if (m) h.innerHTML = h.innerHTML.replace(m, `<mark>${m}</mark>`);
     });
+    // 섹션마다 큰 3D 이미지 (ComfyUI로 만든 파일), 특전 앞 네 장에는 구매자가 할 법한 질문을 붙임
+    const art = name => Object.assign(new Image(), { className: 'pd-art', alt: '', loading: 'lazy', src: `https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@71f40f9/ebook/3d/${name}.webp` });
+    ['steps', 'build', 'toc', 'cost', 'bonus', 'faq', 'price'].forEach(n => eb.querySelector('.pd-' + n + ' .eb-head')?.prepend(art(n)));
+    eb.querySelector('.pd-pain .eb-answer')?.prepend(art('pain'));
+    ['코드는 어떻게 넣을까요?', '디자인은 뭐라고 요청할까요?', 'AI에게 어떻게 시킬까요?', '내 업종은 어떻게 구성할까요?'].forEach((q, i) => {
+      const cap = eb.querySelectorAll('.pd-bonus .eb-cards figcaption')[i];
+      if (cap) cap.insertAdjacentHTML('afterbegin', `<small class="pd-q">${q}</small>`);
+    });
     eb.querySelectorAll('.eb-faq details').forEach(d => { d.open = true; });
     const items = [['상세정보', secs[0]], ['미리보기', eb.querySelector('#eb-preview')], ['목차', secs[4]], ['자주 묻는 질문', secs[8]], ['가격', eb.querySelector('#eb-price')]].filter(i => i[1]);
     const tabs = document.createElement('nav');
