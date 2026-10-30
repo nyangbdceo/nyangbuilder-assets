@@ -319,7 +319,43 @@
         return c.innerText.trim();
       });
     });
+    productDetail();
     onScroll();
+  };
+
+  // 상품 상세 안의 전자책 상세: 구매 버튼은 식스샵 바로구매를 그대로 누르고, 위에 상세 메뉴를 붙임
+  const productDetail = () => {
+    const eb = document.querySelector('[data-section-id="6adb3e5417fb0eda57c16f58"] .eb');
+    if (!eb || !once(eb, 'pd')) return;
+    const native = () => [...document.querySelectorAll('button')].find(b => b.offsetParent && b.textContent.trim() === '바로구매');
+    eb.addEventListener('click', e => {
+      const btn = e.target.closest('a.btn-blue');
+      if (!btn || !native()) return;
+      e.preventDefault();
+      e.stopPropagation();
+      // 아래로 내려온 상태에서는 식스샵 바로구매가 눌려도 넘어가지 않아, 맨 위로 올린 뒤 누름
+      scrollTo({ top: 0, behavior: 'instant' });
+      setTimeout(() => native().click(), 300);
+    }, true);
+    const secs = [...eb.querySelectorAll('.eb-sec')];
+    const find = text => secs.find(s => s.textContent.includes(text));
+    const items = [['상세정보', secs[0]], ['미리보기', eb.querySelector('#eb-preview')], ['목차', find('약 234쪽')], ['자주 묻는 질문', find('자주 묻는 질문')], ['가격', eb.querySelector('#eb-price')]].filter(i => i[1]);
+    const tabs = document.createElement('nav');
+    tabs.className = 'pd-tabs';
+    items.forEach(([label, sec], i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = label;
+      if (!i) b.className = 'on';
+      b.addEventListener('click', () => scrollTo({ top: sec.getBoundingClientRect().top + scrollY - parseInt(getComputedStyle(tabs).top) - tabs.offsetHeight + 1, behavior: 'instant' }));
+      tabs.append(b);
+    });
+    eb.prepend(tabs);
+    addEventListener('scroll', () => {
+      const line = tabs.getBoundingClientRect().bottom + 2;
+      const at = items.reduce((n, [, s], i) => (s.getBoundingClientRect().top <= line ? i : n), 0);
+      [...tabs.children].forEach((b, i) => b.classList.toggle('on', i === at));
+    }, { passive: true });
   };
 
   // 블록은 페이지가 뜬 뒤에 그려지므로, 새 요소가 붙을 때마다 한 프레임 모아서 처리

@@ -1844,6 +1844,30 @@ div[data-block-id="6adf1e030902346eb30f34e1"] section.flow{background:#fff}
   [data-block-id] .eb .eb-who small{font-size:12.5px}
 }
 
-/* 상품 상세 안의 전자책 상세: 구매칸은 상품 페이지 것을 쓰므로 첫 화면을 감춘다. 구매 띠 타이밍을 위해 자리는 남긴다 */
-[data-section-id="6adb3e5417fb0eda57c16f58"] .eb-hero{height:1px;margin:0;padding:0;overflow:visible;visibility:hidden}
+/* 상품 상세 안의 전자책 상세: 구매칸은 상품 페이지 것을 쓰므로 첫 화면을 감춘다. 구매 띠도 식스샵 기본 구매 띠가 있어 숨긴다 */
+[data-section-id="6adb3e5417fb0eda57c16f58"] .eb-hero{display:none!important}
 [data-section-id="6adb3e5417fb0eda57c16f58"]{overflow-x:clip}
+
+/* 상품 상세 안에서는 쇼핑몰 상세페이지처럼: 가운데 한 줄 폭, 작은 제목, 위에 상세 메뉴 */
+[data-section-id="6adb3e5417fb0eda57c16f58"] .eb{width:100%;max-width:860px;padding-top:0!important;margin:0 auto!important;box-shadow:0 0 0 1px #E8ECF3;overflow:visible!important}
+[data-section-id="6adb3e5417fb0eda57c16f58"] .eb-bar{display:none!important}
+[data-section-id="6adb3e5417fb0eda57c16f58"] .eb-sec{padding:64px 0}
+[data-section-id="6adb3e5417fb0eda57c16f58"] .eb .wrap{max-width:none;padding-left:32px;padding-right:32px}
+[data-section-id="6adb3e5417fb0eda57c16f58"] .eb h2{font-size:30px;line-height:1.3}
+.pd-tabs{position:sticky;top:128px;z-index:5;display:flex;background:#fff;border-bottom:1px solid #E3E8F1}
+.pd-tabs button{flex:1;padding:18px 6px;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;background:none;font:600 15px/1.2 inherit;font-family:inherit;color:#6B7387;cursor:pointer;white-space:nowrap}
+.pd-tabs button.on{color:#0B1220;border-bottom-color:#0B1220}
+[data-section-id="6adb3e5417fb0eda57c16f58"] .eb .eb-who li{padding:0 28px;gap:24px;min-height:200px}
+[data-section-id="6adb3e5417fb0eda57c16f58"] .eb .eb-who img{width:220px;height:220px;margin-bottom:-48px}
+[data-section-id="6adb3e5417fb0eda57c16f58"] .eb .eb-who .bub{font-size:17px}
+@media (max-width:900px){
+  .pd-tabs{top:112px}
+  .pd-tabs button{padding:14px 2px;font-size:13px}
+  [data-section-id="6adb3e5417fb0eda57c16f58"] .eb{box-shadow:none}
+  [data-section-id="6adb3e5417fb0eda57c16f58"] .eb-sec{padding:48px 0}
+  [data-section-id="6adb3e5417fb0eda57c16f58"] .eb .wrap{padding-left:20px;padding-right:20px}
+  [data-section-id="6adb3e5417fb0eda57c16f58"] .eb h2{font-size:24px}
+  [data-section-id="6adb3e5417fb0eda57c16f58"] .eb .eb-who li{padding:0 14px;gap:12px;min-height:0}
+  [data-section-id="6adb3e5417fb0eda57c16f58"] .eb .eb-who img{width:150px;height:150px;margin-bottom:-32px}
+  [data-section-id="6adb3e5417fb0eda57c16f58"] .eb .eb-who .bub{font-size:15px}
+}
