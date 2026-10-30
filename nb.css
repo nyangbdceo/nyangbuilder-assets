@@ -1823,3 +1823,24 @@ div[data-block-id="6adf1e030902346eb30f34e1"] section.flow{background:#fff}
 [style*="--to:#EEF5FF" i]{--to:var(--pale)!important}
 [style*="--from:#E3EEFF" i]{--from:#ECF3FF!important}
 [style*="--to:#E3EEFF" i]{--to:#ECF3FF!important}
+
+/* 전자책 추천 대상: 큰 사람 사진과 말풍선을 한 줄씩 지그재그로 */
+.eb .eb-who{display:block;max-width:820px}
+.eb .eb-who li{grid-template-columns:168px 1fr;gap:32px;padding:0;background:none;border:0;border-radius:0}
+.eb .eb-who li+li{margin-top:36px}
+.eb .eb-who img{width:168px;height:168px}
+.eb .eb-who .bub{display:inline-block;padding:18px 24px;border-radius:20px;background:#fff;font-size:19px;box-shadow:0 10px 28px rgba(20,40,90,.08)}
+.eb .eb-who .bub::before{left:-10px;margin-top:-9px;border-width:9px 10px 9px 0;border-color:transparent #fff transparent transparent}
+.eb .eb-who small{margin-top:12px;padding:0 4px;font-size:15px}
+.eb .eb-who li:nth-child(even){grid-template-columns:1fr 168px}
+.eb .eb-who li:nth-child(even) img{order:2}
+.eb .eb-who li:nth-child(even) > div{text-align:right}
+.eb .eb-who li:nth-child(even) .bub::before{left:auto;right:-10px;border-width:9px 0 9px 10px;border-color:transparent transparent transparent #fff}
+@media (max-width:900px){
+  .eb .eb-who li{grid-template-columns:96px 1fr;gap:16px;padding:0}
+  .eb .eb-who li+li{margin-top:28px}
+  .eb .eb-who li:nth-child(even){grid-template-columns:1fr 96px}
+  .eb .eb-who img{width:96px;height:96px}
+  .eb .eb-who .bub{padding:13px 15px;font-size:15px;text-align:left}
+  .eb .eb-who small{font-size:13px}
+}
