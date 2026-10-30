@@ -347,9 +347,16 @@
       scrollTo({ top: 0, behavior: 'instant' });
       setTimeout(() => native().click(), 300);
     }, true);
+    // 판매 상세 구성: 섹션 이름표(순서·배경은 CSS), 제목 강조, 질문 펼침
     const secs = [...eb.querySelectorAll('.eb-sec')];
-    const find = text => secs.find(s => s.textContent.includes(text));
-    const items = [['상세정보', secs[0]], ['미리보기', eb.querySelector('#eb-preview')], ['목차', find('약 234쪽')], ['자주 묻는 질문', find('자주 묻는 질문')], ['가격', eb.querySelector('#eb-price')]].filter(i => i[1]);
+    ['pain', 'build', 'steps', 'preview', 'toc', 'bonus', 'cost', 'who', 'faq', 'price'].forEach((n, i) => secs[i]?.classList.add('pd-' + n));
+    const marks = ['안 올까요', '이렇게 바뀝니다', '먼저 펼쳐', '직접 만든', '처음부터 오픈까지', '꼭 읽어 보세요', '책 한 권', '이만큼 준비', '질문', '지금 시작'];
+    eb.querySelectorAll('h2').forEach(h => {
+      const m = marks.find(t => h.textContent.includes(t));
+      if (m) h.innerHTML = h.innerHTML.replace(m, `<mark>${m}</mark>`);
+    });
+    eb.querySelectorAll('.eb-faq details').forEach(d => { d.open = true; });
+    const items = [['상세정보', secs[0]], ['미리보기', eb.querySelector('#eb-preview')], ['목차', secs[4]], ['자주 묻는 질문', secs[8]], ['가격', eb.querySelector('#eb-price')]].filter(i => i[1]);
     const tabs = document.createElement('nav');
     tabs.className = 'pd-tabs';
     items.forEach(([label, sec], i) => {
