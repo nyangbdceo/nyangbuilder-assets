@@ -327,6 +327,15 @@
   const productDetail = () => {
     const eb = document.querySelector('[data-section-id="6adb3e5417fb0eda57c16f58"] .eb');
     if (!eb || !once(eb, 'pd')) return;
+    // PC에서는 상세를 이미지 아래로 옮겨 오른쪽 구매칸이 따라오게 함 (블록 범위 CSS가 유지되게 같은 block-id로 감쌈)
+    const wide = matchMedia('(min-width:901px)').matches;
+    const left = document.querySelector('[data-section-id="6adb3e5417fb0eda57c16f51"] [class*="ProductRequiredInfoT01_wrapper"] > .block-type-app');
+    if (wide && left) {
+      const box = document.createElement('div');
+      box.dataset.blockId = eb.closest('[data-block-id]').dataset.blockId;
+      left.append(box);
+      box.append(eb);
+    }
     const native = () => [...document.querySelectorAll('button')].find(b => b.offsetParent && b.textContent.trim() === '바로구매');
     eb.addEventListener('click', e => {
       const btn = e.target.closest('a.btn-blue');
@@ -334,6 +343,7 @@
       e.preventDefault();
       e.stopPropagation();
       // 아래로 내려온 상태에서는 식스샵 바로구매가 눌려도 넘어가지 않아, 맨 위로 올린 뒤 누름
+      if (wide) { native().click(); return; }
       scrollTo({ top: 0, behavior: 'instant' });
       setTimeout(() => native().click(), 300);
     }, true);
