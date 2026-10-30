@@ -1818,3 +1818,6 @@ div[data-block-id="6adf1e030902346eb30f34e1"] section.flow{background:#fff}
 /* SOLD OUT 안내: 아래 전자책 카드의 오른쪽 글 칸(.shop-card 1.1fr, 간격 56px)과 같은 폭으로 그 위에 */
 .closed{width:calc((100% - 56px) * .55);margin-left:auto;margin-right:0}
 @media (max-width:900px){.closed{width:auto;margin-left:0}}
+/* 블록 설정에 옛 연하늘(#EEF5FF)로 적힌 물결도 지금 --pale 색을 따르게 */
+[style*="--from:#EEF5FF" i]{--from:var(--pale)!important}
+[style*="--to:#EEF5FF" i]{--to:var(--pale)!important}
