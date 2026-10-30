@@ -1843,3 +1843,6 @@ div[data-block-id="6adf1e030902346eb30f34e1"] section.flow{background:#fff}
   [data-block-id] .eb .eb-who .bub{padding:12px 14px;font-size:15px;text-align:left}
   [data-block-id] .eb .eb-who small{font-size:12.5px}
 }
+
+/* 상품 상세 안의 전자책 상세: 구매칸은 상품 페이지 것을 쓰므로 첫 화면을 감춘다. 구매 띠 타이밍을 위해 자리는 남긴다 */
+[data-section-id="6adb3e5417fb0eda57c16f58"] .eb-hero{height:1px;margin:0;padding:0;overflow:visible;visibility:hidden}
