@@ -1821,3 +1821,5 @@ div[data-block-id="6adf1e030902346eb30f34e1"] section.flow{background:#fff}
 /* 블록 설정에 옛 연하늘(#EEF5FF)로 적힌 물결도 지금 --pale 색을 따르게 */
 [style*="--from:#EEF5FF" i]{--from:var(--pale)!important}
 [style*="--to:#EEF5FF" i]{--to:var(--pale)!important}
+[style*="--from:#E3EEFF" i]{--from:#ECF3FF!important}
+[style*="--to:#E3EEFF" i]{--to:#ECF3FF!important}
