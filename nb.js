@@ -350,7 +350,7 @@
     // 판매 상세 구성: 섹션 이름표(순서·배경은 CSS), 제목 강조, 질문 펼침
     const secs = [...eb.querySelectorAll('.eb-sec')];
     ['pain', 'build', 'steps', 'preview', 'toc', 'bonus', 'cost', 'who', 'faq', 'price'].forEach((n, i) => secs[i]?.classList.add('pd-' + n));
-    const marks = ['안 올까요', '이렇게 바뀝니다', '먼저 펼쳐', '직접 만든', '처음부터 오픈까지', '꼭 읽어 보세요', '책 한 권', '이만큼 준비', '질문', '지금 시작'];
+    const marks = ['안 올까요', '이렇게 바뀝니다', '먼저 펼쳐', '직접 만든', '처음부터 오픈까지', '꼭 읽어 보세요', '책 한 권', '이만큼 준비', '자주 묻는 질문', '지금 시작해 보세요'];
     eb.querySelectorAll('h2').forEach(h => {
       const m = marks.find(t => h.textContent.includes(t));
       if (m) h.innerHTML = h.innerHTML.replace(m, `<mark>${m}</mark>`);
