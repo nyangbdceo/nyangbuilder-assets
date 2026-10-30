@@ -1826,8 +1826,8 @@ div[data-block-id="6adf1e030902346eb30f34e1"] section.flow{background:#fff}
 
 /* 전자책 추천 대상: 누끼 사람과 말풍선을 한 줄씩 지그재그로. 블록 CSS는 [data-block-id]로 범위가 붙으므로 그보다 구체적으로 쓴다 */
 [data-block-id] .eb .eb-who{display:grid;grid-template-columns:1fr;gap:24px;max-width:900px}
-[data-block-id] .eb .eb-who li{display:flex;align-items:flex-end;gap:32px;min-height:250px;padding:0 44px;background:#fff;border:1px solid #E3E8F1;border-radius:28px;overflow:hidden}
-[data-block-id] .eb .eb-who img{flex:none;width:250px;height:250px;border-radius:0;object-fit:contain;object-position:bottom}
+[data-block-id] .eb .eb-who li{display:flex;align-items:flex-end;gap:32px;min-height:230px;padding:0 44px;background:#fff;border:1px solid #E3E8F1;border-radius:28px;overflow:hidden}
+[data-block-id] .eb .eb-who img{flex:none;width:270px;height:270px;margin-bottom:-58px;border-radius:0;object-fit:contain;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
 [data-block-id] .eb .eb-who li > div{flex:1;align-self:center}
 [data-block-id] .eb .eb-who .bub{display:inline-block;padding:18px 24px;border-radius:20px;background:#EEF4FF;font-size:20px}
 [data-block-id] .eb .eb-who .bub::before{left:-10px;margin-top:-9px;border-width:9px 10px 9px 0;border-color:transparent #EEF4FF transparent transparent}
@@ -1838,7 +1838,7 @@ div[data-block-id="6adf1e030902346eb30f34e1"] section.flow{background:#fff}
 @media (max-width:900px){
   [data-block-id] .eb .eb-who{gap:16px}
   [data-block-id] .eb .eb-who li{gap:12px;min-height:0;padding:0 14px;border-radius:22px}
-  [data-block-id] .eb .eb-who img{width:136px;height:136px}
+  [data-block-id] .eb .eb-who img{width:150px;height:150px;margin-bottom:-32px}
   [data-block-id] .eb .eb-who li > div{padding:14px 0}
   [data-block-id] .eb .eb-who .bub{padding:12px 14px;font-size:15px;text-align:left}
   [data-block-id] .eb .eb-who small{font-size:12.5px}
