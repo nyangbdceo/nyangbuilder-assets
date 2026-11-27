@@ -2074,7 +2074,8 @@ html body div[data-block-id] section.story-sec .bs-ch + .bs-ch{display:none!impo
 .col-tools .search{flex:0 0 calc((100% - 44px) / 3)}
 .col-tools .search input{width:100%}
 @media (max-width:900px){.col-tools .search{flex:1 1 100%}}
-html body div[data-block-id] section.story-sec .bs-pair .bs-card:not(.dark){background:#fff!important;border:1px solid var(--line)}
+html body div[data-block-id] section.story-sec{background:#fff}
+html body div[data-block-id] section.story-sec .bs-pair .bs-card:not(.dark){background:var(--mist)!important;border:0}
 /* 홈 "정중히 거절" 섹션 설명 문구도 19.5px */
 html body div[data-block-id="6adf0fbb21796c93dd8ba8b7"] h2 + p{font-size:19.5px;line-height:1.72}
 @media (max-width:900px){html body div[data-block-id="6adf0fbb21796c93dd8ba8b7"] h2 + p{font-size:16.5px;line-height:1.7}}
