@@ -2096,3 +2096,5 @@ html body div[data-block-id="6adf1e38330f06b06c7ea979"] .reel p{margin-top:2px;f
 /* PROJECT 카드 브랜드명은 작게, 서비스 안내 문구는 줄바꿈 반영 */
 html body div[data-block-id="6adf1e38330f06b06c7ea979"] .reel h3{font-family:var(--en);font-size:14px;font-weight:700;letter-spacing:.02em}
 html body div[data-block-id="6adf1e010902346eb30f34ca"] .svc-note{white-space:pre-line;line-height:1.7}
+/* PROJECT 이미지 캐러셀: 옆 카드에 파란 색 덮개를 씌우지 않음 (제품 색 그대로) */
+html body div[data-block-id="6adf1e38330f06b06c7ea979"] .rail.arc .shot::after{display:none}
