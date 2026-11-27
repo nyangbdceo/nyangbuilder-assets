@@ -133,7 +133,8 @@
       if (!calm && !hold) pos += dt * .07;
       place();
     };
-    rail.addEventListener('mouseenter', () => { hold = true; });
+    // 카드(이미지) 위에 커서가 있을 때만 멈춤. 띠 빈자리에 커서가 있을 땐 계속 돎
+    rail.addEventListener('mouseover', e => { hold = !!e.target.closest('.shot'); });
     rail.addEventListener('mouseleave', () => { hold = false; });
     new IntersectionObserver(es => es.forEach(e => { seen = e.isIntersecting; })).observe(rail);
     fill(); place(); requestAnimationFrame(loop);
