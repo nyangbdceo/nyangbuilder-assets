@@ -2011,14 +2011,17 @@ html body div[data-block-id="6adf0dbfa0fe226093b0e45b"] img.name{height:22px!imp
   html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa,html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a{overflow:visible}
   html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a{position:relative;padding-right:150px}
   html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a::after{content:"";position:absolute;right:-64px;top:50%;width:190px;height:190px;transform:translateY(-50%);background:center/contain no-repeat;filter:drop-shadow(0 18px 22px rgba(11,40,90,.18));pointer-events:none}
-  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(2) .a::after{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@cea367a/icons/why-cost.webp)}
+  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(2) .a::after{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@779612a/icons/why-money.webp)}
   html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(3) .a::after{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@cea367a/icons/why-focus.webp)}
   html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(4) .a::after{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@cea367a/icons/why-sales.webp)}
   html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(3) .a::after,html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(4) .a::after{width:140px;height:140px;right:-40px}
+  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(2) .a::after{width:150px;height:150px;right:-44px}
+  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a{padding-right:110px}
+  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a h3{white-space:pre;font-size:26px}
 }
 @media (max-width:900px){
   html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a{padding-top:112px;background-repeat:no-repeat!important}
-  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(2) .a{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@cea367a/icons/why-cost.webp),radial-gradient(circle closest-side,#fff 97%,rgba(255,255,255,0) 100%)!important;background-size:58px 58px,82px 82px!important;background-position:center 28px,center 16px!important}
+  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(2) .a{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@779612a/icons/why-money.webp),radial-gradient(circle closest-side,#fff 97%,rgba(255,255,255,0) 100%)!important;background-size:52px 52px,82px 82px!important;background-position:center 31px,center 16px!important}
   html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(3) .a{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@cea367a/icons/why-focus.webp),radial-gradient(circle closest-side,#fff 97%,rgba(255,255,255,0) 100%)!important;background-size:48px 48px,82px 82px!important;background-position:center 33px,center 16px!important}
   html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(4) .a{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@cea367a/icons/why-sales.webp),radial-gradient(circle closest-side,#fff 97%,rgba(255,255,255,0) 100%)!important;background-size:48px 48px,82px 82px!important;background-position:center 33px,center 16px!important}
 }
