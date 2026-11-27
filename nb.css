@@ -2006,14 +2006,25 @@ html body div[data-block-id="6adf0dbfa0fe226093b0e45b"] img.name{height:22px!imp
 
 
 
-/* 왜 냥빌더: 답변 카드 3D 아이콘 (PC 오른쪽, 모바일 위 가운데) */
-html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a{padding-right:132px;background-repeat:no-repeat;background-position:right 28px center;background-size:92px}
-html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(2) .a{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@68c874d/icons/why-cost.webp)}
-html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(3) .a{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@68c874d/icons/why-time.webp)}
-html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(4) .a{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@68c874d/icons/why-sales.webp)}
-@media (max-width:900px){
-  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a{padding-right:22px;padding-top:92px;background-repeat:no-repeat!important;background-position:center 22px!important;background-size:60px!important}
-  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(2) .a{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@68c874d/icons/why-cost.webp)!important}
-  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(3) .a{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@68c874d/icons/why-time.webp)!important}
-  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(4) .a{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@68c874d/icons/why-sales.webp)!important}
+/* 왜 냥빌더: 답변 카드 3D 아이콘. PC는 카드 오른쪽 아래로 크게 걸치게, 모바일은 파란 카드 위 가운데 */
+@media (min-width:901px){
+  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa,html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a{overflow:visible}
+  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a{position:relative;padding-right:150px}
+  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a::after{content:"";position:absolute;right:-64px;top:50%;width:190px;height:190px;transform:translateY(-50%);background:center/contain no-repeat;filter:drop-shadow(0 18px 22px rgba(11,40,90,.18));pointer-events:none}
+  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(2) .a::after{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@cea367a/icons/why-cost.webp)}
+  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(3) .a::after{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@cea367a/icons/why-focus.webp)}
+  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(4) .a::after{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@cea367a/icons/why-sales.webp)}
 }
+@media (max-width:900px){
+  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a{padding-top:100px;background-repeat:no-repeat!important;background-position:center 18px!important;background-size:72px!important}
+  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(2) .a{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@cea367a/icons/why-cost.webp)!important}
+  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(3) .a{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@cea367a/icons/why-focus.webp)!important}
+  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(4) .a{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@cea367a/icons/why-sales.webp)!important}
+}
+
+/* 메인 페이지 섹션 설명 문구만 한 단계 키움 (소개 페이지는 글이 길어 그대로) */
+html body div[data-block-id="6adf0fb3a0fe226093b0f21f"] p.lead,html body div[data-block-id="6adf0fb5330f06b06c7e581b"] p.lead,html body div[data-block-id="6adf0fb60902346eb30ee5b8"] p.lead,html body div[data-block-id="6adf0fb821796c93dd8ba888"] p.lead,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] p.lead,html body div[data-block-id="6adf0fc1d9946fa1aa1c9c39"] p.lead,html body div[data-block-id="6adf0fc30902346eb30ee5f9"] p.lead{font-size:19.5px;line-height:1.72}
+@media (max-width:900px){html body div[data-block-id="6adf0fb3a0fe226093b0f21f"] p.lead,html body div[data-block-id="6adf0fb5330f06b06c7e581b"] p.lead,html body div[data-block-id="6adf0fb60902346eb30ee5b8"] p.lead,html body div[data-block-id="6adf0fb821796c93dd8ba888"] p.lead,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] p.lead,html body div[data-block-id="6adf0fc1d9946fa1aa1c9c39"] p.lead,html body div[data-block-id="6adf0fc30902346eb30ee5f9"] p.lead{font-size:16.5px;line-height:1.7}}
+
+/* 마무리 CTA 블록의 캐릭터 아이콘 숨김 */
+html body div[data-block-id="6adf0fc621796c93dd8ba917"] img[src*="symbol-3d"],html body div[data-block-id="6adf1e2dd9946fa1aa1ce7ee"] img[src*="symbol-3d"],html body div[data-block-id="6adf1e090902346eb30f3513"] img[src*="symbol-3d"],html body div[data-block-id="6adf1e3a330f06b06c7ea98e"] img[src*="symbol-3d"],html body div[data-block-id="6adf1e34d9946fa1aa1ce816"] img[src*="symbol-3d"],html body div[data-block-id="6adff612ce9ec26ac549b81e"] img[src*="symbol-3d"],html body div[data-block-id="6adff548a59d7852e4d8046d"] img[src*="symbol-3d"],html body div[data-block-id="6ae314b49746fdd1305c801f"] img[src*="symbol-3d"],html body div[data-block-id="6adf2775330f06b06c7edbaf"] img[src*="symbol-3d"]{display:none!important}
