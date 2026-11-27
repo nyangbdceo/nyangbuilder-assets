@@ -2092,11 +2092,11 @@ html body div[data-block-id="6adff54621796c93dd8f5fc1"] .lec-copy .lec-kakao{mar
 html body div[data-block-id] .svc-tabs ~ .cards.svc{margin-top:72px}
 html body div[data-block-id] .svc-tabs ~ .cards.svc-img{margin-top:36px}
 /* PROJECT 페이지 작업물: CONCEPT PROJECT 표기는 작고 흐리게 */
-html body div[data-block-id="6adf1e38330f06b06c7ea979"] .reel p{margin-top:2px;font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.12em;color:#9AA3B2}
+html body div[data-block-id="6adf1e38330f06b06c7ea979"] .reel p,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .reel p{margin-top:2px;font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.12em;color:#9AA3B2}
 /* PROJECT 카드 브랜드명은 작게, 서비스 안내 문구는 줄바꿈 반영 */
-html body div[data-block-id="6adf1e38330f06b06c7ea979"] .reel h3{font-family:var(--en);font-size:14px;font-weight:700;letter-spacing:.02em}
+html body div[data-block-id="6adf1e38330f06b06c7ea979"] .reel h3,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .reel h3{font-family:var(--en);font-size:14px;font-weight:700;letter-spacing:.02em}
 html body div[data-block-id="6adf1e010902346eb30f34ca"] .svc-note{white-space:pre-line;line-height:1.7}
 /* PROJECT 이미지 캐러셀: 옆 카드에 파란 색 덮개를 씌우지 않음 (제품 색 그대로) */
 html body div[data-block-id="6adf1e38330f06b06c7ea979"] .rail.arc .shot::after{display:none}
 /* PROJECT 카드: CONCEPT PROJECT를 이미지 위 하단에 작게 */
-html body div[data-block-id="6adf1e38330f06b06c7ea979"] .reel p{position:absolute;left:0;right:0;top:0;aspect-ratio:9/16;margin:0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:18px;color:rgba(255,255,255,.92);font-size:10px;text-shadow:0 1px 6px rgba(0,0,0,.35);pointer-events:none}
+html body div[data-block-id="6adf1e38330f06b06c7ea979"] .reel p,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .reel p{position:absolute;left:0;right:0;top:0;aspect-ratio:9/16;margin:0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:18px;color:rgba(255,255,255,.92);font-size:10px;text-shadow:0 1px 6px rgba(0,0,0,.35);pointer-events:none}
