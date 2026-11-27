@@ -2029,3 +2029,7 @@ html body div[data-block-id="6adf0fb3a0fe226093b0f21f"] p.lead,html body div[dat
 
 /* 마무리 CTA 블록의 캐릭터 아이콘 숨김 */
 html body div[data-block-id="6adf0fc621796c93dd8ba917"] img[src*="symbol-3d"],html body div[data-block-id="6adf1e2dd9946fa1aa1ce7ee"] img[src*="symbol-3d"],html body div[data-block-id="6adf1e090902346eb30f3513"] img[src*="symbol-3d"],html body div[data-block-id="6adf1e3a330f06b06c7ea98e"] img[src*="symbol-3d"],html body div[data-block-id="6adf1e34d9946fa1aa1ce816"] img[src*="symbol-3d"],html body div[data-block-id="6adff612ce9ec26ac549b81e"] img[src*="symbol-3d"],html body div[data-block-id="6adff548a59d7852e4d8046d"] img[src*="symbol-3d"],html body div[data-block-id="6ae314b49746fdd1305c801f"] img[src*="symbol-3d"],html body div[data-block-id="6adf2775330f06b06c7edbaf"] img[src*="symbol-3d"]{display:none!important}
+
+/* 물결 블록에 예전 파랑(#0F6EF0)이 직접 박혀 있어 메인 파랑으로 맞춤 */
+.wave[style*="--to:#0F6EF0" i]{--to:#0B5FD9!important}
+.wave[style*="--from:#0F6EF0" i]{--from:#0B5FD9!important}
