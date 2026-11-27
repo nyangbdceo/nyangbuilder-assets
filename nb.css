@@ -1986,3 +1986,21 @@ html body div[data-block-id="6adf0de3a0fe226093b0e546"] .ctas .btn{padding:16px 
   html body div[data-block-id="6adf0de3a0fe226093b0e546"] p.sub{margin-top:14px;font-size:16px;line-height:1.75}
   html body div[data-block-id="6adf0de3a0fe226093b0e546"] .ctas{margin-top:32px}
 }
+
+/* 칼럼 썸네일: 표지 오른쪽 위에 3D 그림, 제목은 그림 위로 */
+.cover .cover-art{position:absolute;right:5%;top:12%;width:46%;height:64%;object-fit:contain;z-index:0;filter:drop-shadow(0 14px 18px rgba(30,80,160,.18));transition:transform .6s var(--ease);pointer-events:none}
+.post:hover .cover .cover-art{transform:translateY(-4px) rotate(-3deg)}
+.cover small,.cover strong{position:relative;z-index:1}
+.cover-lg .cover-art{right:6%;top:10%;width:34%;height:80%}
+@media (max-width:900px){.col-list .cover .cover-art{right:4%;top:14%;width:52%;height:52%}.cover-lg .cover-art{width:44%;height:60%;top:14%}}
+
+/* 노션 그림 설명 줄 */
+.n-caption{margin:-6px 0 18px;text-align:center;font-size:14px;color:var(--sub)}
+
+/* 상단 메뉴: 3D 캐릭터 심볼과 워드마크를 조금 작게 */
+html body div[data-block-id="6adf0dbfa0fe226093b0e45b"] img.sym{height:36px!important;width:auto!important}
+html body div[data-block-id="6adf0dbfa0fe226093b0e45b"] img.name{height:22px!important;width:auto!important}
+@media (max-width:900px){
+  html body div[data-block-id="6adf0dbfa0fe226093b0e45b"] img.sym{height:30px!important}
+  html body div[data-block-id="6adf0dbfa0fe226093b0e45b"] img.name{height:18px!important}
+}
