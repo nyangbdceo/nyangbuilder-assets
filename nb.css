@@ -2085,3 +2085,6 @@ html body div[data-block-id="6adff54621796c93dd8f5fc1"] form button[type=submit]
 html body div[data-block-id="6adf10b00902346eb30eeb74"] .agree .req{display:none}
 /* 강의 문의: 왼쪽 안내 카드 내용을 세로 가운데로 (아래 빈 여백 줄임) */
 @media (min-width:901px){html body div[data-block-id="6adff54621796c93dd8f5fc1"] .lec-copy{justify-content:center}}
+/* 강의 문의 안내 카드: 설명-단계-카톡 버튼 사이 여백 조금 더 */
+html body div[data-block-id="6adff54621796c93dd8f5fc1"] .lec-copy .lec-steps{margin-top:40px}
+html body div[data-block-id="6adff54621796c93dd8f5fc1"] .lec-copy .lec-kakao{margin-top:40px}
