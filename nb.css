@@ -2063,3 +2063,5 @@ html body .bs-ch-label i{display:none}
 
 /* 서비스 비교 카드: (디럭스 기준)을 금액 옆에 */
 html body .side.new p small{display:inline!important}
+/* 소개 브랜드 카드: 비운 본문 칸은 여백도 없앰 */
+html body .bs-slogan-kr:empty,html body .bs-logo-text p:empty{display:none}
