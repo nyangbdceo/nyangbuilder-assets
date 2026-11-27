@@ -1975,3 +1975,14 @@ div[data-block-id="6adf1e030902346eb30f34e1"] section.flow{background:#fff}
 :is([data-section-id="6adb3e5417fb0eda57c16f51"],[data-section-id="6adb3e5417fb0eda57c16f58"]) .pd-faq details{padding:10px 10px 4px!important;border:0!important;border-radius:24px!important;background:#0F6EF0!important}
 :is([data-section-id="6adb3e5417fb0eda57c16f51"],[data-section-id="6adb3e5417fb0eda57c16f58"]) .pd-faq summary{padding:15px 22px!important;border-radius:999px!important;background:#fff!important;color:#0B1220!important}
 :is([data-section-id="6adb3e5417fb0eda57c16f51"],[data-section-id="6adb3e5417fb0eda57c16f58"]) .pd-faq details p{padding:16px 22px 18px!important;margin:0!important;color:#fff!important}
+
+/* 홈 첫 화면: 큰 영문 제목 아래 한글 문구·설명·버튼이 작고 붙어 보여서 크기와 간격을 키움 */
+html body div[data-block-id="6adf0de3a0fe226093b0e546"] p.kr{margin-top:48px;font-size:30px;line-height:1.45;letter-spacing:-.02em}
+html body div[data-block-id="6adf0de3a0fe226093b0e546"] p.sub{margin-top:18px;font-size:18px;line-height:1.8;color:#C3CDE0}
+html body div[data-block-id="6adf0de3a0fe226093b0e546"] .ctas{margin-top:44px}
+html body div[data-block-id="6adf0de3a0fe226093b0e546"] .ctas .btn{padding:16px 30px;font-size:16px;border-radius:14px}
+@media (max-width:900px){
+  html body div[data-block-id="6adf0de3a0fe226093b0e546"] p.kr{margin-top:32px;font-size:21px}
+  html body div[data-block-id="6adf0de3a0fe226093b0e546"] p.sub{margin-top:14px;font-size:16px;line-height:1.75}
+  html body div[data-block-id="6adf0de3a0fe226093b0e546"] .ctas{margin-top:32px}
+}
