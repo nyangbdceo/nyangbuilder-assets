@@ -2081,3 +2081,5 @@ html body div[data-block-id="6adf0fbb21796c93dd8ba8b7"] h2 + p{font-size:19.5px;
 @media (max-width:900px){html body div[data-block-id="6adf0fbb21796c93dd8ba8b7"] h2 + p{font-size:16.5px;line-height:1.7}}
 /* 헤더 CONTACT 버튼: 뒤집혔을 때 "문의하기"를 다른 메뉴 한글(16px)과 같은 크기로 */
 @media (min-width:901px){html body div[data-block-id="6adf0dbfa0fe226093b0e45b"] .btn .flip span::after{font-size:16px}}
+/* 문의 폼: 문의하기 버튼을 동의 줄에서 살짝 더 떨어뜨림 */
+html body div[data-block-id="6adf10b00902346eb30eeb74"] form button[type=submit],html body div[data-block-id="6adff54621796c93dd8f5fc1"] form button[type=submit]{margin-top:14px}
