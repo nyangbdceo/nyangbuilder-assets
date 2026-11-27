@@ -2149,3 +2149,13 @@ html body > .gal .g-info li{padding:14px 0;border-bottom:1px solid rgba(255,255,
 html body > .gal .g-info li b{display:block;color:#fff;font-size:14.5px;margin-bottom:3px}
 html body > .gal .g-info li b i{font-style:normal;color:#8FB8FF;font-family:Montserrat,sans-serif;margin-right:8px}
 @media (max-width:900px){html body > .gal{align-items:flex-start;overflow-y:auto;padding:70px 0 40px;background:rgba(10,12,20,.97)}html body > .gal figure:has(.g-info:not(:empty)){flex-direction:column;gap:24px}html body > .gal figure:has(.g-info:not(:empty)) .g-row img{height:auto;width:72vw}html body > .gal .g-info{width:auto;padding:0 7vw}html body > .gal .g-info h4{font-size:21px}html body > .gal .g-info .lead{font-size:14.5px}}
+
+/* PROJECT 영상 줄(빈 자리): 이미지 줄과 같은 캐러셀 스타일 */
+html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .reel p,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .reel p{margin-top:2px;font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.12em;color:#9AA3B2}
+html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .reel h3,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .reel h3{font-family:var(--en);font-size:14px;font-weight:700;letter-spacing:.02em}
+html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .rail.arc .shot::after{display:none}
+html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .reel p,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .reel p{position:absolute;left:0;right:0;top:0;aspect-ratio:9/16;margin:0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:18px;color:rgba(255,255,255,.92);font-size:10px;text-shadow:0 1px 6px rgba(0,0,0,.35);pointer-events:none;z-index:4}
+html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .rail.arc .shot::before,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc .shot::before{display:none}
+html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .rail.arc .reel h3,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc .reel h3,html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .rail.arc .reel p,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc .reel p{opacity:1}
+html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .shot{background:linear-gradient(160deg,#EEF3FC,#DCE6F7)}
+html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .shot .nl{color:#7A8BA8;font-size:14px;font-weight:600}
