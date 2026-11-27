@@ -1403,7 +1403,6 @@ footer .brand:has(.line[src*="wordmark-cond"]) .tag{font-size:10px;letter-spacin
 /* 왜 냥빌더 PROBLEM 모바일: 카드 안 카드 대신 흰 고민 카드 → 파란 해결 카드를 번갈아, 가운데 정렬 */
 @media (max-width:900px){
   .assure .qa{background:none;box-shadow:none;padding:0;margin:0 0 36px;text-align:center}
-  .assure .qa:last-child{margin-bottom:0}
   .assure .qa .q{background:#fff;border-radius:22px;padding:28px 22px;box-shadow:0 10px 30px rgba(15,110,240,.06)}
   .assure .qa .q small{justify-content:center;flex-wrap:wrap}
   .assure .qa .a{position:relative;background:var(--blue)!important;color:#fff;border-radius:22px;padding:28px 22px 26px;margin-top:22px}
@@ -2005,12 +2004,3 @@ html body div[data-block-id="6adf0dbfa0fe226093b0e45b"] img.name{height:22px!imp
   html body div[data-block-id="6adf0dbfa0fe226093b0e45b"] img.name{height:18px!important}
 }
 
-/* 홈 '왜 냥빌더' 3번 답: 어두운 광고 카드(로고 + 남색 바탕 + 오른쪽 아래 파란 빛) */
-html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:last-child .a{position:relative;padding-top:84px;background:radial-gradient(70% 90% at 100% 100%,rgba(15,110,240,.55),rgba(15,110,240,0) 70%),#0A0F1C!important;border-color:#0A0F1C;color:#fff;overflow:hidden}
-html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:last-child .a::before{content:"";position:absolute;left:32px;top:30px;width:200px;height:28px;background:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@a3de493/symbol-3d.png) left center/auto 26px no-repeat,url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@627a998/wordmark-cond2-white.png) 36px center/auto 16px no-repeat}
-html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:last-child .a h3{color:#fff}
-html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:last-child .a li{color:#B9C6DC}
-@media (max-width:900px){
-  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:last-child .a{padding-top:72px}
-  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:last-child .a::before{left:50%;top:26px;transform:translateX(-50%);width:190px;margin:0;padding:0;font-size:0;letter-spacing:0;background-position:left center,36px center}
-}
