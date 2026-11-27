@@ -2162,3 +2162,5 @@ html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .shot .nl{color:#7A8BA8;
 /* 가격표 안내 문구 살짝 크게, 토글 바탕은 불투명하게 (뒤 격자선이 비쳐 보이지 않게) */
 html body div[data-block-id="6adf1e010902346eb30f34ca"] .svc-note{font-size:15.5px}
 html body div[data-block-id="6adf1e010902346eb30f34ca"] .svc-tabs{background:#1C69DD}
+/* 이미지 가격표에도 추천 말풍선이 생겨서 토글과 간격 */
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .svc-tabs ~ .cards.svc-img{margin-top:96px}
