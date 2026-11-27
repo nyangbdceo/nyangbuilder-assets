@@ -2068,3 +2068,9 @@ html body .bs-slogan-kr:empty,html body .bs-logo-text p:empty{display:none}
 html body div[data-block-id] section.story-sec .bs-head + .bs-ch:not(:has(.lead)) > .bs-ch-label{display:none}
 /* 소개 브랜드 스토리: SLOGAN·SYMBOL 카드 숨김 */
 html body div[data-block-id] section.story-sec .bs-ch + .bs-ch{display:none!important}
+/* 칼럼 글 하단 '← 칼럼 목록으로' 위에 한 줄 여백 (식스샵 본문 규칙이 inline으로 덮어서 !important) */
+.ck.ck-content .notion .back,.notion .back{display:inline-block!important;margin-top:32px!important}
+/* 칼럼 검색창 가로 = 카드 1개 너비 (.posts 3칸, 가로 간격 22px) */
+.col-tools .search{flex:0 0 calc((100% - 44px) / 3)}
+.col-tools .search input{width:100%}
+@media (max-width:900px){.col-tools .search{flex:1 1 100%}}
