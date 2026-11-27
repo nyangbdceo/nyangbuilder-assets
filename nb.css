@@ -2060,3 +2060,6 @@ html body div[data-block-id="6adf0fc621796c93dd8ba917"] img[src*="symbol-3d"],ht
 
 /* 소개 브랜드 카드: 01·02·03 숫자 숨김 */
 html body .bs-ch-label i{display:none}
+
+/* 서비스 비교 카드: (디럭스 기준)을 금액 옆에 */
+html body .side.new p small{display:inline!important}
