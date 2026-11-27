@@ -2033,3 +2033,11 @@ html body div[data-block-id="6adf0fc621796c93dd8ba917"] img[src*="symbol-3d"],ht
 /* 물결 블록에 예전 파랑(#0F6EF0)이 직접 박혀 있어 메인 파랑으로 맞춤 */
 .wave[style*="--to:#0F6EF0" i]{--to:#0B5FD9!important}
 .wave[style*="--from:#0F6EF0" i]{--from:#0B5FD9!important}
+
+/* 카톡 문의 버튼: 펼칠 때 캐릭터를 줄이고 알약 높이를 낮춰 덜 커 보이게 */
+.kakao-float{transition:height .3s var(--ease),padding .3s var(--ease),gap .3s var(--ease),transform .3s var(--ease)}
+.kakao-float img{transition:width .3s var(--ease),height .3s var(--ease)}
+@media (hover:hover){
+  .kakao-float:hover{height:48px;padding:0 18px 0 10px;gap:6px}
+  .kakao-float:hover img{width:30px;height:30px}
+}
