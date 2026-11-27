@@ -2052,3 +2052,8 @@ html body div[data-block-id="6adf0fc621796c93dd8ba917"] img[src*="symbol-3d"],ht
 .notion pre .copy:hover{background:#174FC4;border-color:#174FC4}
 /* 칼럼 목록 'AI 칼럼' 탭 잠시 숨김 (다시 보이려면 이 줄 삭제) */
 .col-list .filters button:nth-child(2){display:none}
+/* 글 표지 썸네일: 본문 img 100% 규칙을 이기고 오른쪽에, 제목은 그림 위로 */
+.notion .cover-lg .cover-art{right:6%;top:10%;width:34%;height:80%;max-width:none;margin:0;border-radius:0;box-shadow:none}
+.notion .cover-lg small,.notion .cover-lg strong{position:relative;z-index:1}
+.notion .cover-lg strong{max-width:58%}
+@media (max-width:900px){.notion .cover-lg .cover-art{width:44%;height:60%;top:14%}.notion .cover-lg strong{max-width:none}}
