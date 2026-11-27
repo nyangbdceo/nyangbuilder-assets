@@ -252,6 +252,18 @@
     box.append(b);
   };
 
+  // 칼럼 글 표지에 썸네일 3D 그림 (column/thumb_<글 주소 끝 8자리>.webp, 없으면 그림 없이)
+  const THUMB = 'https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@main/column/thumb_';
+  const postCover = () => {
+    const m = /\/posts\/c-([0-9a-f]{8})/.exec(location.pathname);
+    const cover = m && document.querySelector('.notion .cover-lg');
+    if (!cover || !once(cover, 'art')) return;
+    const img = Object.assign(new Image(), { className: 'cover-art', alt: '' });
+    img.onerror = () => img.remove();
+    img.src = THUMB + m[1] + '.webp';
+    cover.append(img);
+  };
+
   const init = () => {
     document.querySelectorAll('.wave').forEach(w => { if (once(w, 'w')) w.innerHTML = WAVE; });
     document.querySelectorAll('.reveal, .stream, .pile').forEach(el => { if (once(el, 'r')) io.observe(el); });
@@ -320,6 +332,7 @@
       });
     });
     productDetail();
+    postCover();
     onScroll();
   };
 
