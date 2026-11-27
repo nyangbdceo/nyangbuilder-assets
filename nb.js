@@ -253,7 +253,10 @@
   };
 
   // 칼럼 글 표지에 썸네일 3D 그림 (column/thumb_<글 주소 끝 8자리>.webp, 없으면 그림 없이)
-  const THUMB = 'https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@main/column/thumb_';
+  // @main은 CDN 캐시가 늦게 풀려서 커밋 해시로 고정 (썸네일을 새로 올리면 이 해시도 바꾸기)
+  const THUMB_REV = '8c3f143';
+  const THUMB = 'https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@' + THUMB_REV + '/column/thumb_';
+  const listThumbs = () => document.querySelectorAll('img.cover-art[src*="@main/column/thumb_"]').forEach(i => { i.src = i.src.replace('@main/', '@' + THUMB_REV + '/'); });
   const postCover = () => {
     const m = /\/posts\/c-([0-9a-f]{8})/.exec(location.pathname);
     const cover = m && document.querySelector('.notion .cover-lg');
@@ -333,6 +336,7 @@
     });
     productDetail();
     postCover();
+    listThumbs();
     onScroll();
   };
 
