@@ -2108,3 +2108,17 @@ html body div[data-block-id] .svc-tabs button.on{background:#fff;color:#0B1F4D}
 html body div[data-block-id="6adf1e38330f06b06c7ea979"] .rail.arc .shot::before,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc .shot::before{display:none}
 html body div[data-block-id="6adf1e38330f06b06c7ea979"] .rail.arc .reel h3,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc .reel h3,html body div[data-block-id="6adf1e38330f06b06c7ea979"] .rail.arc .reel p,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc .reel p{opacity:1}
 html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc .shot::after{display:none}
+/* 작업물 크게 보기: body로 옮겨진 창이라 블록 스타일이 안 닿아서 여기서 */
+html body > .gal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(10,12,20,.88)}
+html body > .gal[hidden]{display:none}
+html body > .gal figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px}
+html body > .gal img{max-height:82vh;max-width:88vw;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+html body > .gal figcaption{color:#fff;font:700 14px/1.4 Montserrat,Pretendard,sans-serif;letter-spacing:.04em}
+html body > .gal figcaption span{margin-left:10px;color:#9AA3B2;font-weight:600}
+html body > .gal button{position:absolute;border:0;cursor:pointer;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:22px;line-height:48px;padding:0}
+html body > .gal button:hover{background:rgba(255,255,255,.26)}
+html body > .gal button[hidden]{display:none}
+html body > .gal .g-close{top:22px;right:22px}
+html body > .gal .g-prev{left:22px;top:50%;margin-top:-24px}
+html body > .gal .g-next{right:22px;top:50%;margin-top:-24px}
+@media (max-width:700px){html body > .gal .g-prev{left:8px}html body > .gal .g-next{right:8px}html body > .gal img{max-width:78vw}}
