@@ -1977,12 +1977,12 @@ div[data-block-id="6adf1e030902346eb30f34e1"] section.flow{background:#fff}
 
 /* 홈 첫 화면: 큰 영문 제목 아래 한글 문구·설명·버튼이 작고 붙어 보여서 크기와 간격을 키움 */
 html body div[data-block-id="6adf0de3a0fe226093b0e546"] p.kr{margin-top:48px;font-size:30px;line-height:1.45;letter-spacing:-.02em}
-html body div[data-block-id="6adf0de3a0fe226093b0e546"] p.sub{margin-top:18px;font-size:18px;line-height:1.8;color:#C3CDE0}
+html body div[data-block-id="6adf0de3a0fe226093b0e546"] p.sub{margin-top:20px;font-size:21px;line-height:1.75;color:#C3CDE0}
 html body div[data-block-id="6adf0de3a0fe226093b0e546"] .ctas{margin-top:44px}
 html body div[data-block-id="6adf0de3a0fe226093b0e546"] .ctas .btn{padding:16px 30px;font-size:16px;border-radius:14px}
 @media (max-width:900px){
   html body div[data-block-id="6adf0de3a0fe226093b0e546"] p.kr{margin-top:32px;font-size:21px}
-  html body div[data-block-id="6adf0de3a0fe226093b0e546"] p.sub{margin-top:14px;font-size:16px;line-height:1.75}
+  html body div[data-block-id="6adf0de3a0fe226093b0e546"] p.sub{margin-top:14px;font-size:17px;line-height:1.7}
   html body div[data-block-id="6adf0de3a0fe226093b0e546"] .ctas{margin-top:32px}
 }
 
@@ -2005,6 +2005,3 @@ html body div[data-block-id="6adf0dbfa0fe226093b0e45b"] img.name{height:22px!imp
 }
 
 
-/* 섹션 제목(42~48px) 아래 설명 문구가 작아 보여서 한 단계 키움 */
-html body [data-block-id] p.lead,html body [data-block-id] h2 + p{font-size:19.5px;line-height:1.72}
-@media (max-width:900px){html body [data-block-id] p.lead,html body [data-block-id] h2 + p{font-size:16.5px;line-height:1.7}}
