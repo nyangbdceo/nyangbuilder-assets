@@ -2057,3 +2057,6 @@ html body div[data-block-id="6adf0fc621796c93dd8ba917"] img[src*="symbol-3d"],ht
 .notion .cover-lg small,.notion .cover-lg strong{position:relative;z-index:1}
 .notion .cover-lg strong{max-width:58%}
 @media (max-width:900px){.notion .cover-lg .cover-art{width:44%;height:60%;top:14%}.notion .cover-lg strong{max-width:none}}
+
+/* 소개 브랜드 카드: 01·02·03 숫자 숨김 */
+html body .bs-ch-label i{display:none}
