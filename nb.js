@@ -130,7 +130,8 @@
       requestAnimationFrame(loop);
       const dt = Math.min(64, t - last); last = t;
       if (!seen) return;
-      if (!calm && !hold) pos += dt * .07;
+      // .rail.rev 는 반대(왼→오)로 흐름
+      if (!calm && !hold) pos += dt * .07 * (rail.classList.contains('rev') ? -1 : 1);
       place();
     };
     // 카드(이미지) 위에 커서가 있을 때만 멈춤. 띠 빈자리에 커서가 있을 땐 계속 돎
