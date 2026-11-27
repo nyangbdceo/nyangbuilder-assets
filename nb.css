@@ -2079,3 +2079,5 @@ html body div[data-block-id] section.story-sec .bs-pair .bs-card:not(.dark){back
 /* 홈 "정중히 거절" 섹션 설명 문구도 19.5px */
 html body div[data-block-id="6adf0fbb21796c93dd8ba8b7"] h2 + p{font-size:19.5px;line-height:1.72}
 @media (max-width:900px){html body div[data-block-id="6adf0fbb21796c93dd8ba8b7"] h2 + p{font-size:16.5px;line-height:1.7}}
+/* 헤더 CONTACT 버튼: 뒤집혔을 때 "문의하기"를 다른 메뉴 한글(16px)과 같은 크기로 */
+@media (min-width:901px){html body div[data-block-id="6adf0dbfa0fe226093b0e45b"] .btn .flip span::after{font-size:16px}}
