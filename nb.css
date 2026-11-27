@@ -2016,7 +2016,7 @@ html body div[data-block-id="6adf0dbfa0fe226093b0e45b"] img.name{height:22px!imp
   html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(4) .a::after{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@cea367a/icons/why-sales.webp)}
   html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(3) .a::after,html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(4) .a::after{width:140px;height:140px;right:-40px}
   html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(2) .a::after{width:150px;height:150px;right:-44px}
-  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a{padding-right:110px}
+  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a{padding-right:110px;padding-top:36px;padding-bottom:36px}
   html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a h3{white-space:pre;font-size:26px}
 }
 @media (max-width:900px){
@@ -2037,13 +2037,10 @@ html body div[data-block-id="6adf0fc621796c93dd8ba917"] img[src*="symbol-3d"],ht
 .wave[style*="--to:#0F6EF0" i]{--to:#0B5FD9!important}
 .wave[style*="--from:#0F6EF0" i]{--from:#0B5FD9!important}
 
-/* 카톡 문의 버튼: 펼칠 때 캐릭터를 줄이고 알약 높이를 낮춰 덜 커 보이게 */
-.kakao-float{transition:height .3s var(--ease),padding .3s var(--ease),gap .3s var(--ease),transform .3s var(--ease)}
-.kakao-float img{transition:width .3s var(--ease),height .3s var(--ease)}
-@media (hover:hover){
-  .kakao-float:hover{height:48px;padding:0 18px 0 10px;gap:6px}
-  .kakao-float:hover img{width:30px;height:30px}
-}
+/* 카톡 문의 버튼: 크기는 늘 같게(높이 56, 캐릭터 36), 마우스를 올리면 옆으로만 글자가 펼쳐짐 */
+.kakao-float{height:56px;padding:0 10px;transition:padding .3s var(--ease),gap .3s var(--ease),transform .3s var(--ease)}
+.kakao-float img{width:36px;height:36px}
+@media (hover:hover){.kakao-float:hover{height:56px;padding:0 18px 0 10px;gap:8px}.kakao-float:hover img{width:36px;height:36px}}
 
 /* 칼럼 코드 상자: 식스샵 기본 회색(.ck-content pre)을 이기고, 줄바꿈해서 가로 스크롤 없이, 복사 버튼은 진하게 */
 .ck-content .notion pre,.notion pre{background:#F2F7FE;color:#1B2433;border:1px solid #D6E6FB;border-radius:14px;padding:52px 20px 18px;overflow-x:visible}
