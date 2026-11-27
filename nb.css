@@ -2091,3 +2091,5 @@ html body div[data-block-id="6adff54621796c93dd8f5fc1"] .lec-copy .lec-kakao{mar
 /* 서비스 가격표 탭: 영상 카드는 추천 말풍선 자리, 이미지 카드는 탭 바로 아래 */
 html body div[data-block-id] .svc-tabs ~ .cards.svc{margin-top:72px}
 html body div[data-block-id] .svc-tabs ~ .cards.svc-img{margin-top:36px}
+/* PROJECT 페이지 작업물: CONCEPT PROJECT 표기는 작고 흐리게 */
+html body div[data-block-id="6adf1e38330f06b06c7ea979"] .reel p{margin-top:2px;font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.12em;color:#9AA3B2}
