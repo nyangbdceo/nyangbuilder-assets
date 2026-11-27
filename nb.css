@@ -2100,10 +2100,15 @@ html body div[data-block-id="6adf1e010902346eb30f34ca"] .svc-note{white-space:pr
 html body div[data-block-id="6adf1e38330f06b06c7ea979"] .rail.arc .shot::after{display:none}
 /* PROJECT 카드: CONCEPT PROJECT를 이미지 위 하단에 작게 */
 html body div[data-block-id="6adf1e38330f06b06c7ea979"] .reel p,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .reel p{position:absolute;left:0;right:0;top:0;aspect-ratio:9/16;margin:0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:18px;color:rgba(255,255,255,.92);font-size:10px;text-shadow:0 1px 6px rgba(0,0,0,.35);pointer-events:none;z-index:4}
-/* 서비스 가격표 탭: 왼쪽 작은 알약 토글 (태그·추천 말풍선과 안 겹치게) */
-html body div[data-block-id] .svc-tabs{margin:64px 0 0;width:auto;display:inline-flex;justify-content:flex-start;gap:4px;padding:5px;background:rgba(255,255,255,.1);border-radius:999px;border:0}
-html body div[data-block-id] .svc-tabs button{padding:10px 22px;border-radius:999px;background:none;color:rgba(255,255,255,.7);font-size:15px;font-weight:600;border:0;margin:0}
-html body div[data-block-id] .svc-tabs button.on{background:#fff;color:#0B1F4D}
+/* 서비스 가격표: 키워드 아래 PRICING 제목 + 가운데 큰 토글 */
+html body div[data-block-id] .svc-head{text-align:center;margin-top:84px}
+html body div[data-block-id] .svc-head .label{display:block;margin:0 auto 14px;color:rgba(255,255,255,.85);letter-spacing:.32em}
+html body div[data-block-id] .svc-head h3{margin:0;color:#fff;font-size:54px;font-weight:800;letter-spacing:-.035em;line-height:1.2}
+html body div[data-block-id] .svc-head p{margin:14px 0 0;color:rgba(255,255,255,.88);font-size:19.5px}
+html body div[data-block-id] .svc-tabs{margin:40px auto 0;width:max-content;display:flex;justify-content:center;gap:4px;padding:5px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.4);border-radius:999px}
+html body div[data-block-id] .svc-tabs button{min-width:220px;padding:14px 28px;border-radius:999px;background:none;color:#fff;font-size:19px;font-weight:700;border:0;margin:0}
+html body div[data-block-id] .svc-tabs button.on{background:#fff;color:#0B5FD9}
+@media (max-width:700px){html body div[data-block-id] .svc-head{margin-top:56px}html body div[data-block-id] .svc-head h3{font-size:31px}html body div[data-block-id] .svc-head p{font-size:15.5px}html body div[data-block-id] .svc-tabs{margin-top:28px}html body div[data-block-id] .svc-tabs button{min-width:0;padding:12px 20px;font-size:15.5px}}
 /* 작업물 캐러셀: 양옆 카드도 어둡게·흐리게 하지 않고 그대로 */
 html body div[data-block-id="6adf1e38330f06b06c7ea979"] .rail.arc .shot::before,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc .shot::before{display:none}
 html body div[data-block-id="6adf1e38330f06b06c7ea979"] .rail.arc .reel h3,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc .reel h3,html body div[data-block-id="6adf1e38330f06b06c7ea979"] .rail.arc .reel p,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc .reel p{opacity:1}
@@ -2122,3 +2127,6 @@ html body > .gal .g-close{top:22px;right:22px}
 html body > .gal .g-prev{left:22px;top:50%;margin-top:-24px}
 html body > .gal .g-next{right:22px;top:50%;margin-top:-24px}
 @media (max-width:700px){html body > .gal .g-prev{left:8px}html body > .gal .g-next{right:8px}html body > .gal img{max-width:78vw}}
+/* 서비스 가격 블록 오른쪽 설명: 18 → 19.5px (모바일 17 → 17.5px) */
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .what .top p{font-size:19.5px}
+@media (max-width:700px){html body div[data-block-id="6adf1e010902346eb30f34ca"] .what .top p{font-size:17.5px}}
