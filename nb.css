@@ -2004,3 +2004,7 @@ html body div[data-block-id="6adf0dbfa0fe226093b0e45b"] img.name{height:22px!imp
   html body div[data-block-id="6adf0dbfa0fe226093b0e45b"] img.name{height:18px!important}
 }
 
+
+/* 섹션 제목(42~48px) 아래 설명 문구가 작아 보여서 한 단계 키움 */
+html body [data-block-id] p.lead,html body [data-block-id] h2 + p{font-size:19.5px;line-height:1.72}
+@media (max-width:900px){html body [data-block-id] p.lead,html body [data-block-id] h2 + p{font-size:16.5px;line-height:1.7}}
