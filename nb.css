@@ -2159,3 +2159,6 @@ html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .rail.arc .shot::before,
 html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .rail.arc .reel h3,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc .reel h3,html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .rail.arc .reel p,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc .reel p{opacity:1}
 html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .shot{background:linear-gradient(160deg,#EEF3FC,#DCE6F7)}
 html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .shot .nl{color:#7A8BA8;font-size:14px;font-weight:600}
+/* 가격표 안내 문구 살짝 크게, 토글 바탕은 불투명하게 (뒤 격자선이 비쳐 보이지 않게) */
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .svc-note{font-size:15.5px}
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .svc-tabs{background:#1C69DD}
