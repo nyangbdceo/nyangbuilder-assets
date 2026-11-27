@@ -2041,3 +2041,11 @@ html body div[data-block-id="6adf0fc621796c93dd8ba917"] img[src*="symbol-3d"],ht
   .kakao-float:hover{height:48px;padding:0 18px 0 10px;gap:6px}
   .kakao-float:hover img{width:30px;height:30px}
 }
+
+/* 칼럼 코드 상자: 식스샵 기본 회색(.ck-content pre)을 이기고, 줄바꿈해서 가로 스크롤 없이, 복사 버튼은 진하게 */
+.ck-content .notion pre,.notion pre{background:#F2F7FE;color:#1B2433;border:1px solid #D6E6FB;border-radius:14px;padding:52px 20px 18px;overflow-x:visible}
+.ck-content .notion pre code,.notion pre code{white-space:pre-wrap;word-break:break-word;color:inherit;background:none}
+.notion pre .copy{background:#1F63F0;border-color:#1F63F0;color:#fff}
+.notion pre .copy:hover{background:#174FC4;border-color:#174FC4}
+/* 칼럼 목록 'AI 칼럼' 탭 잠시 숨김 (다시 보이려면 이 줄 삭제) */
+.col-list .filters button:nth-child(2){display:none}
