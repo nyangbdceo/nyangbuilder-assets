@@ -2074,3 +2074,4 @@ html body div[data-block-id] section.story-sec .bs-ch + .bs-ch{display:none!impo
 .col-tools .search{flex:0 0 calc((100% - 44px) / 3)}
 .col-tools .search input{width:100%}
 @media (max-width:900px){.col-tools .search{flex:1 1 100%}}
+html body div[data-block-id] section.story-sec .bs-pair .bs-card:not(.dark){background:#fff!important;border:1px solid var(--line)}
