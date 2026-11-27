@@ -2130,3 +2130,9 @@ html body > .gal .g-next{right:22px;top:50%;margin-top:-24px}
 /* 서비스 가격 블록 오른쪽 설명: 18 → 19.5px (모바일 17 → 17.5px) */
 html body div[data-block-id="6adf1e010902346eb30f34ca"] .what .top p{font-size:19.5px}
 @media (max-width:700px){html body div[data-block-id="6adf1e010902346eb30f34ca"] .what .top p{font-size:17.5px}}
+
+/* 가격표 토글: 눈에 덜 띄게 작고 얇게 */
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .svc-tabs{margin-top:32px;padding:4px;gap:2px;border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.08)}
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .svc-tabs button{min-width:150px;padding:9px 22px;font-size:15.5px;font-weight:600}
+@media (max-width:700px){html body div[data-block-id="6adf1e010902346eb30f34ca"] .svc-tabs button{min-width:0;padding:9px 18px;font-size:14.5px}}
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .svc-tabs ~ .cards.svc{margin-top:96px}
