@@ -2099,7 +2099,7 @@ html body div[data-block-id="6adf1e010902346eb30f34ca"] .svc-note{white-space:pr
 /* PROJECT 이미지 캐러셀: 옆 카드에 파란 색 덮개를 씌우지 않음 (제품 색 그대로) */
 html body div[data-block-id="6adf1e38330f06b06c7ea979"] .rail.arc .shot::after{display:none}
 /* PROJECT 카드: CONCEPT PROJECT를 이미지 위 하단에 작게 */
-html body div[data-block-id="6adf1e38330f06b06c7ea979"] .reel p,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .reel p{position:absolute;left:0;right:0;top:0;aspect-ratio:9/16;margin:0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:18px;color:rgba(255,255,255,.92);font-size:10px;text-shadow:0 1px 6px rgba(0,0,0,.35);pointer-events:none}
+html body div[data-block-id="6adf1e38330f06b06c7ea979"] .reel p,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .reel p{position:absolute;left:0;right:0;top:0;aspect-ratio:9/16;margin:0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:18px;color:rgba(255,255,255,.92);font-size:10px;text-shadow:0 1px 6px rgba(0,0,0,.35);pointer-events:none;z-index:4}
 /* 서비스 가격표 탭: 가운데 대신 왼쪽에 글자형 탭으로 (태그·추천 말풍선과 안 겹치게) */
 html body div[data-block-id] .svc-tabs{margin:64px 0 0;width:auto;justify-content:flex-start;gap:28px;padding:0;background:none;border-radius:0;border-bottom:1px solid rgba(255,255,255,.22)}
 html body div[data-block-id] .svc-tabs button{padding:0 2px 12px;border-radius:0;background:none;color:rgba(255,255,255,.6);font-size:17px;border-bottom:2px solid transparent;margin-bottom:-1px}
