@@ -2104,3 +2104,7 @@ html body div[data-block-id="6adf1e38330f06b06c7ea979"] .reel p,html body div[da
 html body div[data-block-id] .svc-tabs{margin:64px 0 0;width:auto;justify-content:flex-start;gap:28px;padding:0;background:none;border-radius:0;border-bottom:1px solid rgba(255,255,255,.22)}
 html body div[data-block-id] .svc-tabs button{padding:0 2px 12px;border-radius:0;background:none;color:rgba(255,255,255,.6);font-size:17px;border-bottom:2px solid transparent;margin-bottom:-1px}
 html body div[data-block-id] .svc-tabs button.on{background:none;color:#fff;border-bottom-color:#fff}
+/* 작업물 캐러셀: 양옆 카드도 어둡게·흐리게 하지 않고 그대로 */
+html body div[data-block-id="6adf1e38330f06b06c7ea979"] .rail.arc .shot::before,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc .shot::before{display:none}
+html body div[data-block-id="6adf1e38330f06b06c7ea979"] .rail.arc .reel h3,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc .reel h3,html body div[data-block-id="6adf1e38330f06b06c7ea979"] .rail.arc .reel p,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc .reel p{opacity:1}
+html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc .shot::after{display:none}
