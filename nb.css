@@ -2209,3 +2209,5 @@ html body div[data-block-id] .row-label{gap:4px}
 /* 왜 AI 카드 1번: 카메라 사진을 살짝 작게, 가장자리는 2·3번과 같은 그라데이션 바탕에 녹임 */
 html body div[data-block-id="6adf0fb821796c93dd8ba888"] .why-cards .vis.one{background:linear-gradient(180deg,#D7DDF6 0%,#E4E8F9 55%,rgba(243,246,253,0) 100%)}
 html body div[data-block-id="6adf0fb821796c93dd8ba888"] .why-cards .vis.one img{width:auto;height:88%;margin-top:4%;object-fit:contain;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent),linear-gradient(transparent,#000 10%,#000 72%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent),linear-gradient(transparent,#000 10%,#000 72%,transparent);mask-composite:intersect}
+/* 프로젝트 더보기 버튼 좌우로 길게 */
+html body div[data-block-id] .works-more a{min-width:240px;justify-content:center;padding:12px 40px}
