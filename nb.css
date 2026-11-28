@@ -2019,12 +2019,6 @@ html body div[data-block-id="6adf0dbfa0fe226093b0e45b"] img.name{height:22px!imp
   html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a{padding-right:110px;padding-top:36px;padding-bottom:36px}
   html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a h3{white-space:pre;font-size:26px}
 }
-@media (max-width:900px){
-  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa .a{padding-top:112px;background-repeat:no-repeat!important}
-  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(2) .a{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@779612a/icons/why-money.webp),radial-gradient(circle closest-side,#fff 97%,rgba(255,255,255,0) 100%)!important;background-size:52px 52px,82px 82px!important;background-position:center 31px,center 16px!important}
-  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(3) .a{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@cea367a/icons/why-focus.webp),radial-gradient(circle closest-side,#fff 97%,rgba(255,255,255,0) 100%)!important;background-size:48px 48px,82px 82px!important;background-position:center 33px,center 16px!important}
-  html body div[data-block-id="6adf0fb60902346eb30ee5b8"] .qa:nth-child(4) .a{background-image:url(https://cdn.jsdelivr.net/gh/nyangbdceo/nyangbuilder-assets@cea367a/icons/why-sales.webp),radial-gradient(circle closest-side,#fff 97%,rgba(255,255,255,0) 100%)!important;background-size:48px 48px,82px 82px!important;background-position:center 33px,center 16px!important}
-}
 
 /* 메인 페이지 섹션 설명 문구만 한 단계 키움 (소개 페이지는 글이 길어 그대로) */
 html body div[data-block-id="6adf0fb3a0fe226093b0f21f"] p.lead,html body div[data-block-id="6adf0fb5330f06b06c7e581b"] p.lead,html body div[data-block-id="6adf0fb60902346eb30ee5b8"] p.lead,html body div[data-block-id="6adf0fb821796c93dd8ba888"] p.lead,html body div[data-block-id="6adf0fbdce9ec26ac546051f"] p.lead,html body div[data-block-id="6adf0fc1d9946fa1aa1c9c39"] p.lead,html body div[data-block-id="6adf0fc30902346eb30ee5f9"] p.lead{font-size:19.5px;line-height:1.72}
@@ -2235,3 +2229,6 @@ html body > .gal .g-tag{color:rgba(255,255,255,.82)}
 .to-top:hover{transform:translateY(-2px)}
 /* 메인 PROJECTS 제목 아래 여백 줄이기 */
 html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc{margin-top:0}
+/* 카톡 문의 버튼 모바일: 동그란 아이콘만, 눌러도 글자가 펼쳐지지 않게 */
+@media (max-width:900px){.kakao-float span{display:none}.kakao-float,.kakao-float:hover{gap:0;width:56px;padding:0;justify-content:center;transform:none}}
+/* 왜 냥빌더 모바일: 파란 해결 카드에서 아이콘 뺌 */
