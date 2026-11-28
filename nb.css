@@ -2219,3 +2219,7 @@ html body div[data-block-id="6adf1e010902346eb30f34ca"] .cards.svc .price{displa
 html body div[data-block-id="6adf0fb821796c93dd8ba888"] .why-cards .vis.swap img{width:118px;aspect-ratio:4/5;object-position:50% 55%}
 html body div[data-block-id="6adf0fb821796c93dd8ba888"] .why-cards .vis.swap img:nth-child(1){transform:translate(-50%,-50%) translateX(-78px) rotate(-4deg)}
 html body div[data-block-id="6adf0fb821796c93dd8ba888"] .why-cards .vis.swap img:nth-child(2){transform:translate(-50%,-50%) translateX(78px) rotate(4deg)}
+/* 크게 보기: CONCEPT PROJECT 표시는 설명 대신 맨 왼쪽 이미지 위에 */
+html body > .gal .g-cell{position:relative;flex:none;line-height:0}
+html body > .gal .g-tag{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);padding:6px 12px;border-radius:999px;background:rgba(10,12,20,.45);color:#fff;font:700 10.5px/1 Montserrat,sans-serif;letter-spacing:.16em;white-space:nowrap;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+@media (max-width:900px){html body > .gal .g-row .g-cell{scroll-snap-align:center}}
