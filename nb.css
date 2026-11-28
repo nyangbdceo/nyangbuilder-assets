@@ -2168,3 +2168,13 @@ html body div[data-block-id="6adf1e010902346eb30f34ca"] .svc-tabs ~ .cards.svc-i
 html body div[data-block-id] .row-label{flex-direction:column;align-items:center;gap:10px;text-align:center;margin-bottom:0}
 html body div[data-block-id] .row-label small{font-size:26px;font-weight:700;color:#111;letter-spacing:-.02em}
 @media (max-width:700px){html body div[data-block-id] .row-label small{font-size:21px}}
+/* 서비스 가격표: 키워드 아래부터 연한 하늘색 판 (가격 부분을 다른 구역처럼) */
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .price-panel{margin:90px 0 -110px;padding:100px 0 110px;background-color:#EEF3FC;background-image:linear-gradient(rgba(11,95,217,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,95,217,.06) 1px,transparent 1px);background-size:56px 56px;border-radius:48px 48px 0 0}
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .price-panel .svc-head{margin-top:0}
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .price-panel .svc-head .label{color:#0B5FD9}
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .price-panel .svc-head h3{color:#111}
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .price-panel .svc-head p,html body div[data-block-id="6adf1e010902346eb30f34ca"] .price-panel .svc-note{color:#4B5563}
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .price-panel .svc-tabs{background:#fff;border-color:#D5E1F5}
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .price-panel .svc-tabs button{color:#334155}
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .price-panel .svc-tabs button.on{background:#0B5FD9;color:#fff}
+@media (max-width:900px){html body div[data-block-id="6adf1e010902346eb30f34ca"] .price-panel{margin:48px 0 -76px;padding:64px 0 76px;border-radius:32px 32px 0 0}}
