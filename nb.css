@@ -2227,3 +2227,9 @@ html body > .gal .g-tag{position:absolute;left:50%;bottom:16px;transform:transla
 html body > .gal .g-tag{left:2px;bottom:100%;top:auto;transform:none;margin-bottom:12px;padding:0;border-radius:0;background:none;-webkit-backdrop-filter:none;backdrop-filter:none;color:#8FB8FF;font:700 11px/1 Montserrat,sans-serif;letter-spacing:.2em}
 /* 크게 보기 CONCEPT PROJECT 글씨 흰색 */
 html body > .gal .g-tag{color:rgba(255,255,255,.82)}
+/* 상세페이지 탭: 오른쪽 구매 박스처럼 위 여백 두고 고정 */
+@media (min-width:901px){.pd-tabs{top:148px}.pd-tabs::before{content:"";position:absolute;left:-2px;right:-2px;bottom:100%;height:21px;background:#fff}}
+/* 맨 위로 버튼 */
+.to-top{position:fixed;right:34px;bottom:104px;z-index:60;width:44px;height:44px;border:0;border-radius:50%;background:#fff;color:#0B1220;box-shadow:0 8px 22px rgba(10,12,20,.16),0 0 0 1px rgba(10,12,20,.06);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s,transform .25s,visibility .25s}
+.to-top.on{opacity:1;visibility:visible;transform:none}
+.to-top:hover{transform:translateY(-2px)}

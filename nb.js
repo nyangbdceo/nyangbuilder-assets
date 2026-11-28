@@ -408,3 +408,15 @@
   new MutationObserver(schedule).observe(document.documentElement, { childList: true, subtree: true });
   schedule();
 })();
+
+// 상품 상세: 맨 위로 버튼
+(() => {
+  if (!location.pathname.startsWith('/products/')) return;
+  const b = document.createElement('button');
+  b.className = 'to-top'; b.setAttribute('aria-label', '맨 위로');
+  b.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+  b.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+  document.body.appendChild(b);
+  const on = () => b.classList.toggle('on', scrollY > 600);
+  addEventListener('scroll', on, { passive: true }); on();
+})();
