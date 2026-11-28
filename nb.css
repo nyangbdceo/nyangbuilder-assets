@@ -2223,3 +2223,5 @@ html body div[data-block-id="6adf0fb821796c93dd8ba888"] .why-cards .vis.swap img
 html body > .gal .g-cell{position:relative;flex:none;line-height:0}
 html body > .gal .g-tag{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);padding:6px 12px;border-radius:999px;background:rgba(10,12,20,.45);color:#fff;font:700 10.5px/1 Montserrat,sans-serif;letter-spacing:.16em;white-space:nowrap;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 @media (max-width:900px){html body > .gal .g-row .g-cell{scroll-snap-align:center}}
+/* 크게 보기: CONCEPT PROJECT 표시를 첫 이미지 바깥 위쪽 왼편에 작은 글씨로 */
+html body > .gal .g-tag{left:2px;bottom:100%;top:auto;transform:none;margin-bottom:12px;padding:0;border-radius:0;background:none;-webkit-backdrop-filter:none;backdrop-filter:none;color:#8FB8FF;font:700 11px/1 Montserrat,sans-serif;letter-spacing:.2em}
