@@ -2187,3 +2187,8 @@ html body div[data-block-id] .svc-head .label{letter-spacing:.12em;margin-bottom
 html body div[data-block-id] .svc-head h3{font-size:42px;letter-spacing:-.035em}
 html body div[data-block-id] .svc-head p{font-size:18px;margin-top:16px}
 @media (max-width:700px){html body div[data-block-id] .svc-head h3{font-size:28px}html body div[data-block-id] .svc-head p{font-size:18px}}
+/* 가격표 추천 카드: 크기 키우기(scale) 대신 위아래로 늘려 강조 → 옆 카드와 간격이 똑같게 */
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .cards.svc > .best{transform:none!important;margin:-12px 0}
+/* PROJECT 줄 이름을 카드 줄에 가깝게 */
+html body div[data-block-id="6adf1e38330f06b06c7ea979"] .row-label,html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .row-label{margin-bottom:-44px;position:relative;z-index:2}
+@media (max-width:700px){html body div[data-block-id="6adf1e38330f06b06c7ea979"] .row-label,html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .row-label{margin-bottom:-24px}}
