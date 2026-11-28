@@ -2196,3 +2196,8 @@ html body div[data-block-id="6adf1e38330f06b06c7ea979"] .row-label,html body div
 html body div[data-block-id] .works-more{margin-top:8px}
 html body div[data-block-id] .works-more a{padding:11px 22px;background:transparent;color:#4B5563;font-size:14.5px;font-weight:600;border:1px solid #D5DCE8}
 html body div[data-block-id] .works-more a:hover{background:transparent;color:#0B5FD9;border-color:#0B5FD9;transform:none}
+/* 왜 AI 카드 1번: 촬영팀이 보이는 실사 사진을 그대로 두되 가장자리를 카드 바탕에 녹여 덜 튀게 */
+html body div[data-block-id="6adf0fb821796c93dd8ba888"] .why-cards .vis.one img{width:92%;height:196px;max-width:none;max-height:none;object-fit:cover;object-position:50% 45%;filter:none;-webkit-mask-image:radial-gradient(ellipse 56% 54% at 50% 50%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 56% 54% at 50% 50%,#000 70%,transparent 100%)}
+/* PROJECT 줄 이름과 카드 사이 더 좁게 */
+html body div[data-block-id="6adf1e38330f06b06c7ea979"] .row-label,html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .row-label{margin-bottom:-74px}
+@media (max-width:700px){html body div[data-block-id="6adf1e38330f06b06c7ea979"] .row-label,html body div[data-block-id="6b0a17b2e9f7cf7f7bc4db62"] .row-label{margin-bottom:-40px}}
