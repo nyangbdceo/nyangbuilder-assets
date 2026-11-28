@@ -2215,3 +2215,7 @@ html body div[data-block-id] .works-more a{min-width:240px;justify-content:cente
 html body div[data-block-id="6adf1e010902346eb30f34ca"] .what .top .btn{margin-top:22px;min-width:160px;justify-content:center;padding:12px 30px}
 /* 서비스 가격 카드: 금액(정가·할인·가격) 숨김. 다시 보이려면 이 줄만 지우면 됨 */
 html body div[data-block-id="6adf1e010902346eb30f34ca"] .cards.svc .price{display:none!important}
+/* 왜 AI 카드 3번: 세로로 긴 사진을 위아래 잘라 4:5로 (2번과 높이 맞춤) */
+html body div[data-block-id="6adf0fb821796c93dd8ba888"] .why-cards .vis.swap img{width:118px;aspect-ratio:4/5;object-position:50% 55%}
+html body div[data-block-id="6adf0fb821796c93dd8ba888"] .why-cards .vis.swap img:nth-child(1){transform:translate(-50%,-50%) translateX(-78px) rotate(-4deg)}
+html body div[data-block-id="6adf0fb821796c93dd8ba888"] .why-cards .vis.swap img:nth-child(2){transform:translate(-50%,-50%) translateX(78px) rotate(4deg)}
