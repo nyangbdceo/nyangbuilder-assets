@@ -2178,3 +2178,12 @@ html body div[data-block-id="6adf1e010902346eb30f34ca"] .price-panel .svc-tabs{b
 html body div[data-block-id="6adf1e010902346eb30f34ca"] .price-panel .svc-tabs button{color:#334155}
 html body div[data-block-id="6adf1e010902346eb30f34ca"] .price-panel .svc-tabs button.on{background:#0B5FD9;color:#fff}
 @media (max-width:900px){html body div[data-block-id="6adf1e010902346eb30f34ca"] .price-panel{margin:48px 0 -76px;padding:64px 0 76px;border-radius:32px 32px 0 0}}
+/* 가격 판 위쪽은 둥근 모서리 대신 다른 섹션처럼 물결로 */
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .price-panel{border-radius:0;margin-top:0}
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .wave.panel-wave{margin-top:70px;background:transparent}
+@media (max-width:900px){html body div[data-block-id="6adf1e010902346eb30f34ca"] .wave.panel-wave{margin-top:36px}}
+/* PRICING 제목 크기를 다른 섹션 제목(PROCESS 등)과 같게: 라벨 13 / 제목 42 (모바일 28) / 설명 18 */
+html body div[data-block-id] .svc-head .label{letter-spacing:.12em;margin-bottom:12px}
+html body div[data-block-id] .svc-head h3{font-size:42px;letter-spacing:-.035em}
+html body div[data-block-id] .svc-head p{font-size:18px;margin-top:16px}
+@media (max-width:700px){html body div[data-block-id] .svc-head h3{font-size:28px}html body div[data-block-id] .svc-head p{font-size:18px}}
