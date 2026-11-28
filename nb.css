@@ -2232,3 +2232,5 @@ html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc{margin-top:0}
 /* 카톡 문의 버튼 모바일: 동그란 아이콘만, 눌러도 글자가 펼쳐지지 않게 */
 @media (max-width:900px){.kakao-float span{display:none}.kakao-float,.kakao-float:hover{gap:0;width:56px;padding:0;justify-content:center;transform:none}}
 /* 왜 냥빌더 모바일: 파란 해결 카드에서 아이콘 뺌 */
+/* 모바일 메뉴: 오른쪽 한글 글자 끝선을 모두 맞춤 (클래스 꺾쇠·문의하기 화살표는 옆 여백으로) */
+.m-menu > a small{position:relative;padding-right:18px}.m-menu > a.m-contact small{padding-right:0;margin-right:2px}.m-menu a.m-has-sub small::after{position:absolute;right:3px;top:50%;margin:0;transform:translateY(-70%) rotate(45deg)}.m-menu a.m-has-sub[aria-expanded="true"] small::after{transform:translateY(-20%) rotate(-135deg)}
