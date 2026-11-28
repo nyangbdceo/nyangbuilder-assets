@@ -2206,3 +2206,6 @@ html body div[data-block-id="6adf0fb821796c93dd8ba888"] .why-cards .vis.one img{
 html body div[data-block-id="6adf0fb821796c93dd8ba888"] .why-cards .vis.flow,html body div[data-block-id="6adf0fb821796c93dd8ba888"] .why-cards .vis.swap{background:linear-gradient(180deg,#D7DDF6 0%,#E4E8F9 55%,rgba(243,246,253,0) 100%)}
 /* PROJECT 줄 이름: 영문 라벨과 한글 제목 사이 좁게 */
 html body div[data-block-id] .row-label{gap:4px}
+/* 왜 AI 카드 1번: 카메라 사진을 살짝 작게, 가장자리는 2·3번과 같은 그라데이션 바탕에 녹임 */
+html body div[data-block-id="6adf0fb821796c93dd8ba888"] .why-cards .vis.one{background:linear-gradient(180deg,#D7DDF6 0%,#E4E8F9 55%,rgba(243,246,253,0) 100%)}
+html body div[data-block-id="6adf0fb821796c93dd8ba888"] .why-cards .vis.one img{width:auto;height:88%;margin-top:4%;object-fit:contain;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent),linear-gradient(transparent,#000 10%,#000 72%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent),linear-gradient(transparent,#000 10%,#000 72%,transparent);mask-composite:intersect}
