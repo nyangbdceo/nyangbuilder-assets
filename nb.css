@@ -2213,3 +2213,5 @@ html body div[data-block-id="6adf0fb821796c93dd8ba888"] .why-cards .vis.one img{
 html body div[data-block-id] .works-more a{min-width:240px;justify-content:center;padding:12px 40px}
 /* 서비스 가격 블록 오른쪽 상담 버튼: 조금 길게, 위 문구와 살짝 띄움 */
 html body div[data-block-id="6adf1e010902346eb30f34ca"] .what .top .btn{margin-top:22px;min-width:160px;justify-content:center;padding:12px 30px}
+/* 서비스 가격 카드: 금액(정가·할인·가격) 숨김. 다시 보이려면 이 줄만 지우면 됨 */
+html body div[data-block-id="6adf1e010902346eb30f34ca"] .cards.svc .price{display:none!important}
