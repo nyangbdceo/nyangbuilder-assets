@@ -2237,3 +2237,5 @@ html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc{margin-top:0}
 /* 소개 페이지 인사말: 모바일 글자 크기를 아래 섹션 본문(16px)과 맞춤 */
 @media (max-width:900px){html body div[data-block-id="6adf1e250902346eb30f3581"] p.lead{font-size:16px;line-height:1.75}}
 @media (max-width:900px){html body div[data-block-id="6adf1e250902346eb30f3581"] p.lead > b{display:block;text-wrap:balance}}
+/* 소개 브랜드 스토리 모바일: 회색 상자·카드 양옆 여백을 줄여 글을 넓게 */
+@media (max-width:900px){html body .app-block .story-sec .bs-ch{padding:28px 10px!important}html body .app-block .story-sec .bs-card{padding:30px 18px}}
