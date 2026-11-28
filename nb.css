@@ -2234,3 +2234,5 @@ html body div[data-block-id="6adf0fbdce9ec26ac546051f"] .rail.arc{margin-top:0}
 /* 왜 냥빌더 모바일: 파란 해결 카드에서 아이콘 뺌 */
 /* 모바일 메뉴: 오른쪽 한글 글자 끝선을 모두 맞춤 (클래스 꺾쇠·문의하기 화살표는 옆 여백으로) */
 .m-menu > a small{position:relative;padding-right:18px}.m-menu > a.m-contact small{padding-right:0;margin-right:2px}.m-menu a.m-has-sub small::after{position:absolute;right:3px;top:50%;margin:0;transform:translateY(-70%) rotate(45deg)}.m-menu a.m-has-sub[aria-expanded="true"] small::after{transform:translateY(-20%) rotate(-135deg)}
+/* 소개 페이지 인사말: 모바일 글자 크기를 아래 섹션 본문(16px)과 맞춤 */
+@media (max-width:900px){html body div[data-block-id="6adf1e250902346eb30f3581"] p.lead{font-size:16px;line-height:1.75}}
